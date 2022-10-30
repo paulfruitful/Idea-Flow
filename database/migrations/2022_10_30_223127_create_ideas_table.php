@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('author');
+            $table->text('email');
             $table->longText('description');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->text('plan');
