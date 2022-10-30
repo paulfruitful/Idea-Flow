@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('username')->unique();
             $table->string('country')->nullable();
-            $table->int('followers')->nullable();
+            $table->integer('followers')->nullable();
             $table->ipAddress('ip')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

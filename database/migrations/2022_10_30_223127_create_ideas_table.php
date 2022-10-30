@@ -15,6 +15,14 @@ return new class extends Migration
     {
         Schema::create('ideas', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->text('author');
+            $table->longText('description');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->text('plan');
+            $table->text('sponsor');
+            $table->fullText('sector');
+            $table->integer('upvote')->nullable();
             $table->timestamps();
         });
     }
