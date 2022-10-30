@@ -17,12 +17,18 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+
     protected $fillable = [
         'name',
         'email',
         'password',
+        'country',
+        'ip',
+        'followers'
     ];
-
+  public function idea(){
+    return $this->hasMany(Idea::class,'user_id');
+  }
     /**
      * The attributes that should be hidden for serialization.
      *
