@@ -45,7 +45,13 @@ class userControl extends Controller
                 'password'=>['required','min:6']
             ]
             );
-            if(auth()->attempt($form_data)){
+            
+            if($request->remember==1){
+                $request->remember=true;
+            }else{
+                $request->remember=false;
+            }
+            if(auth()->attempt($form_data,$request->remember)){
                 $request->session()->regenerate();
                 return redirect('/')->with('success','Account Logged In Successfully');
 
