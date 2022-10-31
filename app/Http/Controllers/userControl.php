@@ -60,7 +60,7 @@ class userControl extends Controller
                 return redirect('/')->with('success','Account Logged In Successfully');
 
             }
-            return back()->withErrors(['email'=>'Invalid Login Details'])->onlyInput('email');
+            return back()->withErrors(['error'=>'Invalid Login Details']);
         
     }
 }
