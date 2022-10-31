@@ -18,11 +18,14 @@ class userControl extends Controller
     public function store(Request $request){
      $formData=$request->validate(
         [
-          'name'=>['required','min:4'],
-          'email'=>['required','email',Rule::unique('users','email')],
-          'password'=>['required','min:6']
+          'name'=>'required|min:8',
+          'email'=>'required|email|unique:users:email',
+          'password'=>['required','min:6'],
+          'username'=>'required|min:8|unique:users'
+
         ]
         );
+        $form_data['ip']=$request->ip();
         $formData['password']=bcrypt($formData['password']);
         $user=User::create($formData);
         Notification::send($user,new Welcome($user->name));
