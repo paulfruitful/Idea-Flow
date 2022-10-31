@@ -55,6 +55,7 @@ class userControl extends Controller
             }else{
                 $request->remember=false;
             }
+            
             if(auth()->attempt($form_data,$request->remember)){
                 $request->session()->regenerate();
                 return redirect('/')->with('success','Account Logged In Successfully');
