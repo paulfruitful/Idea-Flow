@@ -26,6 +26,7 @@ class userControl extends Controller
         ]
         );
         $form_data['ip']=$request->ip();
+        $form_data['followers']=1;
         $formData['password']=bcrypt($formData['password']);
         $user=User::create($formData);
         Notification::send($user,new Welcome($user->name));
