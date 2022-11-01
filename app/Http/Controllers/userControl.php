@@ -19,7 +19,7 @@ class userControl extends Controller
      $formData=$request->validate(
         [
           'name'=>'required|min:8',
-          'email'=>'required|email|unique:users:email',
+          'email'=>'required|email|unique:users:email|email:rfc,dns',
           'password'=>['required','min:6'],
           'username'=>'required|min:8|unique:users'
 
