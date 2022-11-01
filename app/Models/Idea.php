@@ -9,6 +9,17 @@ use App\Models\Idea_comment;
 class Idea extends Model
 {
     use HasFactory;
+    protected $fillable=[
+ 'title',
+ 'description',
+ 'author',
+ 'email',
+ 'user_id',
+ 'plan',
+ 'sponsor',
+ 'sector',
+ 'upvote'
+    ];
     public function user(){
         return $this->belongsTo(User::class,'user_id');
       }
