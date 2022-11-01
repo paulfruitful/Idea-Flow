@@ -20,3 +20,9 @@ Route::get('/', function () {
 Route::get('/register',[App\Http\Controllers\userControl::class,'create']);
 
 Route::post('/register',[App\Http\Controllers\userControl::class,'store']);
+
+
+Route::post('/login',function(){
+    return view('users.login');
+});
+Route::post('/login',[App\Http\Controllers\userControl::class,'login']);
