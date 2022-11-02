@@ -66,6 +66,7 @@ class userControl extends Controller
     }
 
     public function editProfile(Request $request,User $user){
+        if(auth()->id()==$user->id){
            $form_data=$request->validate([
             'name',
             'email'=>'email:rfc,dns|email|unique:users',
@@ -82,6 +83,9 @@ class userControl extends Controller
            $user->update($form_data);
 
            return back()->with('success','User Profile Updated');
+        }
+
+        return abort('403');
     }
     public function follow(User $user){
      $user->followers+=1;
