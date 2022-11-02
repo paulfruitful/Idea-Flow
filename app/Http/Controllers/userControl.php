@@ -88,6 +88,6 @@ class userControl extends Controller
      $user->save();    
 
     
-        return back()->with('success','User Profile Updated');
+    return back()->with('success','User Profile Updated');
  }
 }

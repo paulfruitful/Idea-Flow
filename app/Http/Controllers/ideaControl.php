@@ -13,4 +13,10 @@ public function all(){
         'idea'=>Idea::latest()
     ]);
 }
+
+public function idea(Idea $idea){
+    return view('idea.idea',[
+        'idea'=>$idea
+    ]);
+}
 }
