@@ -65,7 +65,7 @@ class userControl extends Controller
         
     }
 
-    public function editProfile(Request $request){
+    public function editProfile(Request $request,User $user){
            $form_data=$request->validate([
             'name',
             'email'=>'email:rfc,dns|email|unique:users',
@@ -79,7 +79,7 @@ class userControl extends Controller
 
            }
 
-           User::update($form_data);
+           $user->update($form_data);
 
            return back()->with('success','User Profile Updated');
     }
