@@ -83,4 +83,11 @@ class userControl extends Controller
 
            return back()->with('success','User Profile Updated');
     }
+    public function follow(User $user){
+     $user->followers+=1;
+     $user->save();    
+
+    
+        return back()->with('success','User Profile Updated');
+ }
 }
