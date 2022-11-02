@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('username')->unique();
             $table->string('country')->nullable();
             $table->integer('followers')->nullable();
+            $table->string('avatar')->nullable();
             $table->ipAddress('ip')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

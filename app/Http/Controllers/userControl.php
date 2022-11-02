@@ -64,4 +64,23 @@ class userControl extends Controller
             return back()->withErrors(['error'=>'Invalid Login Details']);
         
     }
+
+    public function editProfile(Request $request){
+           $form_data=$request->validate([
+            'name',
+            'email'=>'email:rfc,dns|email|unique:users',
+            'username'=>'min:12',
+            'country',
+            'avatar'
+           ]);
+
+           if($request->hasFile('avatar')){
+             $form_data['avatar']=$request->file('avatar')->store('avatar','public');
+
+           }
+
+           User::update($form_data);
+
+           return back()->with('success','User Profile Updated');
+    }
 }
