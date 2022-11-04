@@ -47,7 +47,7 @@
                 <i class="far fa-envelope fa-lg mb-1"></i>
                 <span class="badge rounded-pill badge-notification bg-dark">11</span>
               </div>
-              Link
+              Idea Pool
             </a>
           </li>
           <li class="nav-item text-center mx-2 mx-lg-1">
@@ -56,7 +56,7 @@
                 <i class="far fa-envelope fa-lg mb-1"></i>
                 <span class="badge rounded-pill badge-notification bg-dark">11</span>
               </div>
-              Disabled
+              Problem Pool
             </a>
           </li>
           <li class="nav-item dropdown text-center mx-2 mx-lg-1">
@@ -77,9 +77,7 @@
               <li>
                 <hr class="dropdown-divider" />
               </li>
-              <li>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </li>
+             
             </ul>
           </li>
         </ul>
@@ -93,7 +91,7 @@
                 <i class="fas fa-bell fa-lg mb-1"></i>
                 <span class="badge rounded-pill badge-notification bg-dark">11</span>
               </div>
-              Messages
+              Solution Pool
             </a>
           </li>
           <li class="nav-item text-center mx-2 mx-lg-1">
@@ -102,7 +100,7 @@
                 <i class="fas fa-globe-americas fa-lg mb-1"></i>
                 <span class="badge rounded-pill badge-notification bg-dark">11</span>
               </div>
-              News
+              My Profile
             </a>
           </li>
         </ul>
