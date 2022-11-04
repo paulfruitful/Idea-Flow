@@ -17,7 +17,13 @@ class IdeaFactorFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'title'=>fake()->sentence(6),
+            'description'=>fake()->sentences(6),
+            'email'=>fake()->unique()->safeEmail(),
+            'plan'=>fake()->domainName(),
+            'sponsor'=>'Yes',
+            'sector'=>fake()->company()
+
         ];
     }
 }
