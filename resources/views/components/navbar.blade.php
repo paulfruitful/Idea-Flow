@@ -66,7 +66,7 @@
                 <i class="far fa-envelope fa-lg mb-1"></i>
                 <span class="badge rounded-pill badge-notification bg-dark">11</span>
               </div>
-              Dropdown
+              Take An Action
             </a>
             <!-- Dropdown menu -->
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
