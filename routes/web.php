@@ -12,22 +12,23 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+use App\Http\Controllers\userControl;
+use App\Http\Controllers\ideaControl;
 Route::get('/', function () {
     return view('welcome');
 });
 
-//User Routes
-Route::get('/register',[App\Http\Controllers\userControl::class,'create']);
-Route::post('/register',[App\Http\Controllers\userControl::class,'store']);
+
+Route::get('/register',[userControl::class,'create']);
+Route::post('/register',[userControl::class,'store']);
 
 Route::post('/login',function(){
     return view('user.login');
 });
-Route::get('/create/idea',[App\Http\Controllers\ideaControl::class,'create']);
-Route::post('/create/idea',[\App\Http\Controllers\ideaControl::class,'store']);
+Route::get('/create/idea',[ideaControl::class,'create']);
+Route::post('/create/idea',[ideaControl::class,'store']);
 
-Route::post('/login',[App\Http\Controllers\userControl::class,'login']);
+Route::post('/login',[userControl::class,'login']);
 
 Route::get('/user/{user}',function(){
     return view('user.profile');
@@ -37,6 +38,8 @@ Route::get('/user/{user}/profile',function(){
     return view('user.edit');
 });
 
-Route::post('/user/{user}',[App\Http\Controllers\userControl::class,'editProfile']);
+Route::post('/user/{user}',[userControl::class,'editProfile']);
 
-Route::post('/user/{user}/follow',[App\Http\Controllers\userControl::class,'follow']);
+Route::get('/user/{user}/ideas',[]);
+
+Route::post('/user/{user}/follow',[userControl::class,'follow']);

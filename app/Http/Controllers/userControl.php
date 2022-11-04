@@ -94,4 +94,12 @@ class userControl extends Controller
     
     return back()->with('success','User Profile Updated');
  }
+    public function ideas(User $user){
+        dd($user->ideas->all());
+       return view('user.ideas',[
+        'user'=>$user->idea()->latest()
+       ]);
+        
+
+}
 }
