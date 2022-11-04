@@ -24,6 +24,8 @@ Route::post('/register',[App\Http\Controllers\userControl::class,'store']);
 Route::post('/login',function(){
     return view('user.login');
 });
+Route::get('/create/idea',[App\Http\Controllers\ideaControl::class,'create']);
+Route::post('/create/idea',[\App\Http\Controllers\ideaControl::class,'store']);
 
 Route::post('/login',[App\Http\Controllers\userControl::class,'login']);
 
