@@ -25,10 +25,10 @@ Route::post('/register',[userControl::class,'store']);
 Route::post('/login',function(){
     return view('user.login');
 });
+Route::post('/login',[userControl::class,'login']);
+
 Route::get('/create/idea',[ideaControl::class,'create']);
 Route::post('/create/idea',[ideaControl::class,'store']);
-
-Route::post('/login',[userControl::class,'login']);
 
 Route::get('/user/{user}',function(){
     return view('user.profile');
