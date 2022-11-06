@@ -39,6 +39,11 @@ Download composer at: https://getcomposer.org/
 ```
 # Hi, I'm Paul Fruitful ! 👋
 
+## 🚀 About Me
+I'm a Web Developer with 5 years of experience  passionate about solving problems.
+I am very versatile in the digital world and I understand the core concepts of technology and digitalization. 
+At the  beginning of my tech journey I worked with core frontend technologies such as HTML, CSS, and Javascript DOM manipulations, and when I gained a certain level of knowledge in frontend development, I started migrating into backend development concepts and I worked with core PHP to create full stack projects before I discovered some PHP frameworks like Laravel. In the later stage of my tech journey I learnt new skills and I migrated into new fields such as Pentesting which I made my hobby; some of the new skills I learnt were SEO(I learnt  It in 2020), Automations with Python and Malware development which I self learnt by reverse engineering my codes.
+
 
 
 # 💻Tech Stack
@@ -56,11 +61,6 @@ Download composer at: https://getcomposer.org/
 
 ---
 [![](https://visitcount.itsvg.in/api?id=paulfruitful&icon=0&color=0)](https://visitcount.itsvg.in)
-
-## 🚀 About Me
-I'm a Web Developer with 5 years of experience  passionate about solving problems.
-I am very versatile in the digital world and I understand the core concepts of technology and digitalization. 
-At the  beginning of my tech journey I worked with core frontend technologies such as HTML, CSS, and Javascript DOM manipulations, and when I gained a certain level of knowledge in frontend development, I started migrating into backend development concepts and I worked with core PHP to create full stack projects before I discovered some PHP frameworks like Laravel. In the later stage of my tech journey I learnt new skills and I migrated into new fields such as Pentesting which I made my hobby; some of the new skills I learnt were SEO(I learnt  It in 2020), Automations with Python and Malware development which I self learnt by reverse engineering my codes.
 
 
 
