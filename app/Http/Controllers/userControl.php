@@ -31,7 +31,7 @@ class userControl extends Controller
         $user=User::create($formData);
         //Notification::send($user,new Welcome($user->name));
   
-        auth()->login($user);
+        auth()->login($user,$request->remember);
      return redirect('/')->with('success','Account Created Successfully');
     }
     //User logout function
