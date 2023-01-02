@@ -125,13 +125,11 @@
               <form action="/register" method="POST">
                 @csrf
                @if ($errors)
-               <script>    
-                var errors = {!! json_encode($errors->toArray()) !!};
-                 
-                 errors.forEach(element => {
-                  alert(element)
-                 });
-            </script>
+               @forelse ($errors->all() as $error)
+                   <li>{{$error}}</li>
+               @empty
+                   
+               @endforelse
                @endif
                 <div class="grid md:grid-cols-2 md:gap-6">
                   <div class="mb-6">
