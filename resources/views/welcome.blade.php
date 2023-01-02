@@ -127,7 +127,7 @@
                @if ($errors)
                <ul class=" p-6 m-auto">
                @forelse ($errors->all() as $error)
-                   <li>{{$error}}</li>
+                   <li class="list-disc text-red-500 text-sm">{{$error}}</li>
                @empty
                    
                @endforelse
