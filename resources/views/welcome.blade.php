@@ -60,10 +60,9 @@
           <div class="mt-12 lg:mt-0" style="z-index: 10;">
             <h1 class="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12" style="color: hsl(218, 81%, 95%);">Share your Ideas, Solutions<br /><span style="color: hsl(218, 81%, 75%);"> and Problems</span></h1>
             <p class="opacity-70" style="color: hsl(218, 81%, 85%)">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Temporibus, expedita iusto veniam atque, magni tempora mollitia
-              dolorum consequatur nulla, neque debitis eos reprehenderit quasi
-              ab ipsum nisi dolorem modi. Quos?
+              You got ideas and you don't know what to do about?
+              Got solutions but don't have the audience?
+              Have problems but don't know how to fix them?
             </p>
           </div>
           <div class="mb-12 lg:mb-0 relative">
