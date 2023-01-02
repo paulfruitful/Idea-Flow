@@ -125,11 +125,13 @@
               <form action="/register" method="POST">
                 @csrf
                @if ($errors)
+               <ul class=" p-6 m-auto">
                @forelse ($errors->all() as $error)
                    <li>{{$error}}</li>
                @empty
                    
                @endforelse
+              </ul>
                @endif
                 <div class="grid md:grid-cols-2 md:gap-6">
                   <div class="mb-6">
