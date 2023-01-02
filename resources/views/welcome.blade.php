@@ -63,7 +63,8 @@
             <li class="list-none" style="color: hsl(218, 81%, 85%)">  You got ideas and you don't know what to do?</li>
             <li class="list-none" style="color: hsl(218, 81%, 85%)">  Got solutions but don't have the audience?</li>
             <li class="list-none" style="color: hsl(218, 81%, 85%)">   Have problems but don't know how to fix them? </li>
-            </p>
+         <span style="color: hsl(218, 81%, 85%)"> Use Idea Flow today to share your solutions, ideas and problems, make the world a better place and keep the flow of solutions limitless.  
+          </span></p>
           </div>
           <div class="mb-12 lg:mb-0 relative">
             <div id="radius-shape-1" class="absolute rounded-full shadow-lg"></div>
