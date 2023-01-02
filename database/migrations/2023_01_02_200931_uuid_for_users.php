@@ -13,8 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::table('users',function(Blueprint $table){
-         
+         $table->uuid('id')->change();
         });
     }
 
