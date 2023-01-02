@@ -39,7 +39,7 @@ class userControl extends Controller
         auth()->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('/')->with('success','Account Created Successfully');
+        return redirect('/')->with('success','Account Logged Out Successfully');
     }
     // User login fuction
     public function login(Request $request){
