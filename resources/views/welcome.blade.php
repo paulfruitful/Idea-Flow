@@ -127,7 +127,10 @@
                @if ($errors)
                <script>    
                 var errors = {!! json_encode($errors->toArray()) !!};
-                console.log(errors);
+                 
+                 errors.forEach(element => {
+                  alert(element)
+                 });
             </script>
                @endif
                 <div class="grid md:grid-cols-2 md:gap-6">
