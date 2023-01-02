@@ -124,6 +124,12 @@
             <div class="block rounded-lg shadow-lg bg-glass px-6 py-12 md:px-12">
               <form action="/register" method="POST">
                 @csrf
+               @if ($errors)
+                   <script>
+                    
+                    console.log(errors);
+                   </script>
+               @endif
                 <div class="grid md:grid-cols-2 md:gap-6">
                   <div class="mb-6">
                     <input name="name" type="text" class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Name"/>
