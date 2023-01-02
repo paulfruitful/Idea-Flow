@@ -125,10 +125,10 @@
               <form action="/register" method="POST">
                 @csrf
                @if ($errors)
-                   <script>
-                    
-                    console.log(errors);
-                   </script>
+               <script>    
+                var errors = {!! json_encode($errors->toArray()) !!};
+                console.log(errors);
+            </script>
                @endif
                 <div class="grid md:grid-cols-2 md:gap-6">
                   <div class="mb-6">
