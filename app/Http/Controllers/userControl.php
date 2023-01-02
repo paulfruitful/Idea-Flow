@@ -32,7 +32,7 @@ class userControl extends Controller
         //Notification::send($user,new Welcome($user->name));
   
         auth()->login($user);
-     return redirect('/')->with('success','Account Created Successfully',compact('errors'));
+     return redirect('/')->with('success','Account Created Successfully');
     }
     //User logout function
     public function logout(Request $request){
