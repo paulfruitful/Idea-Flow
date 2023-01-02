@@ -14,11 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 use App\Http\Controllers\userControl;
 use App\Http\Controllers\ideaControl;
+use App\Models\Idea;
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::get('/pools', function(){
+    return view('pools',[
+        'ideas'=>Idea::latest()
+    ]);
+});
 Route::get('/register',[userControl::class,'create']);
 Route::post('/register',[userControl::class,'store']);
 
