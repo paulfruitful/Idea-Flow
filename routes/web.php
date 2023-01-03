@@ -30,8 +30,10 @@ Route::get('/pools', function(){
 Route::controller(userControl::class)->group(function(){
     Route::get('/register',['create']);
     Route::post('/register',['store']);
+    Route::logout('/logout',['logout']);
+    Route::post('/login',['login']);
     Route::prefix('user')->group(function(){
-   Route::get('/user/{user}',function(){
+    Route::get('/user/{user}',function(){
     return view('user.profile');
 });
 
@@ -51,8 +53,6 @@ Route::controller(userControl::class)->group(function(){
 Route::post('/login',function(){
     return view('user.login');
 });
-Route::logout('/logout',[userControl::class,'logout']);
-Route::post('/login',[userControl::class,'login']);
 Route::prefix('/create')->controller(ideaControl::class)->group(function(){
 
 Route::get('/idea',['create']);
