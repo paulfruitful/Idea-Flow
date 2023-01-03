@@ -61,10 +61,10 @@
       function loginForm(e){
         e.preventDefault()
         let register=document.getElementById('form');
-        let login=document.getElementById('secondform');
+        let login=document.querySelector('#secondform');
       if( register.style.display!="none"){
           register.style.display="none"
-          console.log(login.style)
+          login.style.display=null
        
         }else{
           register.style.display=""
