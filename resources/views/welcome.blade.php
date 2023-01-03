@@ -64,7 +64,7 @@
         let login=document.getElementById('login');
       if( register.style.display!="none"){
           register.style.display="none"
-          login.style.display=""
+          login.style.display=null
        
         }else{
           register.style.display=""
@@ -190,7 +190,7 @@
                  
                 </div>
               </form>
-            </div>yu
+            </div>
           </div>
         </div>
       </div>
