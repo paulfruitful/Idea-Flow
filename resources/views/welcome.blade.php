@@ -61,7 +61,6 @@
       function loginForm(e){
         e.preventDefault()
         let register=document.getElementById('form');
-        let login=document.getElementByQuerySelector('#login');
       if( register.style.display!="none"){
           register.style.display="none"
        
@@ -83,8 +82,8 @@
           <div class="mb-12 lg:mb-0 relative">
             <div id="radius-shape-1" class="absolute rounded-full shadow-lg"></div>
             <div id="radius-shape-2" class="absolute shadow-lg"></div>
-            <div class="block rounded-lg shadow-lg bg-glass px-6 py-12 md:px-12">
-              <form action="/register" method="POST" id="form">
+            <div class="block rounded-lg shadow-lg bg-glass px-6 py-12 md:px-12" id="form">
+              <form action="/register" method="POST" >
                 @csrf
                @if ($errors)
                <ul class=" p-6 m-auto">
