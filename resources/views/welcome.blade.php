@@ -53,7 +53,16 @@
         backdrop-filter: saturate(200%) blur(25px);
       }
     </style>
-    
+    <script>
+      function loginForm(e){
+        e.preventDefault()
+        let register=document.getElementById('form');
+        if( register.style.display!="none"){
+          register.style.display="none"
+        }
+      
+      }
+    </script>
     <div class="px-6 py-12 lg:py-24 md:px-12 text-center lg:text-left">
       <div class="container mx-auto xl:px-32 text-gray-800">
         <div class="grid lg:grid-cols-2 gap-12 flex items-center">
@@ -70,7 +79,7 @@
             <div id="radius-shape-1" class="absolute rounded-full shadow-lg"></div>
             <div id="radius-shape-2" class="absolute shadow-lg"></div>
             <div class="block rounded-lg shadow-lg bg-glass px-6 py-12 md:px-12">
-              <form action="/register" method="POST">
+              <form action="/register" method="POST" id="form">
                 @csrf
                @if ($errors)
                <ul class=" p-6 m-auto">
@@ -102,7 +111,45 @@
                 </div>
                 <button type="submit" data-mdb-ripple="true" data-mdb-ripple-color="light" class="inline-block px-6 py-2.5 mb-6 w-full bg-indigo-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-indigo-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-indigo-800 active:shadow-lg transition duration-150 ease-in-out">Sign up</button>
                 <div class="text-center text-sm">
-                Already Registered? <span class="text-indigo-800">Login</span>
+                Already Registered? <span class="text-indigo-800"><button onclick="loginForm(event)"> Login</button></span>
+                </div>
+              <div class="flex justify-center">
+                 
+                </div>
+              </form>
+              <form action="/register" method="POST" id="login">
+                @csrf
+               @if ($errors)
+               <ul class=" p-6 m-auto">
+               @forelse ($errors->all() as $error)
+                   <li class="list-disc text-red-500 text-sm">{{$error}}</li>
+               @empty
+                   
+               @endforelse
+              </ul>
+               @endif
+               <h1 class="text-center text-3xl text-gray-700 font-bold p-6">Join The Idea Network!</h1>
+                <div class="grid md:grid-cols-2 md:gap-6">
+                  <div class="mb-6">
+                    <input name="name" type="text" class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Name"/>
+                  </div>
+                  <div class="mb-6">
+                    <input type="text" name="username" class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Username"/>
+                  </div>
+                </div>
+                <input type="email" class="form-control block w-full px-3 py-1.5 mb-6 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Email address" name="email"/>
+                <input type="password" name="password" class="form-control block w-full px-3 py-1.5 mb-6 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Password"/>
+                <input type="password" name="password_confirmation" class="form-control block w-full px-3 py-1.5 mb-6 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Confirm Password"/>
+               
+                <div class="form-check flex justify-center mb-6">
+                  <input name="remember" class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-indigo-600 checked:border-indigo-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="true" id="flexCheckChecked" checked>
+                  <label class="form-check-label inline-block text-gray-800" for="flexCheckChecked">
+                    Keep me logged in
+                  </label>
+                </div>
+                <button type="submit" data-mdb-ripple="true" data-mdb-ripple-color="light" class="inline-block px-6 py-2.5 mb-6 w-full bg-indigo-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-indigo-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-indigo-800 active:shadow-lg transition duration-150 ease-in-out">Sign up</button>
+                <div class="text-center text-sm">
+                Already Registered? <span class="text-indigo-800"><button onclick="loginForm(event)"> Login</button></span>
                 </div>
               <div class="flex justify-center">
                  
