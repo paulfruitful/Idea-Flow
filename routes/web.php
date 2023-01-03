@@ -18,44 +18,34 @@ use App\Models\Idea;
 
 Route::get('/', function () {
     return view('welcome');
-})->middleware('guest');
+});
 
 Route::get('/pools', function(){
-    return view('pool.pools',[
+    return view('pools',[
         'ideas'=>Idea::latest()
     ]);
 });
+Route::get('/register',[userControl::class,'create']);
+Route::post('/register',[userControl::class,'store']);
 
-
-Route::controller(userControl::class)->group(function(){
-    Route::get('/register',['create']);
-    Route::post('/register',['store']);
-    Route::logout('/logout',['logout']);
-    Route::post('/login',['login']);
-    Route::prefix('user')->group(function(){
-    Route::get('/user/{user}',function(){
-    return view('user.profile');
-});
-
-   Route::get('{user}/profile',function(){
-    return view('user.edit');
-});
-
-  Route::post('{user}',['editProfile']);
-  Route::post('{user}/follow',['follow']);
-
-  Route::get('{user}/ideas',[]);
-
-
-
-    });
-});
 Route::post('/login',function(){
     return view('user.login');
 });
-Route::prefix('/create')->controller(ideaControl::class)->group(function(){
+Route::post('/login',[userControl::class,'login']);
 
-Route::get('/idea',['create']);
-Route::post('/idea',['store']);
+Route::get('/create/idea',[ideaControl::class,'create']);
+Route::post('/create/idea',[ideaControl::class,'store']);
+
+Route::get('/user/{user}',function(){
+    return view('user.profile');
 });
 
+Route::get('/user/{user}/profile',function(){
+    return view('user.edit');
+});
+
+Route::post('/user/{user}',[userControl::class,'editProfile']);
+
+Route::get('/user/{user}/ideas',[]);
+
+Route::post('/user/{user}/follow',[userControl::class,'follow']);
