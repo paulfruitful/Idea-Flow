@@ -52,9 +52,7 @@
         background-color: hsla(0, 0%, 100%, 0.9);
         backdrop-filter: saturate(200%) blur(25px);
       }
-      #secondform{
-        display: none;
-      }
+    
     </style>
     
     <script>
@@ -64,7 +62,7 @@
         let login=document.querySelector('#secondform');
       if( register.style.display!="none"){
           register.style.display="none"
-          login.style.display=null
+          login.style.display=""
        
         }else{
           register.style.display=""
@@ -129,7 +127,7 @@
              
             </div>
 
-            <div class="block rounded-lg shadow-lg bg-glass px-6 py-12 md:px-12" id="secondform" >
+            <div class="block rounded-lg shadow-lg bg-glass px-6 py-12 md:px-12 hidden" id="secondform" >
         
               <form action="/register" method="POST"  >
                 @csrf
