@@ -62,11 +62,10 @@
         e.preventDefault()
         let register=document.getElementById('form');
         let login=document.getElementByQuerySelector('#login');
-     /*   if( register.style.display!="none"){
+      if( register.style.display!="none"){
           register.style.display="none"
        
-        }*/
-         login.style.display=="block"
+        }
       }
     </script>
     <div class="px-6 py-12 lg:py-24 md:px-12 text-center lg:text-left">
