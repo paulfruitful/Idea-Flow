@@ -31,6 +31,7 @@ Route::post('/register',[userControl::class,'store']);
 Route::post('/login',function(){
     return view('user.login');
 });
+Route::logout('/logout',[userControl::class,'logout']);
 Route::post('/login',[userControl::class,'login']);
 
 Route::get('/create/idea',[ideaControl::class,'create']);
