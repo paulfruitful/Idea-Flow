@@ -25,9 +25,28 @@ Route::get('/pools', function(){
         'ideas'=>Idea::latest()
     ]);
 });
-Route::get('/register',[userControl::class,'create']);
-Route::post('/register',[userControl::class,'store']);
 
+
+Route::controller(userControl::class)->group(function(){
+    Route::get('/register',[userControl::class,'create']);
+    Route::post('/register',[userControl::class,'store']);
+    Route::prefix('user')->group(function(){
+   Route::get('/user/{user}',function(){
+    return view('user.profile');
+});
+
+   Route::get('/user/{user}/profile',function(){
+    return view('user.edit');
+});
+
+  Route::post('/user/{user}',[userControl::class,'editProfile']);
+
+  Route::get('/user/{user}/ideas',[]);
+
+  Route::post('/user/{user}/follow',[userControl::class,'follow']);
+
+    });
+});
 Route::post('/login',function(){
     return view('user.login');
 });
@@ -39,16 +58,3 @@ Route::get('/idea',['create']);
 Route::post('/idea',['store']);
 });
 
-Route::get('/user/{user}',function(){
-    return view('user.profile');
-});
-
-Route::get('/user/{user}/profile',function(){
-    return view('user.edit');
-});
-
-Route::post('/user/{user}',[userControl::class,'editProfile']);
-
-Route::get('/user/{user}/ideas',[]);
-
-Route::post('/user/{user}/follow',[userControl::class,'follow']);
