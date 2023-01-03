@@ -62,7 +62,7 @@
         let login=document.querySelector('#secondform');
       if( register.style.display!="none"){
           register.style.display="none"
-          login.style.display=""
+          login.style.display="block"
        
         }else{
           register.style.display=""
