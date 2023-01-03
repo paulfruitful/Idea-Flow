@@ -18,7 +18,7 @@ use App\Models\Idea;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->middleware('guest');
 
 Route::get('/pools', function(){
     return view('pool.pools',[
