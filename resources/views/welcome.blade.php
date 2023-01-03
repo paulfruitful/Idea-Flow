@@ -52,7 +52,7 @@
         background-color: hsla(0, 0%, 100%, 0.9);
         backdrop-filter: saturate(200%) blur(25px);
       }
-      #login{
+      #secondform{
         display: none;
       }
     </style>
@@ -61,10 +61,10 @@
       function loginForm(e){
         e.preventDefault()
         let register=document.getElementById('form');
-        let login=document.getElementById('login');
+        let login=document.getElementById('secondform');
       if( register.style.display!="none"){
           register.style.display="none"
-          login.style.display=null
+          console.log(register.style.display)
        
         }else{
           register.style.display=""
@@ -126,39 +126,10 @@
                  
                 </div>
               </form>
-              <form action="/register" method="POST" id="login" >
-                @csrf
-               @if ($errors)
-               <ul class=" p-6 m-auto">
-               @forelse ($errors->all() as $error)
-                   <li class="list-disc text-red-500 text-sm">{{$error}}</li>
-               @empty
-                   
-               @endforelse
-              </ul>
-               @endif
-               <h1 class="text-center text-3xl text-gray-700 font-bold p-6">Welcome Back!</h1>
-              
-                <input type="email" class="form-control block w-full px-3 py-1.5 mb-6 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Email address" name="email"/>
-                <input type="password" name="password" class="form-control block w-full px-3 py-1.5 mb-6 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Password"/>
-              
-                <div class="form-check flex justify-center mb-6">
-                  <input name="remember" class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-indigo-600 checked:border-indigo-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="true" id="flexCheckChecked" checked>
-                  <label class="form-check-label inline-block text-gray-800" for="flexCheckChecked">
-                    Keep me logged in
-                  </label>
-                </div>
-                <button type="submit" data-mdb-ripple="true" data-mdb-ripple-color="light" class="inline-block px-6 py-2.5 mb-6 w-full bg-indigo-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-indigo-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-indigo-800 active:shadow-lg transition duration-150 ease-in-out">Sign up</button>
-                <div class="text-center text-sm">
-                Not Registered? <span class="text-indigo-800"><button onclick="loginForm(event)">Register</button></span>
-                </div>
-              <div class="flex justify-center">
-                 
-                </div>
-              </form>
-            </div>yu
+             
+            </div>
 
-            <div class="block rounded-lg shadow-lg bg-glass px-6 py-12 md:px-12" id="login" >
+            <div class="block rounded-lg shadow-lg bg-glass px-6 py-12 md:px-12" id="secondform" >
         
               <form action="/register" method="POST"  >
                 @csrf
