@@ -52,7 +52,11 @@
         background-color: hsla(0, 0%, 100%, 0.9);
         backdrop-filter: saturate(200%) blur(25px);
       }
+      #login{
+        display: none;
+      }
     </style>
+    
     <script>
       function loginForm(e){
         e.preventDefault()
@@ -62,7 +66,7 @@
           register.style.display="none"
        
         }*/
-         login.style.display=="flex"
+         login.style.display=="block"
       }
     </script>
     <div class="px-6 py-12 lg:py-24 md:px-12 text-center lg:text-left">
