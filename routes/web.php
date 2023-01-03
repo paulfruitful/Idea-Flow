@@ -35,15 +35,15 @@ Route::controller(userControl::class)->group(function(){
     return view('user.profile');
 });
 
-   Route::get('/user/{user}/profile',function(){
+   Route::get('{user}/profile',function(){
     return view('user.edit');
 });
 
-  Route::post('/user/{user}',[userControl::class,'editProfile']);
+  Route::post('{user}',[userControl::class,'editProfile']);
 
-  Route::get('/user/{user}/ideas',[]);
+  Route::get('{user}/ideas',[]);
 
-  Route::post('/user/{user}/follow',[userControl::class,'follow']);
+  Route::post('{user}/follow',[userControl::class,'follow']);
 
     });
 });
