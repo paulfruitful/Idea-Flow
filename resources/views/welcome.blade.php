@@ -86,7 +86,7 @@
             <div id="radius-shape-1" class="absolute rounded-full shadow-lg"></div>
             <div id="radius-shape-2" class="absolute shadow-lg"></div>
             <div class="block rounded-lg shadow-lg bg-glass px-6 py-12 md:px-12" id="form">
-              <form action="/register" method="POST" >
+              <form action="/login" method="POST" >
                 @csrf
                @if ($errors)
                <ul class=" p-6 m-auto">
