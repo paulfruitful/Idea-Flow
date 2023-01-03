@@ -50,11 +50,7 @@ class userControl extends Controller
             ]
             );
             
-            if($request->remember==1){
-                $request->remember=true;
-            }else{
-                $request->remember=false;
-            }
+          
             
             if(auth()->attempt($form_data,$request->remember)){
                 $request->session()->regenerate();
