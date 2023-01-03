@@ -64,7 +64,7 @@
         let login=document.getElementById('secondform');
       if( register.style.display!="none"){
           register.style.display="none"
-          console.log(register.style.display)
+          console.log(login.style)
        
         }else{
           register.style.display=""
