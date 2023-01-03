@@ -61,7 +61,7 @@
       function loginForm(e){
         e.preventDefault()
         let register=document.getElementById('form');
-        let login=document.getElementById('login');
+        let login=document.getElementByQuerySelector('#login');
      /*   if( register.style.display!="none"){
           register.style.display="none"
        
