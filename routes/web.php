@@ -40,10 +40,11 @@ Route::controller(userControl::class)->group(function(){
 });
 
   Route::post('{user}',[userControl::class,'editProfile']);
-
+  Route::post('{user}/follow',[userControl::class,'follow']);
+  
   Route::get('{user}/ideas',[]);
 
-  Route::post('{user}/follow',[userControl::class,'follow']);
+
 
     });
 });
