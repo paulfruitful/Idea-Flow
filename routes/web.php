@@ -21,7 +21,7 @@ Route::get('/', function () {
 });
 
 Route::get('/pools', function(){
-    return view('pools',[
+    return view('pool.pools',[
         'ideas'=>Idea::latest()
     ]);
 });
