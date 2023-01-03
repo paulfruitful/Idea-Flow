@@ -58,11 +58,11 @@
         e.preventDefault()
         let register=document.getElementById('form');
         let login=document.getElementById('login');
-        if( register.style.display!="none" && login.style.display=="none"){
+     /*   if( register.style.display!="none"){
           register.style.display="none"
-          login.style.display=="block"
-        }
-      
+       
+        }*/
+         login.style.display=="flex"
       }
     </script>
     <div class="px-6 py-12 lg:py-24 md:px-12 text-center lg:text-left">
@@ -119,7 +119,7 @@
                  
                 </div>
               </form>
-              <form action="/register" method="POST" id="login" style="display: none">
+              <form action="/register" method="POST" id="login" >
                 @csrf
                @if ($errors)
                <ul class=" p-6 m-auto">
