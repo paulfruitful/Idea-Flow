@@ -58,7 +58,7 @@ class userControl extends Controller
             
             if(auth()->attempt($form_data,$request->remember)){
                 $request->session()->regenerate();
-                return redirect('/')->with('success','Account Logged In Successfully');
+                return redirect('/pools')->with('success','Account Logged In Successfully');
 
             }
             return back()->withErrors(['error'=>'Invalid Login Details']);
