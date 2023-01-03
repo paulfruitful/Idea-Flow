@@ -28,8 +28,8 @@ Route::get('/pools', function(){
 
 
 Route::controller(userControl::class)->group(function(){
-    Route::get('/register',[userControl::class,'create']);
-    Route::post('/register',[userControl::class,'store']);
+    Route::get('/register',['create']);
+    Route::post('/register',['store']);
     Route::prefix('user')->group(function(){
    Route::get('/user/{user}',function(){
     return view('user.profile');
@@ -39,9 +39,9 @@ Route::controller(userControl::class)->group(function(){
     return view('user.edit');
 });
 
-  Route::post('{user}',[userControl::class,'editProfile']);
-  Route::post('{user}/follow',[userControl::class,'follow']);
-  
+  Route::post('{user}',['editProfile']);
+  Route::post('{user}/follow',['follow']);
+
   Route::get('{user}/ideas',[]);
 
 
