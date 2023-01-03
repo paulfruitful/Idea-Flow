@@ -33,9 +33,11 @@ Route::post('/login',function(){
 });
 Route::logout('/logout',[userControl::class,'logout']);
 Route::post('/login',[userControl::class,'login']);
+Route::prefix('/create')->controller(ideaControl::class)->group(function(){
 
-Route::get('/create/idea',[ideaControl::class,'create']);
-Route::post('/create/idea',[ideaControl::class,'store']);
+Route::get('/idea',['create']);
+Route::post('/idea',['store']);
+});
 
 Route::get('/user/{user}',function(){
     return view('user.profile');
