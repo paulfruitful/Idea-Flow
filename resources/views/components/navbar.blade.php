@@ -1,7 +1,7 @@
 <div class="flex p-4 rounded-sm shadow-xl bg-white ">
 
 <div class="relative">
-<div class="flex flex-row absolute left-1 ">
+<div class="flex flex-row  text-center">
   <a href="" class="text-xl  font-bold p-3 shadow-sm text-dark">Idea Pools</a>
   <a href="" class="text-xl  font-bold p-3 shadow-sm text-dark">Solution Pools</a>
   <a href="" class="text-xl font-bold p-3 shadow-sm text-dark">Problem Pools</a>
