@@ -1,4 +1,4 @@
-<div class="flex p-4 rounded-sm shadow-xl bg-white ">
+<div class="grid p-4 rounded-sm shadow-xl bg-white ">
 
 <div class="relative">
 <div class="flex flex-row  text-center">
