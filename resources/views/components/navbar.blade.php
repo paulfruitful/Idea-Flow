@@ -1,4 +1,4 @@
-<div class="grid p-4 rounded-sm justify-items-stretch shadow-md bg-white ">
+<div class="grid p-4 rounded-sm justify-items-stretch shadow-sm bg-white ">
 
 <div class="relative justify-self-end">
 <div class="flex flex-row sm:flex-column  text-center">
