@@ -7,11 +7,11 @@
 </style>
 
 <div class="grid p-4 rounded-sm justify-items-stretch shadow-sm bg-white ">
-<div class="flex flex-row">
-<div class="relative justify-self-start" style="height: 30px" >
- <div class="p-3 relative flex flex-row bg-white border-solid border-black border-2 flex flex-row" style="height: 74px">
-  <div class="p-3 font-bold bg-black text-white text-xl">IDEA</div>
-  <div class="p-3 font-bold text-black text-xl">FLOW</div>
+<div class="flex flex-row  grid justify-items-stretch">
+<div class="relative justify-self-start" style="height: 30px" > 
+ <div class="p-2 relative flex flex-row" style="height: 74px">
+  <div class="p-2 font-bold bg-black text-white text-xl">IDEA</div>
+  <div class="p-2 font-bold text-black text-xl">FLOW</div>
  </div>
 </div>
 <div class="relative justify-self-end">
