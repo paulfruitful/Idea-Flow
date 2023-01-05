@@ -10,8 +10,8 @@
 <div class="flex flex-row  grid justify-items-stretch">
 <div class="relative justify-self-start" style="height: 30px" > 
  <div class="p-2 relative flex flex-row" style="height: 74px">
-  <div class="p-2 font-bold bg-black text-white text-xl">IDEA</div>
-  <div class="p-2 font-bold text-black text-xl">FLOW</div>
+  <div class="p-2 font-bold bg-black text-white text-xl">IDEA FLOW</div>
+ 
  </div>
 </div>
 <div class="relative justify-self-end">
