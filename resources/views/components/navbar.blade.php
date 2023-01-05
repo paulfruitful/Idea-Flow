@@ -7,8 +7,8 @@
 </style>
 
 <div class="grid p-4 rounded-sm justify-items-stretch shadow-sm bg-white ">
-<div class="justify-self-start">
-  <img src="https://i.ibb.co/rkmPTVx/Idea.png" alt="">
+<div class="justify-self-start" style="height:30px; width:80px;">
+  <img src="https://i.ibb.co/zPygL28/Idea-removebg-preview.png" alt="">
 </div>
 <div class="relative justify-self-end">
 <div class="flex flex-row sm:flex-column  text-center">
