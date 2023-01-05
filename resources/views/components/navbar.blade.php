@@ -10,7 +10,7 @@
 <div class="flex flex-row  grid justify-items-stretch">
 <div class="relative justify-self-start" style="height: 30px" > 
  <div class="p-2 relative border-solid border-2 shadow-sm border-black flex flex-row" style="height: 74px">
-  <div class="p-3 font-bold bg-black hover:text-black hover:bg-white text-white text-xl">IDEA FLOW</div>
+<a href="/pools">  <div class="p-3 font-bold bg-black hover:text-black hover:bg-white text-white text-xl"> IdeaFlow</div></a>
  
  </div>
 </div>
