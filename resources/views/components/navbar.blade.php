@@ -1,6 +1,6 @@
 <style>
   .svg{
-    height:25px ;
+    height:20px ;
     width: 25px;
   }
  
