@@ -9,8 +9,8 @@
 <div class="grid p-4 rounded-sm justify-items-stretch shadow-sm bg-white ">
 <div class="flex flex-row  grid justify-items-stretch">
 <div class="relative justify-self-start" style="height: 30px" > 
- <div class="p-2 relative flex flex-row" style="height: 74px">
-  <div class="p-2 font-bold bg-black text-white text-xl">IDEA FLOW</div>
+ <div class="p-2 relative border-solid border-1 shadow-sm border-black flex flex-row" style="height: 74px">
+  <div class="p-3 font-bold bg-black text-white text-xl">IDEA FLOW</div>
  
  </div>
 </div>
