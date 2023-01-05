@@ -7,8 +7,10 @@
 </style>
 
 <div class="grid p-4 rounded-sm justify-items-stretch shadow-sm bg-white ">
-<div class="justify-self-start" >
- 
+<div class="justify-self-start" style="height: 30px" >
+ <div class="p-6 bg-white border-solid border-black border-2">
+  <div class="p-6 font-bold bg-black text-white text-xl">IDEA</div>
+ </div>
 </div>
 <div class="relative justify-self-end">
 <div class="flex flex-row sm:flex-column  text-center">
