@@ -4,9 +4,9 @@ This App Was Created For The GDG ABA Devfest22 Hackathon Sponsored By Techmie.
 
 The Purpose Of This App Is To Create An Endless Cycle Of Ideas, Solutions And Problems In A Form Of A Pool.
 
-Though This App Was Canceled At The Hackathon Due To It Beign A Marketplace Not A MicroSass Solution.
+Though This App Was Canceled By My Team During The Hackathon Due To It Beign A Marketplace And Not A MicroSass Solution.
 
-
+ Checkout <a href="https://github.com/paulfruitful/ReviewIt">ReviewIt</a> The App My Team Later Came Up With
 ## Acknowledgements
 
  - [Awesome Readme Templates](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
