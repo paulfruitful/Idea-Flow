@@ -7,7 +7,7 @@
 </style>
 
 <div class="grid p-4 rounded-sm justify-items-stretch shadow-sm bg-white ">
-
+<a href="/pools" class="relative justify-self-start p-6 flex flex-row text-3xl font-bold"></a>
 <div class="relative justify-self-center" >
 <div class="flex flex-row sm:flex-column  text-center">
   <a href="" class="text-md  font-bold p-3 hover:p-4 flex flex-nowrap flex-row hover:text-indigo-500 text-gray-800">
