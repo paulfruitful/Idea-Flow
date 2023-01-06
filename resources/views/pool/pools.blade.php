@@ -7,5 +7,6 @@
 </head>
 <body>
     <x-navbar/>
+    <x-pool-hero/>
 </body>
 </html>
