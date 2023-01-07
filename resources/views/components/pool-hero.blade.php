@@ -4,7 +4,7 @@
 <p class="text-5xl text-white m-auto font-bold "><span class="">Let Your</span>  Ideas Flow </p>
 <p class="text-xl font-bold p-6 mb-4" style="color: #ffffff">Share Your Ideas, Offer Your Solutions and Report Your Problems </p>
 <div class="justify-items-center m-auto">
-<a href="/ideas/create" class="p-4 m-auto text-md text-gray-800 font-bold border-solid shadow-xl rounded-md" style="background-color:#ffea00;">Share An Idea</a>
+<a href="/ideas/create" class="p-4 m-auto text-md text-gray-800 font-bold border-solid shadow-xl rounded-md" style="background-color:#ffea00;"><svg class="width:20px; height:15px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/></svg>Share An Idea</a>
 
 </div>
 </div>
