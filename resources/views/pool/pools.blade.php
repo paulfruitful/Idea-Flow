@@ -6,7 +6,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-  <div class="">
+  <div class="flex-column">
     <x-navbar/>
     <x-pool-hero/>
   </div>
