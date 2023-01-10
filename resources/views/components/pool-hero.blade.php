@@ -9,4 +9,6 @@
 
 </div>
 </div>
+<div class="justify-self-end"><img src="https://i.ibb.co/QkpZLcv/OIP-1-removebg-preview.png" alt=""></div>
+
 </div>
