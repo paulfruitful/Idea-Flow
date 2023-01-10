@@ -1,4 +1,5 @@
 <div class="grid justify-self-stretch justify-items-center mt-3  bg-gradient-to-r from-cyan-500 to-blue-700 w-full" style="height: 450px">
+<div class="justify-self-start mt-4"><img style="height:150px; width:150px;" src="https://i.ibb.co/ypk0Cx4/1067357-removebg-preview.png" alt=""></div>
 <div class=" justify-self-center m-auto">
 <div class="m-auto flex flex-col">
 <p class="text-5xl text-white m-auto font-bold "><span class="">Let Your</span>  Ideas Flow </p>
@@ -10,5 +11,4 @@
 </div>
 </div>
 <div class="justify-self-end"><img style="height: 100px; width:100px;" src="https://i.ibb.co/QkpZLcv/OIP-1-removebg-preview.png" alt=""></div>
-<div class="justify-self-start "><img style="height:150px; width:150px;" src="https://i.ibb.co/ypk0Cx4/1067357-removebg-preview.png" alt=""></div>
 </div>
