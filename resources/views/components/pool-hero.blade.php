@@ -1,4 +1,4 @@
-<div class="grid justify-self-stretch justify-items-center mt-3  bg-gradient-to-r from-cyan-500 to-blue-700 w-full" style="height: 450px">
+<div class="grid justify-self-stretch justify-items-center mt-3 mb-6  bg-gradient-to-r from-cyan-500 to-blue-700 w-full" style="height: 400px">
 <div class=" justify-self-center m-auto">
 <div class="m-auto flex flex-col">
 <p class="text-5xl text-white m-auto font-bold "><span class="">Let Your</span>  Ideas Flow </p>

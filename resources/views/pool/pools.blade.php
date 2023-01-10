@@ -8,5 +8,6 @@
 <body>
     <x-navbar/>
     <x-pool-hero/>
+    <h1 class="text-center font-bold p-6 text-black">Latest Ideas!</h1>
 </body>
 </html>
