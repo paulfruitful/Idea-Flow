@@ -11,5 +11,8 @@
     <x-pool-hero/>
   </div>
   <div class="m-auto p-auto text-center text-black font-bold text-3xl">Latest Ideas</div>
+  <div>
+    <x-latest-ideas/>
+  </div>
 </body>
 </html>
