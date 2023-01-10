@@ -10,5 +10,5 @@
 </div>
 </div>
 <div class="justify-self-end"><img style="height: 100px; width:100px;" src="https://i.ibb.co/QkpZLcv/OIP-1-removebg-preview.png" alt=""></div>
-<div class="justify-self-start absolute"><img style="height:150px; width:150px;" src="" alt=""></div>
+<div class="justify-self-start left-0"><img style="height:150px; width:150px;" src="https://i.ibb.co/ypk0Cx4/1067357-removebg-preview.png" alt=""></div>
 </div>
