@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Idea;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -9,6 +10,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class IdeaFactory extends Factory
 {
+    protected $model= Idea::class;
     /**
      * Define the model's default state.
      *
@@ -21,9 +23,9 @@ class IdeaFactory extends Factory
             'description'=>fake()->sentences(6),
             'email'=>fake()->unique()->safeEmail(),
             'plan'=>fake()->domainName(),
-            'sponsor'=>'Yes',
-            'sector'=>'Financial Tech',
-            'privacy'=>'Private',
+            'sponsor'=>fake()->randomElement(['Yes','No']),
+            'sector'=>fake()->randomElement(['Financial Tech','Health Tech','Educational Tech','Agricultural Tech', 'General Tech']),
+            'privacy'=>fake()->randomElement(['Private','Public']),
             'upvote'=>fake()->numberBetween(2,67),
           
 
