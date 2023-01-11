@@ -17,8 +17,16 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
      $user=User::all()->first();
-     Idea::factory()->create([
-        'user_id'=>$user->id
+     Idea::create([
+        'title'=>fake()->sentence(6),
+        'description'=>fake()->sentences(6),
+        'email'=>fake()->unique()->safeEmail(),
+        'plan'=>fake()->domainName(),
+        'sponsor'=>fake()->randomElement(['Yes','No']),
+        'sector'=>fake()->randomElement(['Financial Tech','Health Tech','Educational Tech','Agricultural Tech', 'General Tech']),
+        'privacy'=>fake()->randomElement(['Private','Public']),
+        'upvote'=>fake()->numberBetween(2,67),
+      
      ]);
         
     }
