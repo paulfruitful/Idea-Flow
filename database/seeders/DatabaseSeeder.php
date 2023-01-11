@@ -6,6 +6,8 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use \App\Models\User;
 use \App\Models\Idea;
+use Database\Factories\IdeaFactory;
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -16,9 +18,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
      $user=User::all()->first();
-     Idea::factory(20)->create([
-        'user_id'=>$user->id
-     ]);
+     IdeaFactory::new();
         
     }
 }
