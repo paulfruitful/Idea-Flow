@@ -23,7 +23,7 @@ class IdeaFactory extends Factory
             'plan'=>fake()->domainName(),
             'sponsor'=>fake()->randomElement(['Yes','No']),
             'sector'=>fake()->randomElement(['Financial Tech','Health Tech','Educational Tech','Agricultural Tech', 'General Tech']),
-            'privacy'=>'public',
+            'privacy'=>fake()->randomElement(['Private','Public']),
             'upvote'=>fake()->numberBetween(2,67),
             'downvote'=>fake()->numberBetween(2,67)
 
