@@ -21,7 +21,8 @@ class Idea extends Model
  'plan',
  'sponsor',
  'sector',
- 'upvote'
+ 'upvote',
+ 'privacy'
     ];
     public function user(){
         return $this->belongsTo(User::class,'user_id');
