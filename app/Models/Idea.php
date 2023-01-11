@@ -3,10 +3,11 @@
 namespace App\Models;
 
 use App\Models\User;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use App\Models\Idea_comment;
+use Database\Factories\IdeaFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Idea extends Model
 {
@@ -31,4 +32,9 @@ class Idea extends Model
     public function Idea_comment(){
       return $this->hasMany(Idea_comment::class,'idea_id');
     }  
+
+  protected static function newFactory()
+  {
+    return IdeaFactory::new();
+  }
 }
