@@ -21,9 +21,9 @@ class IdeaFactory extends Factory
             'description'=>fake()->sentences(6),
             'email'=>fake()->unique()->safeEmail(),
             'plan'=>fake()->domainName(),
-            'sponsor'=>fake()->randomElement(['Yes','No']),
-            'sector'=>fake()->randomElement(['Financial Tech','Health Tech','Educational Tech','Agricultural Tech', 'General Tech']),
-            'privacy'=>fake()->randomElement(['Private','Public']),
+            'sponsor'=>'Yes',
+            'sector'=>'Financial Tech',
+            'privacy'=>'Private',
             'upvote'=>fake()->numberBetween(2,67),
           
 
