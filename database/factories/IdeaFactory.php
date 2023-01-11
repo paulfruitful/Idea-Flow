@@ -21,10 +21,11 @@ class IdeaFactory extends Factory
             'description'=>fake()->sentences(6),
             'email'=>fake()->unique()->safeEmail(),
             'plan'=>fake()->domainName(),
-            'sponsor'=>'Yes',
-            'sector'=>fake()->company(),
+            'sponsor'=>fake()->randomElement(['Yes','No']),
+            'sector'=>fake()->randomElement(['Financial Tech','Health Tech','Educational Tech','Agricultural Tech', 'General Tech']),
             'privacy'=>'public',
-            'upvote'=>fake()->numberBetween(2,67)
+            'upvote'=>fake()->numberBetween(2,67),
+            'downvote'=>fake()->numberBetween(2,67)
 
         ];
     }
