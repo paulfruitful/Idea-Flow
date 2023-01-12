@@ -1,3 +1,4 @@
+@props(['ideas'])
 <div>
     
 </div>
