@@ -8,8 +8,8 @@
  <body>
    
  <x-navbar/>
- <div class="grid justify-items-center">
-   
+ <div class="grid justify-items-center m-6">
+   <div class="flex flex-row text-center"><h1 class="font-bold text-3xl"></h1></div>
     <x-create-form/>
 </div> 
  </body>
