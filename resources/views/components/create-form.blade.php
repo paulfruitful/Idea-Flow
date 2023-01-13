@@ -9,10 +9,12 @@
 <div class="relative flex flex-col m-6 mt-6">
     <input type="text" placeholder="Idea to solve..." id="edit" class="  placeholder:italic placeholder:text-slate-400 block border-solid border-2 p-6 border-slate-400  focus:outline-none focus:border-sky-500" name="description">
 <span class="flex flex-row"><span class="text-gray-400 italic text-md text-center pr-2">Write a brief description about your idea </span>😍</span></div>
-<div class="relative flex flex-row m-6">
-<select class="focus:bg-white focus:text-white p-3" aria-placeholder="Monetize" name="spons" id="">
-    <option value="true">Yes</option>
-    <option value="false">No</option>
+<div class="relative flex flex-row m-8">
+    <label  class="text-xl pr-3">Want To Monetize?</label>
+<select class=" border-solid border-2 border-indigo-600 rounded-lg form-select focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Monetizable?" name="spons" id="">
+    <option selected>Choose An Option</option>
+    <option class="border-solid border-2 border-indigo-600 rounded-lg hover:bg-indigo-600 " value="true">Yes</option>
+    <option class="border-solid border-2 border-indigo-600 rounded-lg hover:bg-indigo-600 " value="false">No</option>
 </select>
 </div>
 </form>
