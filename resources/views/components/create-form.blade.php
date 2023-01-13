@@ -9,6 +9,9 @@
 <div class="relative flex flex-col m-6 mt-6">
     <input type="text" placeholder="Idea to solve..." id="edit" class="  placeholder:italic placeholder:text-slate-400 block border-solid border-2 p-6 border-slate-400  focus:outline-none focus:border-sky-500" name="description">
 <span class="flex flex-row"><span class="text-gray-400 italic text-md text-center pr-2">Write a brief description about your idea </span>😍</span></div>
+<div class="block m-6 p-6">
+    <h1 class="font-bold text-2xl text-gray-700 border-solid">H</h1>
+</div>
 <div class="relative flex flex-row m-8">
     <label  class="text-md pr-3">Want To Monetize?</label>
 <select class=" border-solid border-2 border-gray-700 rounded-lg form-select focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Monetizable?" name="spons" id="">
