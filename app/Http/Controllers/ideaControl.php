@@ -35,7 +35,8 @@ public function store(Request $request){
         'email'=>'email|email:rfc,dns|required',
         'plan'=>'required',
         'sponsor'=>'required',
-        'sector'=>'required'
+        'sector'=>'required',
+        'privacy'=>'required'
     ]);
 
 
