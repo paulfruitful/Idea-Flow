@@ -20,7 +20,7 @@ class Idea extends Model
  'email',
  'user_id',
  'sponsor',
- 'sector',
+ 'plan',
  'upvote',
  'privacy'
     ];

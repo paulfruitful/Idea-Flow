@@ -33,7 +33,7 @@ public function store(Request $request){
         'title'=>'required',
         'description'=>'required',
         'sponsor'=>'required',
-        'sector'=>'required',
+        'plan'=>'required',
         'privacy'=>'required'
     ]);
 
