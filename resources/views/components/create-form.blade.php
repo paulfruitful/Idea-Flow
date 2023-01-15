@@ -1,6 +1,6 @@
 <script src="//cdn.ckeditor.com/4.20.1/basic/ckeditor.js"></script>
   <div class="relative flex flex-row m-6 p-6 text-center"><h1 class="font-bold text-3xl">Share an Idea</h1></div>
-    <form action="/create/idea" class="block  p-12 m-6 border-solid border-2  shadow-xl  rounded-md bg-white">
+    <form action="/create/idea" class="block  p-12 m-6 border-solid border-2  shadow-xl  rounded-md bg-white" method="POST">
     @csrf
   <div class="relative flex flex-row m-6">
     <label  class="text-xl pr-3">Title:</label>
@@ -21,16 +21,16 @@
     <option class="border-solid border-2 border-indigo-600 rounded-lg hover:bg-indigo-600 " value="false">No</option>
 </select>
 </div>
-<div class="relative flex flex-row mr-3 ">
+<div class="relative flex flex-row mr-3 mt-4">
     <label  class="text-md pr-3">Privacy:</label>
 <select class=" border-solid border-2 border-gray-700 rounded-lg form-select focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Monetizable?" name="privacy" id="">
     
     <option  class="border-solid border-2 border-indigo-600 rounded-lg hover:bg-indigo-600 " value="true">Public</option>
-    <option class="border-solid border-2 border-indigo-600 rounded-lg hover:bg-indigo-600 " value="false">Public</option>
+    <option class="border-solid border-2 border-indigo-600 rounded-lg hover:bg-indigo-600 " value="false">Only Me</option>
 </select>
 </div>
 
-<div class="relative flex flex-row ">
+<div class="relative flex flex-row mt-4 ">
        <label  class="text-md pr-3">Type:</label>
 <select class=" border-solid border-2 border-gray-700 rounded-lg form-select focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Monetizable?" name="privacy" id="">
     
@@ -43,6 +43,9 @@
 </div>
 </div>
 
+<div class="mt-16 grid justify-items-end">
+    <a href="/create/idea" class="p-4 bg-black text-white font-bold text-md border-solid border-black border-2 shadow-sm hover:bg-white hover:text-black rounded">Share</a>
+</div>
 
 </form>
 

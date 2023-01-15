@@ -32,7 +32,6 @@ public function store(Request $request){
     $form_data=$request->validate([
         'title'=>'required',
         'description'=>'required',
-      
         'sponsor'=>'required',
         'sector'=>'required',
         'author'=>'required',
