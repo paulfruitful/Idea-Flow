@@ -1,8 +1,8 @@
 <script src="//cdn.ckeditor.com/4.20.1/basic/ckeditor.js"></script>
-<form action="/create/idea" class="block  p-12 m-6 border-solid border-2  shadow-xl  rounded-md bg-white">
+  <div class="relative flex flex-row m-6 p-6 text-center"><h1 class="font-bold text-3xl">Share an Idea</h1></div>
+    <form action="/create/idea" class="block  p-12 m-6 border-solid border-2  shadow-xl  rounded-md bg-white">
     @csrf
-    <div class="relative flex flex-row m-6 p-6 text-center"><h1 class="font-bold text-3xl">Share an Idea</h1></div>
-    <div class="relative flex flex-row m-6">
+  <div class="relative flex flex-row m-6">
     <label  class="text-xl pr-3">Title:</label>
     <input type="text" placeholder="Idea to solve..." class=" placeholder:italic placeholder:text-slate-400 block border-solid border-t-0 border-b-2 border-slate-600  focus:outline-none focus:border-sky-500" style="width: 240px; border-bottom-width:1px;" name="title">
 </div>
@@ -32,8 +32,8 @@
 
 
 </div>
-<div class="relative  grid justify-items-center mt-6">
-    <div class="flex flex-row">    <label  class="text-md pr-3">Type:</label>
+<div class="relative flex flex-row  mt-4">
+    <div class="">    <label  class="text-md pr-3">Type:</label>
 <select class=" border-solid border-2 border-gray-700 rounded-lg form-select focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Monetizable?" name="privacy" id="">
     
     <option  class="border-solid border-2 border-indigo-600 rounded-lg hover:bg-indigo-600 " value="true">Software</option>
