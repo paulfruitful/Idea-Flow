@@ -41,7 +41,6 @@ public function store(Request $request){
     $form_data["author"]=auth()->user()->username;
     $form_data["email"]=auth()->user()->email;
 
-
     Idea::create($form_data);
 
     return redirect('/user/'.auth()->id().'/ideas')->with('success','Idea Shared Successfully');

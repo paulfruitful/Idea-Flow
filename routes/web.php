@@ -46,6 +46,9 @@ Route::get('/user/{user}/profile',function(){
 
 Route::post('/user/{user}',[userControl::class,'editProfile']);
 
-Route::get('/user/{user}/ideas',[]);
+Route::get('/user/{user}/ideas',function(){
+    // function for now
+    return redirect('/pools');
+});
 
 Route::post('/user/{user}/follow',[userControl::class,'follow']);
