@@ -12,7 +12,7 @@
 <div class="block mt-6 mr-6 ml-6 mb-2 p-6">
     <h1 class="font-bold text-2xl text-center text-gray-700 border-solid">Post Settings</h1>
 </div>
-<div class="relative flex flex-row flex-nowrap">
+<div class="relative flex flex-row flex-wrap">
 <div class="relative flex flex-row mr-3 ">
     <label  class="text-md pr-3">Monetizable:</label>
 <select class=" border-solid border-2 border-gray-700 rounded-lg form-select focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Monetizable?" name="sponsor" id="">
@@ -30,18 +30,20 @@
 </select>
 </div>
 
-<div class="relative flex flex-row mr-3 ">
-    <label  class="text-md pr-3">Type:</label>
+
+</div>
+<div class="relative  grid justify-items-center mt-6">
+    <div class="flex flex-row">    <label  class="text-md pr-3">Type:</label>
 <select class=" border-solid border-2 border-gray-700 rounded-lg form-select focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Monetizable?" name="privacy" id="">
     
     <option  class="border-solid border-2 border-indigo-600 rounded-lg hover:bg-indigo-600 " value="true">Software</option>
     <option class="border-solid border-2 border-indigo-600 rounded-lg hover:bg-indigo-600 " value="false">Hardware</option>
      <option class="border-solid border-2 border-indigo-600 rounded-lg hover:bg-indigo-600 " value="false">Combined</option>
     
-</select>
-</div>
+</select></div>
 
 </div>
+
 </form>
 
 <script>
