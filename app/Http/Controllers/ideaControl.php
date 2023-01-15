@@ -40,7 +40,7 @@ public function store(Request $request){
     $form_data["user_id"]=auth()->id();
     $form_data["author"]=auth()->user()->username;
     $form_data["email"]=auth()->user()->email;
-
+    dd($form_data["plan"]);
 
     Idea::create($form_data);
 
