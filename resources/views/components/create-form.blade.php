@@ -13,7 +13,7 @@
     <h1 class="font-bold text-2xl text-center text-gray-700 border-solid">Post Settings</h1>
 </div>
 <div class="relative flex flex-row flex-wrap">
-<div class="relative flex flex-row mr-3 ">
+<div class="relative flex flex-row mr-3 mt-4 ">
     <label  class="text-md pr-3">Monetizable:</label>
 <select class=" border-solid border-2 border-gray-700 rounded-lg form-select focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Monetizable?" name="sponsor" id="">
     
@@ -32,7 +32,7 @@
 
 <div class="relative flex flex-row mt-4 ">
        <label  class="text-md pr-3">Type:</label>
-<select class=" border-solid border-2 border-gray-700 rounded-lg form-select focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Monetizable?" name="privacy" id="">
+<select class=" border-solid border-2 border-gray-700 rounded-lg form-select focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Monetizable?" name="sector" id="">
     
     <option  class="border-solid border-2 border-indigo-600 rounded-lg hover:bg-indigo-600 " value="true">Software</option>
     <option class="border-solid border-2 border-indigo-600 rounded-lg hover:bg-indigo-600 " value="false">Hardware</option>
@@ -44,7 +44,7 @@
 </div>
 
 <div class="mt-16 grid justify-items-end">
-    <a href="/create/idea" class="p-4 bg-black text-white font-bold text-md border-solid border-black border-2 shadow-sm hover:bg-white hover:text-black rounded">Share</a>
+    <button type="submit" class="p-4 pt-2 pb-2 bg-black text-white font-bold text-md border-solid border-black border-2 shadow-sm hover:bg-white hover:text-black rounded">Share</button>
 </div>
 
 </form>
