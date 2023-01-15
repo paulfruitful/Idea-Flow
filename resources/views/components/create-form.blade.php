@@ -30,19 +30,19 @@
 </select>
 </div>
 
-
-</div>
-<div class="relative flex flex-row  mt-4">
-    <div class="">    <label  class="text-md pr-3">Type:</label>
+<div class="relative flex flex-row ">
+       <label  class="text-md pr-3">Type:</label>
 <select class=" border-solid border-2 border-gray-700 rounded-lg form-select focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Monetizable?" name="privacy" id="">
     
     <option  class="border-solid border-2 border-indigo-600 rounded-lg hover:bg-indigo-600 " value="true">Software</option>
     <option class="border-solid border-2 border-indigo-600 rounded-lg hover:bg-indigo-600 " value="false">Hardware</option>
      <option class="border-solid border-2 border-indigo-600 rounded-lg hover:bg-indigo-600 " value="false">Combined</option>
     
-</select></div>
+</select>
 
 </div>
+</div>
+
 
 </form>
 
