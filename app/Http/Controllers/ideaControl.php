@@ -34,7 +34,6 @@ public function store(Request $request){
         'description'=>'required',
         'sponsor'=>'required',
         'sector'=>'required',
-        'author'=>'required',
         'privacy'=>'required'
     ]);
 

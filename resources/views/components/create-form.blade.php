@@ -1,7 +1,23 @@
 <script src="//cdn.ckeditor.com/4.20.1/basic/ckeditor.js"></script>
   <div class="relative flex flex-row m-6 p-6 text-center"><h1 class="font-bold text-3xl">Share an Idea</h1></div>
     <form action="/create/idea" class="block  p-12 m-6 border-solid border-2  shadow-xl  rounded-md bg-white" method="POST">
-    @csrf
+       @csrf
+@if($errors->all())
+  <div class="flex flex-col">
+   
+<ul class="p-6 m-auto">
+@foreach ($errors->all() as $e)
+    <li class="text-red-600 font-bold list-disc">{{$e}}</li>
+    <script>alert('Fill the required fields')</script>
+@endforeach
+
+</ul>    
+</div>
+
+    
+@else
+
+@endif 
   <div class="relative flex flex-row m-6">
     <label  class="text-xl pr-3">Title:</label>
     <input type="text" placeholder="Idea to solve..." class=" placeholder:italic placeholder:text-slate-400 block border-solid border-t-0 border-b-2 border-slate-600  focus:outline-none w-full focus:border-sky-500" style=" border-bottom-width:2.4px;" name="title">
