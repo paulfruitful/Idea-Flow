@@ -4,7 +4,7 @@
     @csrf
   <div class="relative flex flex-row m-6">
     <label  class="text-xl pr-3">Title:</label>
-    <input type="text" placeholder="Idea to solve..." class=" placeholder:italic placeholder:text-slate-400 block border-solid border-t-0 border-b-2 border-slate-600  focus:outline-none focus:border-sky-500" style="width: 240px; border-bottom-width:1px;" name="title">
+    <input type="text" placeholder="Idea to solve..." class=" placeholder:italic placeholder:text-slate-400 block border-solid border-t-0 border-b-2 border-slate-600  focus:outline-none w-full focus:border-sky-500" style=" border-bottom-width:2.4px;" name="title">
 </div>
 <div class="relative flex flex-col m-6 mt-6">
     <input type="text" placeholder="Idea to solve..." id="edit" class="  placeholder:italic placeholder:text-slate-400 block border-solid border-2 p-6 border-slate-400  focus:outline-none focus:border-sky-500" name="description">
