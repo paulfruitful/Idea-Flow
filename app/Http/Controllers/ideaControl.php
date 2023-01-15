@@ -32,11 +32,14 @@ public function store(Request $request){
     $form_data=$request->validate([
         'title'=>'required',
         'description'=>'required',
-        'email'=>'email|email:rfc,dns|required',
-        'plan'=>'required',
         'sponsor'=>'required',
-        'sector'=>'required'
+        'plan'=>'required',
+        'privacy'=>'required'
     ]);
+
+    $form_data["user_id"]=auth()->id();
+    $form_data["author"]=auth()->user()->username;
+    $form_data["email"]=auth()->user()->email;
 
 
     Idea::create($form_data);

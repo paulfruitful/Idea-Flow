@@ -19,9 +19,8 @@ class Idea extends Model
  'author',
  'email',
  'user_id',
- 'plan',
  'sponsor',
- 'sector',
+ 'plan',
  'upvote',
  'privacy'
     ];
