@@ -20,11 +20,11 @@ class IdeaFactory extends Factory
     {
         return [
             'title'=>fake()->company(),
-            'description'=>implode('', fake()->sentences(6)),
+            'description'=>implode('', fake()->sentences(10)),
             'email'=>fake()->unique()->safeEmail(),
-            'plan'=>'hardware',
-            'sponsor'=>'false',
-            'privacy'=>'true',
+            'plan'=>fake()->randomElement(['hardware','software']),
+            'sponsor'=>fake()->randomElement(['true','false']),
+            'privacy'=>fake()->randomElement(['true','false']),
             'upvote'=>37,
           
 
