@@ -25,7 +25,7 @@ class IdeaFactory extends Factory
             'plan'=>fake()->randomElement(['hardware','software']),
             'sponsor'=>fake()->randomElement(['true','false']),
             'privacy'=>fake()->randomElement(['true','false']),
-            'upvote'=>fake()->numberBetween(10,89),
+            'upvote'=>fake()->numberBetween(5,100),
           
 
         ];
