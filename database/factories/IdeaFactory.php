@@ -23,7 +23,7 @@ class IdeaFactory extends Factory
             'description'=>fake()->sentences(6),
             'email'=>fake()->unique()->safeEmail(),
             'plan'=>fake()->randomElement(['Software','Hardware','Combined']),
-            'sponsor'=>fake()->randomElement(['true','true']),
+            'sponsor'=>fake()->randomElement(['true','false']),
             'privacy'=>fake()->randomElement(['true','false']),
             'upvote'=>fake()->numberBetween(2,67),
           
