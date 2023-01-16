@@ -17,16 +17,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
      $user=User::all()->first();
-     Idea::create([
-        'title'=>fake()->sentence(6),
-        'description'=>fake()->sentences(6),
-        'email'=>fake()->unique()->safeEmail(),
-        'plan'=>fake()->domainName(),
-        'sponsor'=>fake()->randomElement(['Yes','No']),
-        'sector'=>fake()->randomElement(['Financial Tech','Health Tech','Educational Tech','Agricultural Tech', 'General Tech']),
-        'privacy'=>fake()->randomElement(['Private','Public']),
-        'upvote'=>fake()->numberBetween(2,67),
-      
+     Idea::factory(5)->create([ 
+    'user_id'=>$user->id,
+    'author'=>$user->username,
+     'email'=>$user->email
      ]);
         
     }
