@@ -22,10 +22,10 @@ class IdeaFactory extends Factory
             'title'=>fake()->company(),
             'description'=>fake()->sentences(6),
             'email'=>fake()->unique()->safeEmail(),
-            'plan'=>fake()->randomElement(['Software','Hardware','Combined']),
-            'sponsor'=>fake()->randomElement(['true','false']),
-            'privacy'=>fake()->randomElement(['true','false']),
-            'upvote'=>fake()->numberBetween(2,67),
+            'plan'=>'software',
+            'sponsor'=>true,
+            'privacy'=>'true',
+            'upvote'=>67,
           
 
         ];
