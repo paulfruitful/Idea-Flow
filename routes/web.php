@@ -22,7 +22,7 @@ Route::get('/', function () {
 
 Route::get('/pools', function(){
     return view('pool.pools',[
-        //'ideas'=>Idea::latest()
+        'ideas'=>Idea::latest()
     ]);
 });
 Route::get('/register',[userControl::class,'create']);
