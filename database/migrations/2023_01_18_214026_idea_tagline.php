@@ -13,7 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        //
+        Schema::table('ideas', function(Blueprint $table){
+          $table->longText('tagline');
+        });
     }
 
     /**
