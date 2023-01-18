@@ -17,6 +17,7 @@ class Idea extends Model
  'title',
  'description',
  'author',
+ 'tagline',
  'email',
  'user_id',
  'sponsor',
