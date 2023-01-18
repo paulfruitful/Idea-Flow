@@ -21,7 +21,7 @@ class IdeaFactory extends Factory
         return [
             'title'=>fake()->company(),
             'description'=>implode('', fake()->sentences(10)),
-            'description'=>implode('', fake()->sentences()),
+            'tagline'=>fake()->sentence(),
             'email'=>fake()->unique()->safeEmail(),
             'plan'=>fake()->randomElement(['hardware','software']),
             'sponsor'=>fake()->randomElement(['true','false']),

@@ -17,13 +17,13 @@ class Idea extends Model
  'title',
  'description',
  'author',
- 'tagline',
  'email',
  'user_id',
  'sponsor',
  'plan',
  'upvote',
- 'privacy'
+ 'privacy',
+ 'tagline',
     ];
     public function user(){
         return $this->belongsTo(User::class,'user_id');

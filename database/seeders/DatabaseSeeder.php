@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
      $user=User::all()->first();
-     Idea::factory(7)->create([ 
+     Idea::factory(13)->create([ 
     'user_id'=>$user->id,
     'author'=>$user->username,
      'email'=>$user->email
