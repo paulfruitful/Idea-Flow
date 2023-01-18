@@ -76,7 +76,7 @@
           <div class="mt-12 lg:mt-0" style="z-index: 10;">
             <h1 class="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12" style="color: hsl(218, 81%, 95%);">Share your Ideas, Solutions<br /><span style="color: hsl(218, 81%, 75%);"> and Problems</span></h1>
             <p class="opacity-70" style="color: hsl(218, 81%, 85%)">
-            <li class="list-none" style="color: hsl(218, 81%, 85%)">  You got ideas and you don't know what to do?</li>
+            <li class="list-none" style="color: hsl(218, 81%, 85%)">  You've got ideas and you don't know what to do?</li>
             <li class="list-none" style="color: hsl(218, 81%, 85%)">  Got solutions but don't have the audience?</li>
             <li class="list-none" style="color: hsl(218, 81%, 85%)">   Have problems but don't know how to fix them? </li>
          <span style="color: hsl(218, 81%, 85%)"> Use Idea Flow today to share your solutions, ideas and problems, make the world a better place and keep the flow of solutions limitless.  
