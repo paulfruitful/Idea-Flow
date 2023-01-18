@@ -31,7 +31,7 @@ public function edit(){
 public function store(Request $request){
     $form_data=$request->validate([
         'title'=>'required',
-        'tagline'=>'required',
+        'tagline'=>'required|max:120',
         'description'=>'required',
         'sponsor'=>'required',
         'plan'=>'required',
