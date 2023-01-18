@@ -7,14 +7,14 @@
   <title>IdeaFlow</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="block">
   <div class="flex-column">
     <x-navbar/>
     <x-pool-hero/>
   </div>
   <div class="m-auto p-auto text-center text-black font-bold text-3xl">Latest Ideas</div>
   <div>
-    <x-latest-ideas/>
+    <x-latest-ideas :ideas="$ideas"/>
   </div>
 </body>
 </html>

@@ -19,14 +19,13 @@ class IdeaFactory extends Factory
     public function definition()
     {
         return [
-            'title'=>fake()->sentence(6),
-            'description'=>fake()->sentences(6),
+            'title'=>fake()->company(),
+            'description'=>implode('', fake()->sentences(10)),
             'email'=>fake()->unique()->safeEmail(),
-            'plan'=>fake()->domainName(),
-            'sponsor'=>fake()->randomElement(['Yes','No']),
-            'sector'=>fake()->randomElement(['Financial Tech','Health Tech','Educational Tech','Agricultural Tech', 'General Tech']),
-            'privacy'=>fake()->randomElement(['Private','Public']),
-            'upvote'=>fake()->numberBetween(2,67),
+            'plan'=>fake()->randomElement(['hardware','software']),
+            'sponsor'=>fake()->randomElement(['true','false']),
+            'privacy'=>fake()->randomElement(['true','false']),
+            'upvote'=>fake()->numberBetween(5,100),
           
 
         ];
