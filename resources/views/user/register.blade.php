@@ -1,4 +1,4 @@
-<!--Check The Route File To Check The register route-->
+<!--Check The Routes File To Check the registration route-->
 <!doctype html>
 <html lang="en">
   <head>
