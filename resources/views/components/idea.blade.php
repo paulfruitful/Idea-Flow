@@ -2,7 +2,7 @@
 <a href="/ideas/{{$idea->id}}" class="">
 <div class="block p-6 relative bg-white hover:shadow-lg hover:p-8 text-black shadow-md m-4">
 <div class="text-center font-bold p-6 m-3 text-xl">{{$idea->title}}</div>
-<div class="text-center p-6 m-3 text-md">{{$idea->tagline}}</div>
+<div class="text-center p-6 m-3 text-blue-600 text-md">"{{$idea->tagline}}"</div>
 <div class="relative grid">
 <div class="relative text-md mb-3 justify-self-start">By <a href="/ideas/{{$idea->id}}" class=" font-bold">{{ucwords($idea->author)}}</a></div>
 <div class=" relative justify-self-end ">
