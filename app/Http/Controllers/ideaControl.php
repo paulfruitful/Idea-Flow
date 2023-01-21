@@ -24,8 +24,10 @@ public function create(){
     return view('idea.create');
 }
 
-public function edit(){
-    return view('idea.edit');
+public function edit(Idea $idea){
+    return view('idea.edit',[
+        'idea'=>$idea
+    ]);
 }
 
 public function store(Request $request){
@@ -46,4 +48,21 @@ public function store(Request $request){
 
     return redirect('/user/'.auth()->id().'/ideas')->with('success','Idea Shared Successfully');
 }
+
+public function update(Request $request){
+    $form_data=$request->validate([
+        'title'=>'max:50',
+        'tagline'=>'max:120',
+        'description',
+        'sponsor',
+        'plan',
+        'privacy'
+    ]);
+
+ 
+    Idea::update($form_data);
+
+    return redirect('/user/'.auth()->id().'/ideas')->with('success','Idea Shared Successfully');
+}
+
 }
