@@ -10,5 +10,6 @@
 <body>
     <x-navbar/>
     <x-idea-hero :idea="$idea"/>
+    <x-description :idea="$idea"/>
 
 </body>
