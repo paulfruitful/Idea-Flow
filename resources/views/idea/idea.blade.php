@@ -9,5 +9,6 @@
 </head>
 <body>
     <x-navbar/>
+    <x-idea-hero/>
 
 </body>
