@@ -11,7 +11,7 @@
     <x-navbar/>
     <div class="flex flex-col">
     <x-idea-hero :idea="$idea"/>
-    <div>
-    <x-description :idea="$idea"/></div>
+    
 </div>
+ <x-description :idea="$idea"/>
 </body>
