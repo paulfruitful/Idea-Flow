@@ -9,9 +9,9 @@
 </head>
 <body class="block">
     @php
-     $idea=["title"=>"Keep The Cycle Of Ideas Flowing",
-     "description"=>"Build The Next Solution By Implementing Ideas"
-]; 
+     $idea= array( 'title'=>"Keep The Cycle Of Ideas Flowing","tagline"=>"Build The Next Solution By Implementing Ideas");
+     
+
     @endphp
     <x-navbar/>
 
