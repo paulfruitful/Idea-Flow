@@ -16,7 +16,7 @@
   <div>
     <x-latest-ideas :ideas="$ideas"/>
   </div>
-    <a class="grid justify-self-stretch text-center p-6 m-6 font-bold text-2xl hover:text-blue-600 hover:px-3 " href="">See more Ideas </a>
+    <a class="grid justify-self-stretch text-center p-6 m-6 font-bold text-2xl hover:text-blue-600 hover:px-3 " href="">See more </a>
 
  </div>
 </body>
