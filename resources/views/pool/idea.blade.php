@@ -7,6 +7,7 @@
   <title>IdeaFlow</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="block">
+    <x-navbar/>
     <x-latest-ideas :ideas="$ideas"/>
 </body>
