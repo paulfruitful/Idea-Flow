@@ -9,7 +9,8 @@
 </head>
 <body>
     <x-navbar/>
+    <div class="flex flex-col">
     <x-idea-hero :idea="$idea"/>
     <x-description :idea="$idea"/>
-
+</div>
 </body>
