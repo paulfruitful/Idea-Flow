@@ -9,6 +9,6 @@
 </head>
 <body>
     <x-navbar/>
-    <x-idea-hero/>
+    <x-idea-hero :idea="$idea"/>
 
 </body>
