@@ -11,9 +11,10 @@
     @php
      $idea=["title"=>"Keep The Cycle Of Ideas Flowing",
      "description"=>"Build The Next Solution By Implementing Ideas"
-     ]   
+]; 
     @endphp
     <x-navbar/>
 
     <x-latest-ideas :ideas="$ideas"/>
+    <x-idea-hero :idea="$idea"/>
 </body>
