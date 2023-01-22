@@ -8,6 +8,12 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="block">
+    @php
+     $idea=["title"=>"Keep The Cycle Of Ideas Flowing",
+     "description"=>"Build The Next Solution By Implementing Ideas"
+     ]   
+    @endphp
     <x-navbar/>
+
     <x-latest-ideas :ideas="$ideas"/>
 </body>
