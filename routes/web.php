@@ -40,7 +40,7 @@ Route::get('/idea',[ideaControl::class,'create']);
 Route::post('/idea',[ideaControl::class,'store']);
     }
 );
-Route::get('/idea/{idea}',[ideaControl::class,'idea']);
+Route::get('/ideas/{idea}',[ideaControl::class,'idea']);
 Route::get('/user/{user}',function(){
     return view('user.profile');
 });
