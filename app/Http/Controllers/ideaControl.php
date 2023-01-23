@@ -10,7 +10,7 @@ class ideaControl extends Controller
     //
 public function all(){
     return view('pool.idea',[
-        'idea'=>Idea::latest()
+        'ideas'=>Idea::latest()
     ]);
 }
 

@@ -6,4 +6,6 @@
  @empty
      <p>No Idea</p>
  @endforelse
+
+
 </div>
