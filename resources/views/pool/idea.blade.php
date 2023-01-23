@@ -9,10 +9,7 @@
 </head>
 <body class="block">
     @php
-     $idea= array( 'title'=>"Keep The Cycle Of Ideas Flowing","tagline"=>"Build The Next Solution By Implementing Ideas");
-     
-
-    @endphp
+  
     <x-navbar/>
 
     <x-latest-ideas :ideas="$ideas"/>
