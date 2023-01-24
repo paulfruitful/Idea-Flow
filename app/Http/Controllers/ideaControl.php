@@ -14,7 +14,7 @@ public function all(){
         'tagline'=>'Build The Next Solution By Implementing Ideas'
     ];
     return view('pool.idea',[
-        'ideas'=>Idea::latest()->get()
+        'ideas'=>Idea::latest()->paginate(10)
     ]);
 }
 
