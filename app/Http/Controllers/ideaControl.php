@@ -14,10 +14,8 @@ public function all(){
         'tagline'=>'Build The Next Solution By Implementing Ideas'
     ];
     return view('pool.idea',[
-        'ideas'=>Idea::latest()])->with('hero',[
-            'title'=>'Keep The Cycle Of Ideas Flowing',
-            'tagline'=>'Build The Next Solution By Implementing Ideas'
-        ]);
+        'ideas'=>Idea::latest()->get()
+    ]);
 }
 
 public function idea(Idea $idea){
