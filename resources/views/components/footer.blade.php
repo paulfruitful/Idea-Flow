@@ -10,5 +10,16 @@
             </ul>
         </div>
     </div>
+
+    <div class="relative">
+        <div class="flex flex-col">
+            <div class="font-bold text-2xl text-white p-3"><p>Pools</p></div>
+            <ul class="p-2">
+                <li class="text-md"><a href=""> Idea Pool</a></li>
+                <li class="text-md"><a href=""> Problem Pool</a></li>
+                <li class="text-md"><a href=""> Solution Pool</a></li>            
+            </ul>
+        </div>
+    </div>
 </div>
 </div>
