@@ -14,4 +14,8 @@
     
 </div>
  <x-description :idea="$idea"/>
+
+ <div>
+  <x-footer/>
+ </div>
 </body>
