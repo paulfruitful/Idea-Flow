@@ -9,12 +9,15 @@ class ideaControl extends Controller
 {
     //
 public function all(){
-    $idea=[
+    $hero = [
         'title'=>'Keep The Cycle Of Ideas Flowing',
         'tagline'=>'Build The Next Solution By Implementing Ideas'
     ];
     return view('pool.idea',[
-        'ideas'=>Idea::latest()], compact($idea));
+        'ideas'=>Idea::latest()])->with('hero',[
+            'title'=>'Keep The Cycle Of Ideas Flowing',
+            'tagline'=>'Build The Next Solution By Implementing Ideas'
+        ]);
 }
 
 public function idea(Idea $idea){

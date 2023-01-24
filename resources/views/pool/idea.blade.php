@@ -12,5 +12,5 @@
     <x-navbar/>
 
     <x-latest-ideas :ideas="$ideas"/>
-    <x-idea-hero :idea="$idea"/>
+    <x-idea-hero :idea="$hero"/>
 </body>
