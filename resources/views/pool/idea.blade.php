@@ -23,7 +23,7 @@
       </div>
       </div>
     </div>
-  <div class="text-center font-bold text-3xl">Ideas</div>
+  <div class="text-center font-bold text-3xl">Idea Pool</div>
     <x-latest-ideas :ideas="$ideas"/>
-   
+ <div class="p-6 m-6">{{$ideas->links()}}</div>  
 </body>
