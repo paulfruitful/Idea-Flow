@@ -8,10 +8,10 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="block">
-    @php
-  
+ 
     <x-navbar/>
 
     <x-latest-ideas :ideas="$ideas"/>
-    <x-idea-hero :idea="$idea"/>
+    <x-idea-hero :idea="array( 'title'=>"Keep The Cycle Of Ideas Flowing","tagline"=>"Build The Next Solution By Implementing Ideas");
+      "/>
 </body>
