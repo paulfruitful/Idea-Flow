@@ -9,9 +9,12 @@ class ideaControl extends Controller
 {
     //
 public function all(){
+    $idea=[
+        'title'=>'Keep The Cycle Of Ideas Flowing',
+        'tagline'=>'Build The Next Solution By Implementing Ideas'
+    ];
     return view('pool.idea',[
-        'ideas'=>Idea::latest()
-    ]);
+        'ideas'=>Idea::latest()], compact($idea));
 }
 
 public function idea(Idea $idea){
