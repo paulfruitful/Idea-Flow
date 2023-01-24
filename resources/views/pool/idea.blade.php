@@ -12,6 +12,5 @@
     <x-navbar/>
 
     <x-latest-ideas :ideas="$ideas"/>
-    <x-idea-hero :idea="array( 'title'=>"Keep The Cycle Of Ideas Flowing","tagline"=>"Build The Next Solution By Implementing Ideas");
-      "/>
+    <x-idea-hero :idea="$idea"/>
 </body>
