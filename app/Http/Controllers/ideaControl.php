@@ -41,7 +41,8 @@ public function store(Request $request){
         'description'=>'required',
         'sponsor'=>'required',
         'plan'=>'required',
-        'privacy'=>'required'
+        'privacy'=>'required',
+        'image'=>'required'
     ]);
 
     $form_data["user_id"]=auth()->id();
