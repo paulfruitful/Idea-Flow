@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('ideas', function (Blueprint $table) {
+      /*  Schema::create('ideas', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->text('author');
@@ -25,7 +25,7 @@ return new class extends Migration
             $table->integer('upvote')->nullable();
             $table->timestamps();
         });
-    }
+    */ }
 
     /**
      * Reverse the migrations.

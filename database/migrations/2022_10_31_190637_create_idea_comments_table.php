@@ -13,13 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('idea_comments', function (Blueprint $table) {
+       /* Schema::create('idea_comments', function (Blueprint $table){
             $table->id();
             $table->string('username');
             $table->longText('comment');
             $table->foreignId('idea_id')->constrained()->onDelete('cascade');
             $table->timestamps();
-        });
+       }
+); */
     }
 
     /**
