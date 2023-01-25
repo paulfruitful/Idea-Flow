@@ -42,7 +42,10 @@ private $user;
     {
         return (new MailMessage)
                     ->subject('Welcome To IdeaFlow'.' '.$this->user->name)
-                    ->line('The introduction to the notification.')
+                    ->greetings('Thanks For Joining The Network')
+                    ->line('We are enthrilled to have you as part of the IdeaFlow Network.')
+                    ->line('We hope that you would be able to contribute to cycle of ideas, problems and solutions')
+                    ->line('')
                     ->action('Notification Action', url('/'))
                     ->line('Thank you for using our application!');
     }
