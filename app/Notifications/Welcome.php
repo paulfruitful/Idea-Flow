@@ -10,15 +10,15 @@ use Illuminate\Notifications\Notification;
 class Welcome extends Notification
 {
     use Queueable;
-
+private $user;
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($user)
     {
-        //
+        $this->user=$user;
     }
 
     /**
