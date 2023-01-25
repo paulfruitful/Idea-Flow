@@ -41,6 +41,7 @@ private $user;
     public function toMail($notifiable)
     {
         return (new MailMessage)
+                    ->subject('Welcome To IdeaFlow'.' '.$this->user->name)
                     ->line('The introduction to the notification.')
                     ->action('Notification Action', url('/'))
                     ->line('Thank you for using our application!');
