@@ -13,10 +13,7 @@
     <x-idea-hero :idea="$idea"/>
     
 </div>
-<div class=" grid justify-self-stretch justify-items-center">
-<div class="w-full justify-self-center  p-6">
-  <img src="{{$idea->image}}" alt="">
-</div></div>
+
 <div>
  <x-description :idea="$idea"/>
 </div>
