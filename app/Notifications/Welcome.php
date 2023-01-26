@@ -10,15 +10,15 @@ use Illuminate\Notifications\Notification;
 class Welcome extends Notification
 {
     use Queueable;
-
+private $user;
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($user)
     {
-        //
+        $this->user=$user;
     }
 
     /**
@@ -41,7 +41,11 @@ class Welcome extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
+                    ->subject('Welcome To IdeaFlow'.' '.$this->user->name)
+                    ->greetings('Thanks For Joining The Network')
+                    ->line('We are enthrilled to have you as part of the IdeaFlow Network.')
+                    ->line('We hope that you would be able to contribute to cycle of ideas, problems and solutions')
+                    ->line('')
                     ->action('Notification Action', url('/'))
                     ->line('Thank you for using our application!');
     }
