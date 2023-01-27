@@ -16,7 +16,7 @@
   <div>
     <x-latest-ideas :ideas="$ideas"/>
   </div>
-    <a class="grid justify-self-stretch text-center p-6 m-6 font-bold text-xl hover:text-blue-600 hover:px-3 " href="/pools/ideas">See more </a>
+    <a class="flex flex-row text-center p-6 m-auto font-bold text-xl hover:text-blue-600 hover:px-3 " href="/pools/ideas">See more <img src="https://cdn-icons-png.flaticon.com/512/2989/2989988.png" style="height: 30px; width:30px;" alt=""></a>
 
  </div>
 </body>
