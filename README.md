@@ -18,6 +18,8 @@ Though This App Was Canceled By My Team During The Hackathon Due To It Beign A M
 
 - [@JonathanAzuonye]('https://github.com/JonathanAzuonye')
 - [@paulfruitful]('https://github.com/paulfruitful')
+- [@Praisebuka]('https://github.com/Praisebuka')
+
 
 ## Features
 
