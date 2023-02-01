@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Idea;
+use App\Models\Idea_comment;
 use Illuminate\Http\Request;
 
 class ideaControl extends Controller
@@ -54,7 +55,7 @@ public function store(Request $request){
     return redirect('/user/'.auth()->id().'/ideas')->with('success','Idea Shared Successfully');
 }
 
-public function update(Request $request){
+public function update(Idea $idea,Request $request){
     $form_data=$request->validate([
         'title'=>'max:50',
         'tagline'=>'max:120',
@@ -64,10 +65,19 @@ public function update(Request $request){
         'privacy'
     ]);
 
- 
-    Idea::update($form_data);
+ $idea->update($form_data);
+    
 
     return redirect('/user/'.auth()->id().'/ideas')->with('success','Idea Shared Successfully');
+}
+
+public function comment(Idea $idea, Request $request){
+    $formData=$request->validate([
+        'comment'=>'required'
+    ]);
+    $form_data["idea_id"]=$idea->id;
+    Idea_comment::create([$formData]);
+    return back()->with('success', 'done');
 }
 
 }
