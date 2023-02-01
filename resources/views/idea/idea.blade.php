@@ -17,6 +17,7 @@
 <div>
  <x-description :idea="$idea"/>
 </div>
+<x-comment/>
  <div>
   <x-footer/>
  </div>
