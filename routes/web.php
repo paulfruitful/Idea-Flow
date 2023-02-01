@@ -16,6 +16,7 @@ use App\Http\Controllers\userControl;
 use App\Http\Controllers\ideaControl;
 use App\Models\Idea;
 
+//Primary User Routes
 Route::get('/', function () {
     return view('welcome');
 })->middleware('guest');
@@ -33,6 +34,8 @@ Route::post('/login',function(){
 });
 Route::post('/login',[userControl::class,'login']);
 
+//Idea Routes
+
 Route::prefix('create')->group(
     function(){
 
@@ -42,6 +45,9 @@ Route::post('/idea',[ideaControl::class,'store']);
 );
 Route::get('/pools/ideas',[ideaControl::class,'all']);
 Route::get('/ideas/{idea}',[ideaControl::class,'idea']);
+Route::get('/idea/{idea}/comment',[ideaControl::class,'comment']);
+
+//User Routes
 Route::get('/user/{user}',function(){
     return view('user.profile');
 });
