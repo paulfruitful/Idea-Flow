@@ -17,6 +17,9 @@
 <div>
  <x-description :idea="$idea"/>
 </div>
+<div>
+  <x-reaction/>
+</div>
 <x-comment/>
  <div>
   <x-footer/>
