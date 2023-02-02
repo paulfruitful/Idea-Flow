@@ -20,7 +20,7 @@
 <div>
   <x-reaction/>
 </div>
-<x-comment/>
+<x-comment :id="$idea->id"/>
  <div>
   <x-footer/>
  </div>

@@ -75,8 +75,11 @@ public function comment(Idea $idea, Request $request){
     $formData=$request->validate([
         'comment'=>'required'
     ]);
-    $form_data["idea_id"]=$idea->id;
-    Idea_comment::create([$formData]);
+    $formData["idea_id"]=$idea->id;
+    $formData["username"]=auth()->user()->username;
+  
+    Idea_comment::create($formData);
+     
     return back()->with('success', 'done');
 }
 

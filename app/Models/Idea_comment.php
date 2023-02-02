@@ -11,7 +11,8 @@ class Idea_comment extends Model
     use HasFactory;
     protected $fillable=[
         'idea_id',
-        'comment'
+        'comment',
+        'username'
     ];
     public function Idea(){
         return $this->belongsTo(Idea::class,'idea_id');

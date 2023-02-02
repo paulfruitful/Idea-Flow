@@ -45,7 +45,7 @@ Route::post('/idea',[ideaControl::class,'store']);
 );
 Route::get('/pools/ideas',[ideaControl::class,'all']);
 Route::get('/ideas/{idea}',[ideaControl::class,'idea']);
-Route::get('/idea/{idea}/comment',[ideaControl::class,'comment']);
+Route::post('/idea/{idea}/comment',[ideaControl::class,'comment']);
 
 //User Routes
 Route::get('/user/{user}',function(){
