@@ -83,4 +83,10 @@ public function comment(Idea $idea, Request $request){
     return back()->with('success', 'done');
 }
 
+public function like(Idea $idea){
+    $idea->upvote+=1;
+    $idea->save();
+    return back();
+}
+
 }
