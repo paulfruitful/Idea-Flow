@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Idea;
 use App\Models\Idea_comment;
+use App\Models\reaction;
 use Illuminate\Http\Request;
 
 class ideaControl extends Controller
@@ -84,7 +85,12 @@ public function comment(Idea $idea, Request $request){
 }
 
 public function like(Idea $idea){
-    $idea->upvote+=1;
+    $data=[
+        "user_id"=>auth()->id(),
+        "idea_id"=>$idea->id 
+];
+reaction::create($data);
+    $idea->upvote=$idea->reactions->count();
     $idea->save();
     return back();
 }
