@@ -89,8 +89,8 @@ public function like(Idea $idea){
         "user_id"=>auth()->id(),
         "idea_id"=>$idea->id 
 ];
-reaction::create($data);
-dd(Idea::find('983d9950-a44c-43a0-8ad2-a9b424e9548f')->idea_comment);
+$react=reaction::create($data);
+dd($react->idea);
     $idea->upvote=count($idea->reaction);
     $idea->save();
     return back();
