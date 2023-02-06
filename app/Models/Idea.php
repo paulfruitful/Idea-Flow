@@ -39,7 +39,7 @@ class Idea extends Model
   {
     return IdeaFactory::new();
   }
-  public function Idea(){
+  public function reaction(){
     return $this->hasMany(reaction::class,'idea_id');
 }
 }

@@ -85,8 +85,8 @@ public function comment(Idea $idea, Request $request){
 }
 
 public function like(Idea $idea){
-   $check_id= reaction::where('user_id',auth()->id())->get();
-   //dd($check_id);
+   $check_id=$idea->reaction->where('user_id',auth()->id());
+   //dd(count($check_id));
    if(count($check_id)>1){
     return back();
    }else{
