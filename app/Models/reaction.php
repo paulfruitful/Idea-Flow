@@ -13,7 +13,7 @@ class reaction extends Model
         'user_id',
         'idea_id'
     ];
-    public function Idea(){
+    public function reaction(){
         return $this->belongsTo(Idea::class,'idea_id');
     }
 }
