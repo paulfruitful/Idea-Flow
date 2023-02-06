@@ -90,7 +90,7 @@ public function like(Idea $idea){
         "idea_id"=>$idea->id 
 ];
 $react=reaction::create($data);
-dd($idea->reaction->get());
+
     $idea->upvote+=1;
     $idea->save();
     return back();
