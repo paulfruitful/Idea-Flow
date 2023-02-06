@@ -87,7 +87,12 @@ public function comment(Idea $idea, Request $request){
 public function like(Idea $idea){
    $check_id=$idea->reaction->where('user_id',auth()->id());
   dd(count($check_id));
-   if(count($check_id)!=1){
+/*   if(count($check_id)==1){
+    $idea->reaction->where('user_id', auth()->id())->delete();
+    $idea->upvote-=1;
+    $idea->save();
+    return back()->with('unliked');
+}*/
     $data=[
         "user_id"=>auth()->id(),
         "idea_id"=>$idea->id 
@@ -95,13 +100,6 @@ public function like(Idea $idea){
     $idea->upvote+=1;
     $idea->save();
     return back()->with('liked');
-}
-   else{
-    $idea->reaction->where('user_id', auth()->id())->delete();
-    $idea->upvote-=1;
-    $idea->save();
-    return back()->with('unliked');
-}
 }
 
 }
