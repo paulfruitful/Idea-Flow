@@ -89,7 +89,7 @@ public function like(Idea $idea){
   dd(count($check_id));
 
    if(count($check_id)==1){
-       $idea->reaction->where('user_id', auth()->id())->delete();
+    $idea->reaction->where('user_id', auth()->id())->delete();
     $idea->upvote-=1;
     $idea->save();
     return back()->with('unliked');
@@ -97,9 +97,9 @@ public function like(Idea $idea){
 
     $data=[
         "user_id"=>auth()->id(),
-        "idea_id"=>$idea->id 
-];
-$react=reaction::create($data);
+        "idea_id"=>$idea->id ];
+
+    $react=reaction::create($data);
 
     $idea->upvote+=1;
     $idea->save();
