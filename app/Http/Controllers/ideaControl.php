@@ -49,7 +49,7 @@ public function edit(Idea $idea){
 
 public function store(Request $request){
     $form_data=$request->validate([
-        'title'=>'required',
+        'title'=>'required|max:30',
         'tagline'=>'required|max:120',
         'description'=>'required',
         'sponsor'=>'required',
