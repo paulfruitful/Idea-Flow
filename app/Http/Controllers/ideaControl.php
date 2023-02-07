@@ -83,7 +83,7 @@ public function update(Idea $idea,Request $request){
  $idea->update($form_data);
     
 
-    return redirect('/user/'.auth()->id().'/ideas')->with('success','Idea Shared Successfully');
+    return redirect('/ideas/'.$idea->id)->with('success','Idea Shared Successfully');
 }
 
 public function comment(Idea $idea, Request $request){
