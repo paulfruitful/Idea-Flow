@@ -72,7 +72,7 @@ public function store(Request $request){
 
 public function update(Idea $idea,Request $request){
     $form_data=$request->validate([
-        'title'=>'max:50',
+        'title'=>'max:30',
         'tagline'=>'max:120',
         'description',
         'sponsor',
