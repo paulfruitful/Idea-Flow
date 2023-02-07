@@ -21,9 +21,20 @@ public function all(){
 }
 
 public function idea(Idea $idea){
+    $check_id=$idea->reaction->where('user_id',auth()->id());
+    if(count($check_id)>0){
     return view('idea.idea',[
-        'idea'=>$idea
+        'idea'=>$idea,
+        'liked'=>true,
+        'unliked'=>false
     ]);
+}else{
+    return view('idea.idea',[
+        'idea'=>$idea,
+        'liked'=>false,
+        'unliked'=>true
+    ]);
+}
 }
 
 public function create(){
@@ -91,14 +102,13 @@ public function like(Idea $idea){
    $check_id=$idea->reaction->where('user_id',auth()->id());
  
 
-   if(count($check_id)==1){
+   if(count($check_id)>0){
     $idea->reaction->where('user_id', auth()->id())->first()->delete();
     $idea->upvote-=1;
     $idea->save();
     return back()->with('unliked');
-   }
-
-    $data=[
+   }else{
+     $data=[
         "user_id"=>auth()->id(),
         "idea_id"=>$idea->id ];
 
@@ -107,6 +117,7 @@ public function like(Idea $idea){
     $idea->upvote+=1;
     $idea->save();
     return back()->with('liked');
+    }
 
 }
 
