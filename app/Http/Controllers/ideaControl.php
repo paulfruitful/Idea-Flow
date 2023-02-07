@@ -121,4 +121,9 @@ public function like(Idea $idea){
 
 }
 
+public function delete(Idea $idea){
+    $idea->delete();
+    return redirect('/pools/ideas');
+}
+
 }
