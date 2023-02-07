@@ -106,7 +106,7 @@ public function like(Idea $idea){
     $idea->reaction->where('user_id', auth()->id())->first()->delete();
     $idea->upvote-=1;
     $idea->save();
-    return back()->with('unliked');
+    return back()->with('unliked',true);
    }else{
      $data=[
         "user_id"=>auth()->id(),
@@ -116,7 +116,7 @@ public function like(Idea $idea){
 
     $idea->upvote+=1;
     $idea->save();
-    return back()->with('liked');
+    return back()->with('liked',true);
     }
 
 }
