@@ -18,7 +18,7 @@
  <x-description :idea="$idea"/>
 </div>
 <div>
-  <x-reaction :idea="$idea"/>
+  <x-reaction :idea="$idea" :unliked="$unliked" :liked="$liked"/>
 </div>
 <div>
   <x-comments :comments="$idea->idea_comment"/>
