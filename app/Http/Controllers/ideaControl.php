@@ -50,6 +50,9 @@ public function store(Request $request){
     $form_data["user_id"]=auth()->id();
     $form_data["author"]=auth()->user()->username;
     $form_data["email"]=auth()->user()->email;
+    if($request->hasFile('image')){
+        $form_data["image"]=$request->file('image')->store('images','public');
+    }
 
     Idea::create($form_data);
 
