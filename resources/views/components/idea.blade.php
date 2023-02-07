@@ -7,7 +7,7 @@
 <div class="relative grid">
 <div class="relative text-md mb-3 justify-self-start">By <a href="/ideas/{{$idea->id}}" class=" font-bold">{{ucwords($idea->author)}}</a></div>
 <div class=" relative justify-self-end ">
-<a class="flex flex-row hover:text-blue-600 hover:px-3 " href="/ideas/{{$idea->id}}">See more <img src="https://cdn-icons-png.flaticon.com/512/2989/2989988.png" style="height: 30px; width:30px;" alt=""> </a>
+<a class="flex flex-row hover:text-blue-600 hover:px-3 " href="/ideas/{{$idea->id}}">Learn more <img src="https://cdn-icons-png.flaticon.com/512/2989/2989988.png" style="height: 30px; width:30px;" alt=""> </a>
 </div>
 </div>
 </div>
