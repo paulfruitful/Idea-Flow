@@ -27,7 +27,12 @@ public function idea(Idea $idea){
    if(count($check_id)==1){
      return view('idea.idea',[
         'idea'=>$idea,
-        'unliked'=>null
+        'liked'=>true
+    ]);
+   }else{
+    return view('idea.idea',[
+        'idea'=>$idea,
+        'unliked'=>true
     ]);
    }
 
