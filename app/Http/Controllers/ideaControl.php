@@ -27,14 +27,10 @@ public function idea(Idea $idea){
    if(count($check_id)==1){
      return view('idea.idea',[
         'idea'=>$idea,
-        'liked'=>true,
-        'unliked'=>false
     ]);
    }else{
     return view('idea.idea',[
         'idea'=>$idea,
-        'unliked'=>true,
-        'liked'=>false
     ]);
    }
 
@@ -104,14 +100,14 @@ public function comment(Idea $idea, Request $request){
 
 public function like(Idea $idea){
    $check_id=$idea->reaction->where('user_id',auth()->id());
- 
+ dd($check_id);
 
    if(count($check_id)==1){
     $idea->reaction->where('user_id', auth()->id())->first()->delete();
     $idea->upvote-=1;
     $idea->save();
     return back()->with('unliked');
-   }
+   }else{
 
     $data=[
         "user_id"=>auth()->id(),
@@ -122,7 +118,7 @@ public function like(Idea $idea){
     $idea->upvote+=1;
     $idea->save();
     return back()->with('liked');
-
+    }
 }
 
 }
