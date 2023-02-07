@@ -21,9 +21,17 @@ public function all(){
 }
 
 public function idea(Idea $idea){
-    return view('idea.idea',[
-        'idea'=>$idea
+    $check_id=$idea->reaction->where('user_id',auth()->id());
+ 
+
+   if(count($check_id)==1){
+     return view('idea.idea',[
+        'idea'=>$idea,
+        'unliked'=>null
     ]);
+   }
+
+   
 }
 
 public function create(){
