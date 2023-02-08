@@ -29,7 +29,7 @@
   <input type="text" placeholder="An Idea To Solve " class=" placeholder:italic placeholder:text-slate-400 block border-solid border-t-0 border-b-2 border-slate-600  focus:outline-none w-full focus:border-sky-500" style=" border-bottom-width:2.4px;" name="tagline" value="{{$idea->tagline}}">
 </div>
 <div class="relative flex flex-col m-6 mt-6">
-  <textarea placeholder="Idea to solve..." id="edit" class="  placeholder:italic placeholder:text-slate-400 block border-solid border-2 p-6 border-slate-400  focus:outline-none focus:border-sky-500" name="description" >{{$idea->description}}</textarea>
+  <textarea placeholder="Idea to solve..." id="edit" class="  placeholder:italic placeholder:text-slate-400 block border-solid border-2 p-12 border-slate-400  focus:outline-none focus:border-sky-500" name="description" >{{$idea->description}}</textarea>
 <span class="flex flex-row"><span class="text-gray-400 italic text-md text-center pr-2">Write a brief description about your idea </span>😍</span></div>
 <div class="block mt-6 mr-6 ml-6 mb-2 p-6">
   <h1 class="font-bold text-2xl text-center text-gray-700 border-solid">Post Settings</h1>
