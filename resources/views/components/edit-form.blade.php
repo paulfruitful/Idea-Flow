@@ -66,14 +66,9 @@
 </div>
 
 <div class="mt-16 grid justify-items-end">
-  <button type="submit" class="p-4 pt-2 pb-2 bg-black text-white font-bold text-md border-solid border-black border-2 shadow-sm hover:bg-white hover:text-black rounded">Share</button>
+  <button type="submit" class="p-4 pt-2 pb-2 bg-black text-white font-bold text-md border-solid border-black border-2 shadow-sm hover:bg-white hover:text-black rounded">Update</button>
 </div>
 
 </form>
 
-<script>
-  CKEDITOR.replace( 'description' );
- 
- 
-</script>
 
