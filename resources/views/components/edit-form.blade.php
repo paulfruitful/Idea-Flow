@@ -1,5 +1,5 @@
 @props(['idea'])
-<script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+
 
 <div class="relative flex flex-row m-6 p-6 text-center"><h1 class="font-bold text-3xl">Edit Your Idea</h1></div>
   <form action="/idea/{{$idea->id}}/update" class="block  p-12 m-6 border-solid border-2  shadow-xl  rounded-md bg-white" method="POST">
