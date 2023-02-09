@@ -21,19 +21,40 @@ public function all(){
 }
 
 public function idea(Idea $idea){
+    
     $check_id=$idea->reaction->where('user_id',auth()->id());
     if(count($check_id)>0){
+    if(preg_match('/images/i',$idea->image)){
+        return view('idea.idea',[
+        'idea'=>$idea,
+        'liked'=>true,
+        'unliked'=>false,
+        "image"=>"/storage/".$idea->image
+    ]);
+}else{
     return view('idea.idea',[
         'idea'=>$idea,
         'liked'=>true,
-        'unliked'=>false
+        'unliked'=>false,
+        "image"=>$idea->image
+    ]);
+}
+}else{
+    if(preg_match('/images/i',$idea->image)){
+    return view('idea.idea',[
+        'idea'=>$idea,
+        'liked'=>false,
+        'unliked'=>true,
+        'image'=>"/storage/".$idea->image
     ]);
 }else{
     return view('idea.idea',[
         'idea'=>$idea,
         'liked'=>false,
-        'unliked'=>true
+        'unliked'=>true,
+        "image"=>$idea->image
     ]);
+}
 }
 }
 
