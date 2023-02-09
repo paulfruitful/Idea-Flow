@@ -30,9 +30,11 @@
 </div>
 <div class=" flex flex-row m-12 ml-4">
     <label  class="text-xl pr-3">Cover Image:</label>
-<input type="file" name="image" >
+<div class="flex flex-col">
+    <input type="file" name="image" >
 
-<input type="text" name="image" placeholder="Image Url" class=" placeholder:italic placeholder:text-slate-400 block border-solid border-t-0 border-b-2 border-slate-600  focus:outline-none w-1/2 focus:border-sky-500" >
+<input type="text" name="image" placeholder="Or Image Url" class=" placeholder:italic placeholder:text-slate-400 block border-solid border-t-0 border-b-2 border-slate-600  focus:outline-none w-full mt-4 focus:border-sky-500" >
+</div>
 </div>
 <div class="relative flex flex-col m-6 mt-6">
     <textarea placeholder="Idea to solve..." id="edit" class="  placeholder:italic placeholder:text-slate-400 block border-solid border-2 p-6 border-slate-400  focus:outline-none focus:border-sky-500" name="description"></textarea>
