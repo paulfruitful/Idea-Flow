@@ -33,7 +33,7 @@ Route::post('/login',function(){
     return view('user.login');
 });
 Route::post('/login',[userControl::class,'login']);
-
+Route::get('/logout',[userControl::class,'logout']);
 //Idea Routes
 
 Route::prefix('create')->group(
