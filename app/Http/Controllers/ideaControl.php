@@ -88,7 +88,7 @@ public function store(Request $request){
 
     Idea::create($form_data);
 
-    return redirect('/user/'.auth()->id().'/ideas')->with('success','Idea Shared Successfully');
+    return redirect('/pools/ideas')->with('success','Idea Shared Successfully');
 }
 
 public function update(Idea $idea,Request $request){
