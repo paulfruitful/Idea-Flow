@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 use App\Http\Controllers\userControl;
 use App\Http\Controllers\ideaControl;
+use App\Http\Controllers\solutionControl;
 use App\Models\Idea;
 
 //Primary User Routes
@@ -43,6 +44,7 @@ Route::get('/idea',[ideaControl::class,'create']);
 Route::post('/idea',[ideaControl::class,'store']);
     }
 );
+Route::get('/pools/solutions',[solutionControl::class,'all']);
 Route::get('/pools/ideas',[ideaControl::class,'all']);
 Route::get('/ideas/{idea}',[ideaControl::class,'idea']);
 Route::get('/idea/{idea}/edit',[ideaControl::class,'edit']);
