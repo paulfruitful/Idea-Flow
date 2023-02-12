@@ -14,4 +14,14 @@ class solutionControl extends Controller
             'ideas'=>Solution::latest()->paginate(10)
         ]);
     }
+    
+public function create(){
+    return view('solution.create');
+}
+
+public function edit(Solution $solution){
+    return view('solution.edit',[
+        'solution'=>$solution
+    ]);
+}
 }
