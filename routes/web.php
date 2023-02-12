@@ -45,6 +45,7 @@ Route::post('/idea',[ideaControl::class,'store']);
     }
 );
 Route::get('/pools/solutions',[solutionControl::class,'all']);
+Route::get('/create/solution',[solutionControl::class,'create']);
 Route::get('/pools/ideas',[ideaControl::class,'all']);
 Route::get('/ideas/{idea}',[ideaControl::class,'idea']);
 Route::get('/idea/{idea}/edit',[ideaControl::class,'edit']);
