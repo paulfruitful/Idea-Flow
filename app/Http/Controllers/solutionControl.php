@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Solution;
 use Illuminate\Http\Request;
 use App\Models\solutionComment;
+use App\Models\solutionReaction;
 
 class solutionControl extends Controller
 {
@@ -118,5 +119,28 @@ public function comment(Solution $solution, Request $request){
      
     return back()->with('success', 'done');
 }
+
+public function like(Solution $solution){
+    $check_id=$solution->reaction->where('user_id',auth()->id());
+  
+ 
+    if(count($check_id)>0){
+     $solution->reaction->where('user_id', auth()->id())->first()->delete();
+     $solution->upvote-=1;
+     $solution->save();
+     return back()->with('unliked',true);
+    }else{
+      $data=[
+         "user_id"=>auth()->id(),
+         "solution_id"=>$solution->id ];
+ 
+     $react=solutionReaction::create($data);
+ 
+     $solution->upvote+=1;
+     $solution->save();
+     return back()->with('liked',true);
+     }
+ 
+ }
 
 }
