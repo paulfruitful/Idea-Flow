@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Solution;
 use Illuminate\Http\Request;
+use App\Models\solutionComment;
 
 class solutionControl extends Controller
 {
@@ -105,4 +106,17 @@ public function update(Solution $solution,Request $request){
 
     return redirect('/solutions/'.$solution->id)->with('success','Solution Shared Successfully');
 }
+
+public function comment(Solution $solution, Request $request){
+    $formData=$request->validate([
+        'comment'=>'required'
+    ]);
+    $formData["solution_id"]=$solution->id;
+    $formData["username"]=auth()->user()->username;
+  
+    solutionComment::create($formData);
+     
+    return back()->with('success', 'done');
+}
+
 }
