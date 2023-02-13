@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class solutionReaction extends Model
 {
     use HasFactory;
+public function solution(){
+    return $this->belongsTo(Solution::class,'soluion_id');
+}
+
 }
