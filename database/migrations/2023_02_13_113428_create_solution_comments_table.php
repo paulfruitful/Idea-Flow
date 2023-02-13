@@ -18,7 +18,7 @@ return new class extends Migration
             
             $table->string('username');
             $table->longText('comment');
-            $table->foreignId('idea_id')->constrained()->onDelete('cascade');
+            $table->foreignUuid('solution_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
