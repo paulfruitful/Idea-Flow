@@ -32,4 +32,8 @@ class Solution extends Model
  public function reaction(){
    return $this->hasMany(solutionReaction::class,'solution_id');
  }
+ public function solutionComment(){
+   return $this->hasMany(Solution::class,'solution_id');
+ }  
+
 }
