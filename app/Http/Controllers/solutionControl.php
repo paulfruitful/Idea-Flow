@@ -14,7 +14,46 @@ class solutionControl extends Controller
             'ideas'=>Solution::latest()->paginate(10)
         ]);
     }
+
+    public function idea(Solution $solution){
     
+        $check_id=$solution->reaction->where('user_id',auth()->id());
+        if(count($check_id)>0){
+        if(preg_match('/images/i',$solution->image)){
+            return view('solution.solution',[
+            'solution'=>$solution,
+            'liked'=>true,
+            'unliked'=>false,
+            "image"=>"/storage/".$solution->image
+        ]);
+    }else{
+        return view('solution.solution',[
+            'solution'=>$solution,
+            'liked'=>true,
+            'unliked'=>false,
+            "image"=>$solution->image
+        ]);
+    }
+    }else{
+        if(preg_match('/images/i',$solution->image)){
+        return view('solution.solution',[
+            'solution'=>$solution,
+            'liked'=>false,
+            'unliked'=>true,
+            'image'=>"/storage/".$solution->image
+        ]);
+    }else{
+        return view('solution.solution',[
+            'solution'=>$solution,
+            'liked'=>false,
+            'unliked'=>true,
+            "image"=>$solution->image
+        ]);
+    }
+    }
+    }
+    
+
 public function create(){
     return view('solution.create');
 }
