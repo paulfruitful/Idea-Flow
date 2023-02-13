@@ -88,4 +88,21 @@ public function store(Request $request){
 
     return redirect('/pools/solutions')->with('success','Solution Shared Successfully');
 }
+
+public function update(Solution $solution,Request $request){
+    $form_data=$request->validate([
+        'title'=>'max:30',
+        'demo',
+        'description',
+        'monetizable',
+        'sector',
+        'type',
+        'privacy'
+    ]);
+
+ $solution->update($form_data);
+    
+
+    return redirect('/solutions/'.$solution->id)->with('success','Solution Shared Successfully');
+}
 }
