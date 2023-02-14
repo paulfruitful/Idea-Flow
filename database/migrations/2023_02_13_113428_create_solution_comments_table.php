@@ -14,8 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('solution_comments', function (Blueprint $table) {
-            $table->id();
-            
+            $table->id(); 
             $table->string('username');
             $table->longText('comment');
             $table->foreignUuid('solution_id')->constrained()->onDelete('cascade');
