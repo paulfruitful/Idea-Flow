@@ -23,6 +23,7 @@ class Solution extends Model
     'sector',
     'type',
     'tagline',
+    'privacy',
     'monetizable',
     'upvote',
     'user_id'
