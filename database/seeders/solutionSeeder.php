@@ -17,7 +17,8 @@ class solutionSeeder extends Seeder
     public function run()
     {
         //
-        $user=User::all()->first();
+        $user=User::all();
+        $user=$user[1];
         Solution::factory(33)->create([ 
        'user_id'=>$user->id,
        'author'=>$user->username
