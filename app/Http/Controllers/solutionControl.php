@@ -143,4 +143,9 @@ public function like(Solution $solution){
  
  }
 
+ public function delete(Solution $solution){
+    $solution->delete();
+    return redirect('/pools/solutions');
+}
+
 }
