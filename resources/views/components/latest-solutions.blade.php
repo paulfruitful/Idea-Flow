@@ -1,6 +1,6 @@
 @props(['solutions'])
 
-<div class="flex flex-col lg:flex-col flex-wrap w-full h-full p-6 ">
+<div class="flex flex-col  flex-wrap w-full h-full p-6 ">
  @forelse ($solutions as $solution)
  <x-solution :solution="$solution"/>
  @empty
