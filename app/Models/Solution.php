@@ -40,7 +40,7 @@ class Solution extends Model
    return $this->hasMany(solutionComment::class,'solution_id');
  }  
 
-public function newFactory(){
+protected static function newFactory(){
    return solutionFactory::new();
 }
 
