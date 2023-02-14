@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Idea;
 use App\Models\Idea_comment;
 use App\Models\reaction;
+use App\Models\Solution;
 use Illuminate\Http\Request;
 
 class ideaControl extends Controller
@@ -16,7 +17,7 @@ public function all(){
         'tagline'=>'Build The Next Solution By Implementing Ideas'
     ];
     return view('pool.idea',[
-        'ideas'=>Idea::latest()->paginate(10)
+        'ideas'=>Idea::latest()->paginate(10),
     ]);
 }
 

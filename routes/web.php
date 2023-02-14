@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Models\Idea;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,10 +12,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-use App\Http\Controllers\userControl;
+use App\Models\Solution;
 use App\Http\Controllers\ideaControl;
+use App\Http\Controllers\userControl;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\solutionControl;
-use App\Models\Idea;
 
 //Primary User Routes
 Route::get('/', function () {
@@ -24,7 +25,8 @@ Route::get('/', function () {
 
 Route::get('/pools', function(){
     return view('pool.pools',[
-        'ideas'=>Idea::where('privacy','true')->latest()->paginate(8)
+        'ideas'=>Idea::where('privacy','true')->latest()->paginate(8),
+        'solutions'=>Solution::where('privacy','true')->latest()->paginate(8)
     ]);
 });
 Route::get('/register',[userControl::class,'create']);
