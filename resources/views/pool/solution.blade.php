@@ -24,7 +24,7 @@
       </div>
     </div>
   <div class="text-center m-6 mt-8 font-bold text-3xl">Solution Pool</div>
-    <x-latest-solutions :solution="$solutions"/>
+    <x-latest-solutions :solutions="$solutions"/>
  <div class="p-6 m-6">{{$solutions->links()}}</div>  
 
  <x-footer/>
