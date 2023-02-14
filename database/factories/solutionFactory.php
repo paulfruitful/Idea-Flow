@@ -26,6 +26,7 @@ class solutionFactory extends Factory
             'demo'=>fake()->url(),
             'type'=>fake()->randomElement(['hardware','software']),
             'sector'=>fake()->randomElement(['finance','health','agriculture','fashion','AI']),
+            'image'=>fake()->imageUrl(),
             'monetizable'=>fake()->randomElement(['true','false']),
             'privacy'=>fake()->randomElement(['true','false']),
             'upvote'=>fake()->numberBetween(5,100),
