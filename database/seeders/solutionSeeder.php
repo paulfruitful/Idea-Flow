@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\User;
+use App\Models\Solution;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class solutionSeeder extends Seeder
 {
@@ -15,5 +17,10 @@ class solutionSeeder extends Seeder
     public function run()
     {
         //
+        $user=User::all()->first();
+        Solution::factory(13)->create([ 
+       'user_id'=>$user->id,
+       'author'=>$user->username
+        ]);
     }
 }
