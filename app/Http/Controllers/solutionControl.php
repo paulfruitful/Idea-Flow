@@ -13,11 +13,11 @@ class solutionControl extends Controller
     public function all(){
         
         return view('pool.solution',[
-            'ideas'=>Solution::latest()->paginate(10)
+            'solutions'=>Solution::latest()->paginate(10)
         ]);
     }
 
-    public function idea(Solution $solution){
+    public function solution(Solution $solution){
     
         $check_id=$solution->reaction->where('user_id',auth()->id());
         if(count($check_id)>0){
