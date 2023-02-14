@@ -23,7 +23,7 @@ class solutionFactory extends Factory
             'title'=>fake()->company(),
             'description'=>implode('', fake()->sentences(10)),
             'tagline'=>fake()->sentence(),
-            'email'=>fake()->unique()->safeEmail(),
+            'demo'=>fake()->url(),
             'plan'=>fake()->randomElement(['hardware','software']),
             'monetizable'=>fake()->randomElement(['true','false']),
             'privacy'=>fake()->randomElement(['true','false']),
