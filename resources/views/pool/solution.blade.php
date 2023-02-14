@@ -17,7 +17,7 @@
       <p class="text-2xl lg:text-5xl text-white m-auto font-bold "><span class="">Discover Solutions</span> </p>
       <p class="text-xl font-bold m-auto p-6 mb-4" style="color: #ffffff">Solve Your Problems</p>
       <div class="justify-items-center flex flex-row m-auto">
-     <a href="/create/solution" class="p-4 m-auto hover:shadow-md hover:p-3 text-md text-gray-800 flex flex-row font-bold border-solid shadow-xl rounded-md bg-black text-white" >New Idea</a>
+     <a href="/create/solution" class="p-4 m-auto hover:shadow-md hover:p-3 text-md text-gray-800 flex flex-row font-bold border-solid shadow-xl rounded-md bg-black text-white" >New Solution</a>
       
       </div>
       </div>
