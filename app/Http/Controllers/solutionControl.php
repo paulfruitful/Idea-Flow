@@ -13,7 +13,7 @@ class solutionControl extends Controller
     public function all(){
         
         return view('pool.solution',[
-            'solutions'=>Solution::latest()->paginate(10)
+            'solutions'=>Solution::where('privacy','true')->latest()->paginate(8)
         ]);
     }
 

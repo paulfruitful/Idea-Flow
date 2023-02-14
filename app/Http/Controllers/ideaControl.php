@@ -12,12 +12,9 @@ class ideaControl extends Controller
 {
     //
 public function all(){
-    $hero = [
-        'title'=>'Keep The Cycle Of Ideas Flowing',
-        'tagline'=>'Build The Next Solution By Implementing Ideas'
-    ];
+   
     return view('pool.idea',[
-        'ideas'=>Idea::latest()->paginate(10),
+        'ideas'=>Idea::where('privacy','true')->latest()->paginate(8),
     ]);
 }
 
