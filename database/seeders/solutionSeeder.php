@@ -18,7 +18,7 @@ class solutionSeeder extends Seeder
     {
         //
         $user=User::all()->first();
-        Solution::factory(13)->create([ 
+        Solution::factory(33)->create([ 
        'user_id'=>$user->id,
        'author'=>$user->username
         ]);
