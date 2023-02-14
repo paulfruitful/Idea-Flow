@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('solution_reactions', function (Blueprint $table) {
             $table->id();
             $table->uuid('user_id');
-            $table->foreignUuid('solution_id')->constrained()->onDelete('cascade');
+            $table->foreignId('solution_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
