@@ -22,6 +22,7 @@ class Solution extends Model
     'image',
     'sector',
     'type',
+    'tagline',
     'monetizable',
     'upvote',
     'user_id'
