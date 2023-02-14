@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\User;
 use App\Models\solutionComment;
 use App\Models\solutionReaction;
+use Database\Factories\solutionFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -36,5 +37,9 @@ class Solution extends Model
  public function solutionComment(){
    return $this->hasMany(solutionComment::class,'solution_id');
  }  
+
+public function newFactory(){
+   return solutionFactory::new();
+}
 
 }
