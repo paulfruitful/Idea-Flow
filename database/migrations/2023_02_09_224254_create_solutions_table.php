@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('solutions', function (Blueprint $table) {
-            $table->uuid();
+            $table->uuid('id');
             $table->string('title');
             $table->longText('description');
             $table->string('demo');
@@ -24,7 +24,7 @@ return new class extends Migration
             $table->text('type');
             $table->string('image');
             $table->integer('upvote');
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignUuid('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

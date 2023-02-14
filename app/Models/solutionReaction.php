@@ -10,7 +10,7 @@ class solutionReaction extends Model
 {
     use HasFactory;
 public function solution(){
-    return $this->belongsTo(Solution::class,'soluion_id');
+    return $this->belongsTo(Solution::class,'solution_id');
 }
 
 }

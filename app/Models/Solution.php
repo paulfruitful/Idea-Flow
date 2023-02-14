@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\User;
+use App\Models\solutionComment;
 use App\Models\solutionReaction;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
@@ -33,7 +34,7 @@ class Solution extends Model
    return $this->hasMany(solutionReaction::class,'solution_id');
  }
  public function solutionComment(){
-   return $this->hasMany(Solution::class,'solution_id');
+   return $this->hasMany(solutionComment::class,'solution_id');
  }  
 
 }
