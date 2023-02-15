@@ -48,6 +48,8 @@ Route::post('/idea',[ideaControl::class,'store']);
 );
 Route::get('/pools/solutions',[solutionControl::class,'all']);
 Route::get('/create/solution',[solutionControl::class,'create']);
+
+Route::post('/create/solution',[solutionControl::class,'store']);
 Route::get('/pools/ideas',[ideaControl::class,'all']);
 
 Route::get('/solutions/{solution}',[solutionControl::class,'solution']);

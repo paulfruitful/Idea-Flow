@@ -26,7 +26,7 @@
 </div>
 <div class="relative flex flex-row m-7 ml-4">
   <label  class="text-xl pr-3">Tagline:</label>
-  <input type="text" placeholder="An Idea To Solve " class=" placeholder:italic placeholder:text-slate-400 block border-solid border-t-0 border-b-2 border-slate-600  focus:outline-none w-full focus:border-sky-500" style=" border-bottom-width:2.4px;" name="tagline">
+  <input type="text" placeholder="A Solution To Solve " class=" placeholder:italic placeholder:text-slate-400 block border-solid border-t-0 border-b-2 border-slate-600  focus:outline-none w-full focus:border-sky-500" style=" border-bottom-width:2.4px;" name="tagline">
 </div>
 <div class=" flex flex-row m-12 ml-4">
   <label  class="text-xl pr-3">Cover Image:</label>
@@ -38,7 +38,7 @@
 </div>
 <div class="relative flex flex-col m-6 mt-6">
   <textarea placeholder="Idea to solve..." id="edit" class="  placeholder:italic placeholder:text-slate-400 block border-solid border-2 p-6 border-slate-400  focus:outline-none focus:border-sky-500" name="description"></textarea>
-<span class="flex flex-row"><span class="text-gray-400 italic text-md text-center pr-2">Write a brief description about your idea </span>😍</span></div>
+<span class="flex flex-row"><span class="text-gray-400 italic text-md text-center pr-2">Write a brief description of your solution </span>😍</span></div>
 <div class="block mt-6 mr-6 ml-6 mb-2 p-6">
   <h1 class="font-bold text-2xl text-center text-gray-700 border-solid">Post Settings</h1>
 </div>
@@ -62,7 +62,7 @@
 
 <div class="relative flex flex-row mt-4 ">
      <label  class="text-md pr-3">Type:</label>
-<select class=" border-solid border-2 border-gray-700 rounded-lg form-select focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Monetizable?" name="sector" id="">
+<select class=" border-solid border-2 border-gray-700 rounded-lg form-select focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Monetizable?" name="type" id="">
   
   <option  class="border-solid border-2 border-indigo-600 rounded-lg hover:bg-indigo-600 " value="software">Software</option>
   <option class="border-solid border-2 border-indigo-600 rounded-lg hover:bg-indigo-600 " value="hardware">Hardware</option>
@@ -70,6 +70,20 @@
   
 </select>
 
+<select class=" border-solid border-2 border-gray-700 rounded-lg form-select focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="" name="sector" id="">
+  
+    <option  class="border-solid border-2 border-indigo-600 rounded-lg hover:bg-indigo-600 " value="health">Health</option>
+    <option class="border-solid border-2 border-indigo-600 rounded-lg hover:bg-indigo-600 " value="finance">Finance</option>
+     <option class="border-solid border-2 border-indigo-600 rounded-lg hover:bg-indigo-600 " value="agriculture">Agriculture</option>
+     
+     <option class="border-solid border-2 border-indigo-600 rounded-lg hover:bg-indigo-600 " value="artificial intelligence">Artificial Intelligence</option>
+     
+     <option class="border-solid border-2 border-indigo-600 rounded-lg hover:bg-indigo-600 " value="fashion">Fashion</option>
+     
+     <option class="border-solid border-2 border-indigo-600 rounded-lg hover:bg-indigo-600 " value="real estate">Real Estate</option>
+    
+  </select>
+  
 </div>
 </div>
 
