@@ -70,6 +70,8 @@
   
 </select>
 
+<div class="relative flex flex-row mt-4 ">
+    <label  class="text-md pr-3">Sector:</label>
 <select class=" border-solid border-2 border-gray-700 rounded-lg form-select focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="" name="sector" id="">
   
     <option  class="border-solid border-2 border-indigo-600 rounded-lg hover:bg-indigo-600 " value="health">Health</option>
@@ -83,7 +85,7 @@
      <option class="border-solid border-2 border-indigo-600 rounded-lg hover:bg-indigo-600 " value="real estate">Real Estate</option>
     
   </select>
-  
+</div>
 </div>
 </div>
 
