@@ -70,6 +70,7 @@ public function edit(Solution $solution){
 public function store(Request $request){
     $form_data=$request->validate([
         'title'=>'required|max:30',
+        'tagline'=>'required',
         'description'=>'required',
         'demo'=>'required',
         'sector'=>'required',
@@ -81,6 +82,7 @@ public function store(Request $request){
 
     $form_data["user_id"]=auth()->id();
     $form_data["author"]=auth()->user()->username;
+    $form_data["upvote"]=0;
    
     if($request->hasFile('image')){
         $form_data["image"]=$request->file('image')->store('images','public');
