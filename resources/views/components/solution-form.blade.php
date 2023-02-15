@@ -2,7 +2,7 @@
 <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
 
 <div class="relative flex flex-row m-6 p-6 text-center"><h1 class="font-bold text-3xl">Share Your Solution</h1></div>
-  <form action="/create/idea" class="block  p-12 m-6 border-solid border-2  shadow-xl  rounded-md bg-white" method="POST" enctype="multipart/form-data">
+  <form action="/create/solution" class="block  p-12 m-6 border-solid border-2  shadow-xl  rounded-md bg-white" method="POST" enctype="multipart/form-data">
      @csrf
 @if($errors->all())
 <div class="flex flex-col">
@@ -45,7 +45,7 @@
 <div class="relative flex flex-row flex-wrap">
 <div class="relative flex flex-row mr-3 mt-4 ">
   <label  class="text-md pr-3">Monetizable:</label>
-<select class=" border-solid border-2 border-gray-700 rounded-lg form-select focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Monetizable?" name="sponsor" id="">
+<select class=" border-solid border-2 border-gray-700 rounded-lg form-select focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Monetizable?" name="monetizable" id="">
   
   <option class="border-solid border-2 border-indigo-600 rounded-lg hover:bg-indigo-600 " value="true">Yes</option>
   <option class="border-solid border-2 border-indigo-600 rounded-lg hover:bg-indigo-600 " value="false">No</option>
@@ -62,7 +62,7 @@
 
 <div class="relative flex flex-row mt-4 ">
      <label  class="text-md pr-3">Type:</label>
-<select class=" border-solid border-2 border-gray-700 rounded-lg form-select focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Monetizable?" name="plan" id="">
+<select class=" border-solid border-2 border-gray-700 rounded-lg form-select focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Monetizable?" name="sector" id="">
   
   <option  class="border-solid border-2 border-indigo-600 rounded-lg hover:bg-indigo-600 " value="software">Software</option>
   <option class="border-solid border-2 border-indigo-600 rounded-lg hover:bg-indigo-600 " value="hardware">Hardware</option>
