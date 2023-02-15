@@ -28,6 +28,10 @@
   <label  class="text-xl pr-3">Tagline:</label>
   <input type="text" placeholder="A Solution To Solve " class=" placeholder:italic placeholder:text-slate-400 block border-solid border-t-0 border-b-2 border-slate-600  focus:outline-none w-full focus:border-sky-500" style=" border-bottom-width:2.4px;" name="tagline">
 </div>
+<div class="relative flex flex-row m-7 ml-4">
+    <label  class="text-xl pr-3">Demo:</label>
+    <input type="text" placeholder="https:// " class=" placeholder:italic placeholder:text-slate-400 block border-solid border-t-0 border-b-2 border-slate-600  focus:outline-none w-full focus:border-sky-500" style=" border-bottom-width:2.4px;" name="demo">
+  </div>
 <div class=" flex flex-row m-12 ml-4">
   <label  class="text-xl pr-3">Cover Image:</label>
 <div class="flex flex-col">
@@ -60,7 +64,7 @@
 </select>
 </div>
 
-<div class="relative flex flex-row mt-4 ">
+<div class="relative flex flex-row mt-4 mr-3 ">
      <label  class="text-md pr-3">Type:</label>
 <select class=" border-solid border-2 border-gray-700 rounded-lg form-select focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Monetizable?" name="type" id="">
   
@@ -69,7 +73,7 @@
    <option class="border-solid border-2 border-indigo-600 rounded-lg hover:bg-indigo-600 " value="combined">Combined</option>
   
 </select>
-
+</div>
 <div class="relative flex flex-row mt-4 ">
     <label  class="text-md pr-3">Sector:</label>
 <select class=" border-solid border-2 border-gray-700 rounded-lg form-select focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="" name="sector" id="">
@@ -87,7 +91,7 @@
   </select>
 </div>
 </div>
-</div>
+
 
 <div class="mt-16 grid justify-items-end">
   <button type="submit" class="p-4 pt-2 pb-2 bg-black text-white font-bold text-md border-solid border-black border-2 shadow-sm hover:bg-white hover:text-black rounded">Share</button>
