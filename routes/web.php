@@ -53,6 +53,13 @@ Route::post('/create/solution',[solutionControl::class,'store']);
 Route::get('/pools/ideas',[ideaControl::class,'all']);
 
 Route::get('/solutions/{solution}',[solutionControl::class,'solution']);
+
+Route::get('/solutions/{solution}/edit',[solutionControl::class,'edit']);
+Route::post('/solutions/{solution}/update',[solutionControl::class, 'update']);
+Route::get('/solutions/{solution}/delete',[solutionControl::class,'delete']);
+Route::post('/solutions/{solution}/comment',[solutionControl::class,'comment']);
+Route::get('/solutions/{solution}/like',[solutionControl::class,'like']);
+
 Route::get('/ideas/{idea}',[ideaControl::class,'idea']);
 Route::get('/idea/{idea}/edit',[ideaControl::class,'edit']);
 Route::post('/idea/{idea}/update',[ideaControl::class, 'update']);

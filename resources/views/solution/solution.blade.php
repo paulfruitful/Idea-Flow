@@ -18,7 +18,7 @@
  <x-description :idea="$solution" :image="$image"/>
 </div>
 <div>
-  <x-reaction :idea="$solution" :unliked="$unliked" :liked="$liked"/>
+  <x-reaction :idea="$solution" :unliked="$unliked" :liked="$liked" :type="solutions" />
   @php
       
   @endphp
