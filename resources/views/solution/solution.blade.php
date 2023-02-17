@@ -10,7 +10,7 @@
 <body>
     <x-navbar/>
     <div class="flex flex-col">
-    <x-idea-hero :idea="$solution" :type="solution"/>
+    <x-solution-hero :idea="$solution" />
     
 </div>
 
