@@ -96,12 +96,13 @@ public function store(Request $request){
 public function update(Solution $solution,Request $request){
     $form_data=$request->validate([
         'title'=>'max:30',
-        'demo',
-        'description',
-        'monetizable',
-        'sector',
-        'type',
-        'privacy'
+        'tagline'=>'required|max:150',
+        'demo'=>'required',
+        'description'=>'required',
+        'monetizable'=>'required',
+        'sector'=>'required',
+        'type'=>'required',
+        'privacy'=>'required'
     ]);
     if($request->hasFile('image')){
         $form_data["image"]=$request->file('image')->store('images','public');
