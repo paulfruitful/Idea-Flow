@@ -1,9 +1,10 @@
 
-@@props(['solution'])
+@props(['solution'])
 
 <div class="relative flex flex-row m-6 p-6 text-center"><h1 class="font-bold text-3xl">Edit Your Solution</h1></div>
-  <form action="/solutions/{{$solution->id}}" class="block  p-12 m-6 border-solid border-2  shadow-xl  rounded-md bg-white" method="POST" enctype="multipart/form-data">
+  <form action="/solutions/{{$solution->id}}/update" class="block  p-12 m-6 border-solid border-2  shadow-xl  rounded-md bg-white" method="POST" enctype="multipart/form-data">
      @csrf
+     
 @if($errors->all())
 <div class="flex flex-col">
  

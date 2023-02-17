@@ -103,7 +103,9 @@ public function update(Solution $solution,Request $request){
         'type',
         'privacy'
     ]);
-
+    if($request->hasFile('image')){
+        $form_data["image"]=$request->file('image')->store('images','public');
+    }
  $solution->update($form_data);
     
 
