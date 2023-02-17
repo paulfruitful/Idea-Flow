@@ -10,7 +10,7 @@
 <body>
     <x-navbar/>
     <div class="flex flex-col">
-    <x-solution-hero :idea="$solution" />
+    <x-solution-hero :solution="$solution" />
     
 </div>
 
@@ -18,7 +18,7 @@
  <x-description :idea="$solution" :image="$image"/>
 </div>
 <div>
-  <x-reaction :idea="$solution" :unliked="$unliked" :liked="$liked" :type="solutions" />
+  <x-solution-reaction :solution="$solution" :unliked="$unliked" :liked="$liked"  />
   @php
       
   @endphp
