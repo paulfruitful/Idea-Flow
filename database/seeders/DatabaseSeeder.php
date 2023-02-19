@@ -22,6 +22,11 @@ class DatabaseSeeder extends Seeder
     'author'=>$user->username,
      'email'=>$user->email
      ]);
+     $this->call(
+[
+    solutionSeeder::class
+]
+     );
         
     }
 }

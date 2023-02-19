@@ -2,7 +2,7 @@
   <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
 
   <div class="relative flex flex-row m-6 p-6 text-center"><h1 class="font-bold text-3xl">Drop an Idea</h1></div>
-    <form action="/create/idea" class="block  p-12 m-6 border-solid border-2  shadow-xl  rounded-md bg-white" method="POST">
+    <form action="/create/idea" class="block  p-12 m-6 border-solid border-2  shadow-xl  rounded-md bg-white" method="POST" enctype="multipart/form-data">
        @csrf
 @if($errors->all())
   <div class="flex flex-col">
@@ -27,6 +27,14 @@
 <div class="relative flex flex-row m-7 ml-4">
     <label  class="text-xl pr-3">Tagline:</label>
     <input type="text" placeholder="An Idea To Solve " class=" placeholder:italic placeholder:text-slate-400 block border-solid border-t-0 border-b-2 border-slate-600  focus:outline-none w-full focus:border-sky-500" style=" border-bottom-width:2.4px;" name="tagline">
+</div>
+<div class=" flex flex-row m-12 ml-4">
+    <label  class="text-xl pr-3">Cover Image:</label>
+<div class="flex flex-col">
+    <input type="file" name="image" >
+
+<input type="text" name="image" placeholder="Or Image Url" class=" placeholder:italic placeholder:text-slate-400 block border-solid border-t-0 border-b-2 border-slate-600  focus:outline-none w-full mt-4 focus:border-sky-500" >
+</div>
 </div>
 <div class="relative flex flex-col m-6 mt-6">
     <textarea placeholder="Idea to solve..." id="edit" class="  placeholder:italic placeholder:text-slate-400 block border-solid border-2 p-6 border-slate-400  focus:outline-none focus:border-sky-500" name="description"></textarea>

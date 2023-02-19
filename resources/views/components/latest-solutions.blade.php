@@ -1,8 +1,8 @@
-@props(['ideas'])
+@props(['solutions'])
 
 <div class="flex flex-col  flex-wrap w-full h-full p-6 ">
- @forelse ($ideas as $idea)
- <x-idea :idea="$idea"/>
+ @forelse ($solutions as $solution)
+ <x-solution :solution="$solution"/>
  @empty
      <p>No Idea</p>
  @endforelse

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\User;
+use App\Models\reaction;
 use App\Models\Idea_comment;
 use Database\Factories\IdeaFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -38,4 +39,7 @@ class Idea extends Model
   {
     return IdeaFactory::new();
   }
+  public function reaction(){
+    return $this->hasMany(reaction::class,'idea_id');
+}
 }

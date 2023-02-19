@@ -3,25 +3,57 @@
 namespace App\Http\Controllers;
 
 use App\Models\Idea;
+use App\Models\Idea_comment;
+use App\Models\reaction;
+use App\Models\Solution;
 use Illuminate\Http\Request;
 
 class ideaControl extends Controller
 {
     //
 public function all(){
-    $hero = [
-        'title'=>'Keep The Cycle Of Ideas Flowing',
-        'tagline'=>'Build The Next Solution By Implementing Ideas'
-    ];
+   
     return view('pool.idea',[
-        'ideas'=>Idea::latest()->paginate(10)
+        'ideas'=>Idea::where('privacy','true')->latest()->paginate(8),
     ]);
 }
 
 public function idea(Idea $idea){
-    return view('idea.idea',[
-        'idea'=>$idea
+    
+    $check_id=$idea->reaction->where('user_id',auth()->id());
+    if(count($check_id)>0){
+    if(preg_match('/images/i',$idea->image)){
+        return view('idea.idea',[
+        'idea'=>$idea,
+        'liked'=>true,
+        'unliked'=>false,
+        "image"=>"/storage/".$idea->image
     ]);
+}else{
+    return view('idea.idea',[
+        'idea'=>$idea,
+        'liked'=>true,
+        'unliked'=>false,
+        "image"=>$idea->image
+    ]);
+}
+}else{
+    if(preg_match('/images/i',$idea->image)){
+    return view('idea.idea',[
+        'idea'=>$idea,
+        'liked'=>false,
+        'unliked'=>true,
+        'image'=>"/storage/".$idea->image
+    ]);
+}else{
+    return view('idea.idea',[
+        'idea'=>$idea,
+        'liked'=>false,
+        'unliked'=>true,
+        "image"=>$idea->image
+    ]);
+}
+}
 }
 
 public function create(){
@@ -36,7 +68,7 @@ public function edit(Idea $idea){
 
 public function store(Request $request){
     $form_data=$request->validate([
-        'title'=>'required',
+        'title'=>'required|max:30',
         'tagline'=>'required|max:120',
         'description'=>'required',
         'sponsor'=>'required',
@@ -48,15 +80,18 @@ public function store(Request $request){
     $form_data["user_id"]=auth()->id();
     $form_data["author"]=auth()->user()->username;
     $form_data["email"]=auth()->user()->email;
+    if($request->hasFile('image')){
+        $form_data["image"]=$request->file('image')->store('images','public');
+    }
 
     Idea::create($form_data);
 
-    return redirect('/user/'.auth()->id().'/ideas')->with('success','Idea Shared Successfully');
+    return redirect('/pools/ideas')->with('success','Idea Shared Successfully');
 }
 
-public function update(Request $request){
+public function update(Idea $idea,Request $request){
     $form_data=$request->validate([
-        'title'=>'max:50',
+        'title'=>'max:30',
         'tagline'=>'max:120',
         'description',
         'sponsor',
@@ -64,10 +99,50 @@ public function update(Request $request){
         'privacy'
     ]);
 
- 
-    Idea::update($form_data);
+ $idea->update($form_data);
+    
 
-    return redirect('/user/'.auth()->id().'/ideas')->with('success','Idea Shared Successfully');
+    return redirect('/ideas/'.$idea->id)->with('success','Idea Shared Successfully');
+}
+
+public function comment(Idea $idea, Request $request){
+    $formData=$request->validate([
+        'comment'=>'required'
+    ]);
+    $formData["idea_id"]=$idea->id;
+    $formData["username"]=auth()->user()->username;
+  
+    Idea_comment::create($formData);
+     
+    return back()->with('success', 'done');
+}
+
+public function like(Idea $idea){
+   $check_id=$idea->reaction->where('user_id',auth()->id());
+ 
+
+   if(count($check_id)>0){
+    $idea->reaction->where('user_id', auth()->id())->first()->delete();
+    $idea->upvote-=1;
+    $idea->save();
+    return back()->with('unliked',true);
+   }else{
+     $data=[
+        "user_id"=>auth()->id(),
+        "idea_id"=>$idea->id ];
+
+    $react=reaction::create($data);
+
+    $idea->upvote+=1;
+    $idea->save();
+    return back()->with('liked',true);
+    }
+
+}
+
+public function delete(Idea $idea){
+    $idea->delete();
+    return redirect('/pools/ideas');
 }
 
 }

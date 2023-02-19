@@ -6,15 +6,14 @@ use App\Models\Idea;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Idea_comment extends Model
+class reaction extends Model
 {
     use HasFactory;
     protected $fillable=[
-        'idea_id',
-        'comment',
-        'username'
+        'user_id',
+        'idea_id'
     ];
-    public function Idea(){
+    public function reaction(){
         return $this->belongsTo(Idea::class,'idea_id');
     }
 }
