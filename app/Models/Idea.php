@@ -42,4 +42,8 @@ class Idea extends Model
   public function reaction(){
     return $this->hasMany(reaction::class,'idea_id');
 }
+
+public static function recent(){
+  return Idea::where('privacy','true')->latest()->paginate(8);
+}
 }

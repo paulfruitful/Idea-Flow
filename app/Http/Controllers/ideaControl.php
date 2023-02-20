@@ -14,7 +14,7 @@ class ideaControl extends Controller
 public function all(){
    
     return view('pool.idea',[
-        'ideas'=>Idea::where('privacy','true')->latest()->paginate(8),
+        'ideas'=>Idea::recent(),
     ]);
 }
 

@@ -44,4 +44,7 @@ protected static function newFactory(){
    return solutionFactory::new();
 }
 
+public static function recent(){
+   return Solution::where('privacy','true')->latest()->paginate(8);
+ }
 }
