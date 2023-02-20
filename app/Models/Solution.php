@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\User;
 use App\Models\solutionComment;
 use App\Models\solutionReaction;
+use Illuminate\Support\Facades\DB;
 use Database\Factories\solutionFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
@@ -50,4 +51,8 @@ public static function recent(){
  public function check_reaction(){
    return $this->reaction->where('user_id',auth()->id());
  }
+ public static function trending(){
+   return DB::table('solutions')->orderBy('upvote','desc')->paginate(5);
+ }
+ 
 }
