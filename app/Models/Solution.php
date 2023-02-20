@@ -47,4 +47,7 @@ protected static function newFactory(){
 public static function recent(){
    return Solution::where('privacy','true')->latest()->paginate(8);
  }
+ public function check_reaction(){
+   return $this->reaction->where('user_id',auth()->id());
+ }
 }
