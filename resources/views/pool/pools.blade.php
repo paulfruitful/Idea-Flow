@@ -20,9 +20,25 @@
     <a class="flex flex-row justify-self-center text-center p-6 m-auto  text-xl hover:text-blue-600 hover:px-3 " href="/pools/ideas">See more <img src="https://cdn-icons-png.flaticon.com/512/2989/2989988.png" style="height: 30px; width:30px;" alt=""></a>
 </div>
 
+<div class="m-auto p-auto text-center text-black font-bold text-3xl">Trending Ideas</div>
+  <div>
+    <x-latest-ideas :ideas="$topIdeas"/>
+  </div>
+  <div class="grid justify-self-stretch mb-12">
+    <a class="flex flex-row justify-self-center text-center p-6 m-auto  text-xl hover:text-blue-600 hover:px-3 " href="/pools/ideas">See more <img src="https://cdn-icons-png.flaticon.com/512/2989/2989988.png" style="height: 30px; width:30px;" alt=""></a>
+</div>
+
 <div class="m-auto p-auto text-center text-black font-bold text-3xl">Latest Solutions</div>
   <div>
     <x-latest-solutions :solutions="$solutions"/>
+  </div>
+  <div class="grid justify-self-stretch">
+    <a class="flex flex-row justify-self-center text-center p-6 m-auto  text-xl hover:text-blue-600 hover:px-3 " href="/pools/solutions">See more <img src="https://cdn-icons-png.flaticon.com/512/2989/2989988.png" style="height: 30px; width:30px;" alt=""></a>
+</div>
+
+<div class="m-auto p-auto text-center text-black font-bold text-3xl">Trending Solutions</div>
+  <div>
+    <x-latest-solutions :solutions="$topSolutions"/>
   </div>
   <div class="grid justify-self-stretch">
     <a class="flex flex-row justify-self-center text-center p-6 m-auto  text-xl hover:text-blue-600 hover:px-3 " href="/pools/solutions">See more <img src="https://cdn-icons-png.flaticon.com/512/2989/2989988.png" style="height: 30px; width:30px;" alt=""></a>

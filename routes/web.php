@@ -25,8 +25,10 @@ Route::get('/', function () {
 
 Route::get('/pools', function(){
     return view('pool.pools',[
-        'ideas'=>Idea::where('privacy','true')->latest()->paginate(8),
-        'solutions'=>Solution::where('privacy','true')->latest()->paginate(8)
+        'ideas'=>Idea::recent(),
+        'solutions'=>Solution::recent(),
+        'topIdeas'=>Idea::trending(),
+        'topSolutions'=>Solution::trending()
     ]);
 });
 Route::get('/register',[userControl::class,'create']);

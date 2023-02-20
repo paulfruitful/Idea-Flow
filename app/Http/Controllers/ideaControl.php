@@ -12,7 +12,7 @@ class ideaControl extends Controller
 {
     //
 public function all(){
-   dd(Idea::trending());
+   
     return view('pool.idea',[
         'ideas'=>Idea::recent(),
     ]);
