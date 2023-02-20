@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\User;
 use App\Models\reaction;
 use App\Models\Idea_comment;
+use Illuminate\Support\Facades\DB;
 use Database\Factories\IdeaFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
@@ -44,9 +45,14 @@ class Idea extends Model
 }
 
 public static function recent(){
-  return Idea::where('privacy','true')->latest()->paginate(8);
+  return Idea::where('privacy','true')->latest()->paginate(5);
 }
 public function check_reaction(){
   return $this->reaction->where('user_id',auth()->id());
 }
+
+public static function trending(){
+  return DB::table('ideas')->orderBy('upvote','desc')->paginate(5);
+}
+
 }
