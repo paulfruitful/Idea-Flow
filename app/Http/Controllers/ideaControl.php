@@ -20,7 +20,7 @@ public function all(){
 
 public function idea(Idea $idea){
     
-    $check_id=$idea->reaction->where('user_id',auth()->id());
+    $check_id=$idea->check_reaction();
     if(count($check_id)>0){
     if(preg_match('/images/i',$idea->image)){
         return view('idea.idea',[
