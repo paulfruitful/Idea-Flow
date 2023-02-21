@@ -13,4 +13,7 @@ class Problem extends Model
     return $this->hasMany(ProblemComments::class,'problem_id');
   }
 
+  public function reactions(){
+    return $this->hasMany(ProblemReactions::class,'problem_id');
+  }
 }
