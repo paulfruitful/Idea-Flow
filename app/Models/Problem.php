@@ -2,10 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\ProblemComments;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Problem extends Model
 {
     use HasFactory;
+  public function comments(){
+    return $this->hasMany(ProblemComments::class,'problem_id');
+  }
+
 }
