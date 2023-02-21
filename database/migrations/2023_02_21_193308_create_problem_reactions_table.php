@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('problem_reactions', function (Blueprint $table) {
             $table->id();
+            
+            $table->uuid('user_id');
+            $table->foreignUuid('problem_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
