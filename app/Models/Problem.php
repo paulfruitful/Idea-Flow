@@ -13,7 +13,7 @@ class Problem extends Model
     use HasFactory;
 
     public static function recent(){
-        return Problem::where('privacy','true')->latest()->paginate(5);
+        return Problem::where('privacy','true')->latest()->limit(20)->paginate(5);
     }
 
     public function check_reaction(){

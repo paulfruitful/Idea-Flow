@@ -45,7 +45,7 @@ class Idea extends Model
 }
 
 public static function recent(){
-  return Idea::where('privacy','true')->latest()->paginate(5);
+  return Idea::where('privacy','true')->latest()->limit(20)->paginate(5);
 }
 public function check_reaction(){
   return $this->reaction->where('user_id',auth()->id());
