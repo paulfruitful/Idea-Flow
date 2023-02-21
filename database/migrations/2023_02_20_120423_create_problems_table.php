@@ -15,6 +15,13 @@ return new class extends Migration
     {
         Schema::create('problems', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->longText('description');
+            $table->text('image');
+            $table->text('author');
+            $table->integer('upvote');
+            $table->integer('views');
+            $table->text('tags');
             $table->timestamps();
         });
     }
