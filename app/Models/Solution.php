@@ -52,7 +52,7 @@ public static function recent(){
    return $this->reaction->where('user_id',auth()->id());
  }
  public static function trending(){
-  return DB::table('solutions')->orderBy('upvote','desc')->limit(5);
+  return DB::table('solutions')->orderBy('upvote','desc')->limit(5)->get();
  }
  
 }

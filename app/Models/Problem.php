@@ -21,7 +21,7 @@ class Problem extends Model
       }
 
     public static function trending(){
-        return DB::table('problems')->orderBy('upvote','desc')->limit(5);
+        return DB::table('problems')->orderBy('upvote','desc')->limit(5)->get();
       }
       
     public function comments(){
