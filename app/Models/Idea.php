@@ -52,7 +52,7 @@ public function check_reaction(){
 }
 
 public static function trending(){
-  return DB::table('ideas')->orderBy('upvote','desc')->paginate(5);
+  return DB::table('ideas')->orderBy('upvote','desc')->limit(5);
 }
 
 }
