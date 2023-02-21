@@ -13,7 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        //
+        Schema::table('problems',function(Blueprint $table){
+            $table->text('privacy');
+        });
     }
 
     /**
