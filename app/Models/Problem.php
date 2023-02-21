@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\ProblemComments;
+use App\Models\ProblemReactions;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
