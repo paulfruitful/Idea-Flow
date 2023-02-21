@@ -10,6 +10,6 @@ class ProblemReactions extends Model
 {
     use HasFactory;
     public function problem(){
-        return $this->hasMany(Problem::class,'problem_id');
+        return $this->belongsTo(Problem::class,'problem_id');
       }
 }
