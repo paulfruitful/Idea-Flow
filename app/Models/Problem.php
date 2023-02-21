@@ -14,9 +14,14 @@ class Problem extends Model
     public static function recent(){
         return Problem::where('privacy','true')->latest()->paginate(5);
     }
-  public function comments(){
+
+    public function check_reaction(){
+        return $this->reaction->where('user_id',auth()->id());
+      }
+
+    public function comments(){
     return $this->hasMany(ProblemComments::class,'problem_id');
-  }
+    }
 
   public function reactions(){
     return $this->hasMany(ProblemReactions::class,'problem_id');
