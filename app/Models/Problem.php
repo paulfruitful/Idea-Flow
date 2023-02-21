@@ -10,6 +10,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Problem extends Model
 {
     use HasFactory;
+
+    public static function recent(){
+        return Problem::where('privacy','true')->latest()->paginate(5);
+    }
   public function comments(){
     return $this->hasMany(ProblemComments::class,'problem_id');
   }
@@ -17,4 +21,5 @@ class Problem extends Model
   public function reactions(){
     return $this->hasMany(ProblemReactions::class,'problem_id');
   }
-}
+
+  } 
