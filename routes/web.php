@@ -17,6 +17,7 @@ use App\Http\Controllers\ideaControl;
 use App\Http\Controllers\userControl;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\solutionControl;
+use App\Models\Problem;
 
 //Primary User Routes
 Route::get('/', function () {
@@ -28,7 +29,9 @@ Route::get('/pools', function(){
         'ideas'=>Idea::recent(),
         'solutions'=>Solution::recent(),
         'topIdeas'=>Idea::trending(),
-        'topSolutions'=>Solution::trending()
+        'topSolutions'=>Solution::trending(),
+        'problems'=>Problem::recent(),
+        'topProblems'=>Problem::trending(),
     ]);
 });
 Route::get('/register',[userControl::class,'create']);
