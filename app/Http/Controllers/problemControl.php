@@ -11,7 +11,7 @@ class problemControl extends Controller
     public function all(){
    
         return view('pool.problem',[
-            'problem'=>Problem::recent(),
+            'problems'=>Problem::recent(),
         ]);
     }
     

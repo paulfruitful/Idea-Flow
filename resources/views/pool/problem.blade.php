@@ -24,7 +24,7 @@
       </div>
     </div>
   <div class="text-center m-6 mt-8 font-bold text-3xl">Problem Pool</div>
-    <x-latest-problems :problem="$problem"/>
+    <x-latest-problems :problems="$problems"/>
  <div class="p-6 m-6">{{$problem->links()}}</div>  
 
  <x-footer/>
