@@ -14,6 +14,7 @@ use App\Models\Idea;
 */
 use App\Models\Solution;
 use App\Http\Controllers\ideaControl;
+use App\Http\Controllers\problemControl;
 use App\Http\Controllers\userControl;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\solutionControl;
@@ -42,8 +43,19 @@ Route::post('/login',function(){
 });
 Route::post('/login',[userControl::class,'login']);
 Route::get('/logout',[userControl::class,'logout']);
-//Idea Routes
 
+
+//Get Routes for Solutions
+Route::get('/pools/solutions',[solutionControl::class,'all']);
+Route::get('/create/solution',[solutionControl::class,'create']);
+
+//Post Route for Solution
+Route::post('/create/solution',[solutionControl::class,'store']);
+
+//Get Routes for Ideas
+Route::get('/pools/ideas',[ideaControl::class,'all']);
+
+//Post Idea Routes
 Route::prefix('create')->group(
     function(){
 
@@ -51,20 +63,19 @@ Route::get('/idea',[ideaControl::class,'create']);
 Route::post('/idea',[ideaControl::class,'store']);
     }
 );
-Route::get('/pools/solutions',[solutionControl::class,'all']);
-Route::get('/create/solution',[solutionControl::class,'create']);
 
-Route::post('/create/solution',[solutionControl::class,'store']);
-Route::get('/pools/ideas',[ideaControl::class,'all']);
+//Problem Routes
+Route::get('/problems/{problem}/',[problemControl::class,'all']);
 
+//Solution Routes
 Route::get('/solutions/{solution}',[solutionControl::class,'solution']);
-
 Route::get('/solutions/{solution}/edit',[solutionControl::class,'edit']);
 Route::post('/solutions/{solution}/update',[solutionControl::class, 'update']);
 Route::get('/solutions/{solution}/delete',[solutionControl::class,'delete']);
 Route::post('/solutions/{solution}/comment',[solutionControl::class,'comment']);
 Route::get('/solutions/{solution}/like',[solutionControl::class,'like']);
 
+//Idea Routes
 Route::get('/ideas/{idea}',[ideaControl::class,'idea']);
 Route::get('/idea/{idea}/edit',[ideaControl::class,'edit']);
 Route::post('/idea/{idea}/update',[ideaControl::class, 'update']);
