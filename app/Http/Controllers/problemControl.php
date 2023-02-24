@@ -57,4 +57,9 @@ class problemControl extends Controller
     }
     }
     }
+
+    public function create(){
+        return view('problem.create');
+    }
+    
 }
