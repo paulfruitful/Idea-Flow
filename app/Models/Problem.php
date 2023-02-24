@@ -11,7 +11,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Problem extends Model
 {
     use HasFactory;
+ protected $fillables=[
+  'title',
+  'description',
+  'author',
+  'image',
+  'views',
+  'tags',
+  'upvote'
 
+ ];
     public static function recent(){
         return Problem::where('privacy','true')->latest()->limit(20)->paginate(5);
     }
