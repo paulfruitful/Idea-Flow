@@ -4,7 +4,7 @@
  @forelse ($problems as $problem)
  <x-idea :idea="$idea"/>
  @empty
-     <p>No Idea</p>
+     <p>No Problems</p>
  @endforelse
 
 
