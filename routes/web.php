@@ -64,8 +64,9 @@ Route::post('/idea',[ideaControl::class,'store']);
     }
 );
 
-//Problem Routes
-Route::get('/problems/{problem}/',[problemControl::class,'all']);
+//Problem Get Routes
+Route::get('/pools/problems',[problemControl::class,'all']);
+Route::get('/problems/{problem}/',[problemControl::class,'problem']);
 
 //Solution Routes
 Route::get('/solutions/{solution}',[solutionControl::class,'solution']);
