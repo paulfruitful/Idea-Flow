@@ -18,6 +18,12 @@ class problemFactory extends Factory
     {
         return [
             //
+            'title'=>fake()->sentence(5),
+            'description'=>implode('', fake()->sentences(10)),
+            'image'=>fake()->imageUrl(),
+            'privacy'=>fake()->randomElement(['true','false']),
+            'upvote'=>fake()->numberBetween(5,100),
+            'tags'=>implode('',fake()->randomElements(['health','finance','ai']))
         ];
     }
 }
