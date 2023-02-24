@@ -18,7 +18,7 @@
  <x-problem-description :problem="$problem" :image="$image"/>
 </div>
 <div>
-  <x-reaction :idea="$idea" :unliked="$unliked" :liked="$liked" />
+  <x-problem-reaction :problem="$problem" :unliked="$unliked" :liked="$liked" />
   @php
       
   @endphp
