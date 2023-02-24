@@ -15,7 +15,7 @@
 </div>
 
 <div>
- <x-description :idea="$idea" :image="$image"/>
+ <x-problem-description :problem="$problem" :image="$image"/>
 </div>
 <div>
   <x-reaction :idea="$idea" :unliked="$unliked" :liked="$liked" />
