@@ -56,7 +56,7 @@ Route::post('/create/solution',[solutionControl::class,'store']);
 Route::get('/pools/ideas',[ideaControl::class,'all']);
 
 //Post Idea Routes
-Route::prefix('create')->group(
+Route::prefix('create')->middleware('auth')->group(
     function(){
 
 Route::get('/idea',[ideaControl::class,'create']);
@@ -69,28 +69,28 @@ Route::get('/problems/{problem}/',[problemControl::class,'all']);
 
 //Solution Routes
 Route::get('/solutions/{solution}',[solutionControl::class,'solution']);
-Route::get('/solutions/{solution}/edit',[solutionControl::class,'edit']);
-Route::post('/solutions/{solution}/update',[solutionControl::class, 'update']);
-Route::get('/solutions/{solution}/delete',[solutionControl::class,'delete']);
-Route::post('/solutions/{solution}/comment',[solutionControl::class,'comment']);
-Route::get('/solutions/{solution}/like',[solutionControl::class,'like']);
+Route::get('/solutions/{solution}/edit',[solutionControl::class,'edit'])->middleware('auth');
+Route::post('/solutions/{solution}/update',[solutionControl::class, 'update'])->middleware('auth');
+Route::get('/solutions/{solution}/delete',[solutionControl::class,'delete'])->middleware('auth');
+Route::post('/solutions/{solution}/comment',[solutionControl::class,'comment'])->middleware('auth');
+Route::get('/solutions/{solution}/like',[solutionControl::class,'like'])->middleware('auth');
 
 //Idea Routes
 Route::get('/ideas/{idea}',[ideaControl::class,'idea']);
-Route::get('/idea/{idea}/edit',[ideaControl::class,'edit']);
-Route::post('/idea/{idea}/update',[ideaControl::class, 'update']);
-Route::get('/idea/{idea}/delete',[ideaControl::class,'delete']);
-Route::post('/idea/{idea}/comment',[ideaControl::class,'comment']);
-Route::get('/idea/{idea}/like',[ideaControl::class,'like']);
+Route::get('/idea/{idea}/edit',[ideaControl::class,'edit'])->middleware('auth');
+Route::post('/idea/{idea}/update',[ideaControl::class, 'update'])->middleware('auth');
+Route::get('/idea/{idea}/delete',[ideaControl::class,'delete'])->middleware('auth');
+Route::post('/idea/{idea}/comment',[ideaControl::class,'comment'])->middleware('auth');
+Route::get('/idea/{idea}/like',[ideaControl::class,'like'])->middleware('auth');
 
 //User Routes
 Route::get('/user/{user}',function(){
     return view('user.profile');
-});
+})->middleware('auth');
 
 Route::get('/user/{user}/profile',function(){
     return view('user.edit');
-});
+})->middleware('auth');
 
 Route::post('/user/{user}',[userControl::class,'editProfile']);
 
