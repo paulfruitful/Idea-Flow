@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\ProblemComments;
 use App\Models\ProblemReactions;
+use Database\Factories\problemFactory;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -21,6 +22,9 @@ class Problem extends Model
   'upvote'
 
  ];
+ protected static function newFactory(){
+  return problemFactory::new();
+}
     public static function recent(){
         return Problem::where('privacy','true')->latest()->limit(20)->paginate(5);
     }
@@ -41,4 +45,5 @@ class Problem extends Model
     return $this->hasMany(ProblemReactions::class,'problem_id');
   }
 
+ 
   } 
