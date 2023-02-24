@@ -31,8 +31,8 @@ class DatabaseSeeder extends Seeder
      $Problemuser=User::all();
      $Problemuser=$Problemuser[1];
      Problem::factory(33)->create([ 
-    'user_id'=>$user->id,
-    'author'=>$user->username
+    'user_id'=>$Problemuser->id,
+    'author'=>$Problemuser->username
      ]);   
     }
 }
