@@ -4,9 +4,11 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Models\Idea;
-use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use App\Models\Problem;
+use App\Models\Solution;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -33,6 +35,14 @@ class User extends Authenticatable
   public function idea(){
     return $this->hasMany(Idea::class,'user_id');
   }
+  public function problem(){
+    return $this->hasMany(Problem::class,'user_id');
+   }
+
+   public function solution(){
+    return $this->hasMany(Solution::class,'user_id');
+ }
+
     /**
      * The attributes that should be hidden for serialization.
      *

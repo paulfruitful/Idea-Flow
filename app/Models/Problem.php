@@ -2,10 +2,11 @@
 
 namespace App\Models;
 
+use App\Models\User;
 use App\Models\ProblemComments;
 use App\Models\ProblemReactions;
-use Database\Factories\problemFactory;
 use Illuminate\Support\Facades\DB;
+use Database\Factories\problemFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -19,7 +20,8 @@ class Problem extends Model
   'image',
   'views',
   'tags',
-  'upvote'
+  'upvote',
+  'user_id'
 
  ];
  protected static function newFactory(){
@@ -45,5 +47,7 @@ class Problem extends Model
     return $this->hasMany(ProblemReactions::class,'problem_id');
   }
 
- 
+ public function user(){
+  return $this->belongsTo(User::class,'user_id');
+ }
   } 
