@@ -20,9 +20,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/ideas',function(){
-   return json_encode(Idea::trending());
+   return json_encode(Idea::where('privacy','true')->latest());
 });
-
+Route::get('/topIdeas',function(){
+    return json_encode(Idea::trending());
+ });
+ 
 Route::get('/ideas/{idea}',function(Idea $idea){
     return json_decode($idea);
 });
