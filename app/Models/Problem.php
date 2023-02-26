@@ -21,7 +21,8 @@ class Problem extends Model
   'views',
   'tags',
   'upvote',
-  'user_id'
+  'user_id',
+  'id'
 
  ];
  protected static function newFactory(){
