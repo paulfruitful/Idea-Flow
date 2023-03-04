@@ -67,7 +67,10 @@ Route::post('/idea',[ideaControl::class,'store']);
 //Problem Get Routes
 Route::get('/pools/problems',[problemControl::class,'all']);
 Route::get('/problems/{problem}/',[problemControl::class,'problem']);
+Route::get('/create/problem',[problemControl::class,'create']);
 
+//Problem Post Routes
+Route::post('/create/problem',[problemControl::class,'store']);
 //Solution Routes
 Route::get('/solutions/{solution}',[solutionControl::class,'solution']);
 Route::get('/solutions/{solution}/edit',[solutionControl::class,'edit'])->middleware('auth');

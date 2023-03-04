@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\User;
+use Illuminate\Support\Str;
 use App\Models\ProblemComments;
 use App\Models\ProblemReactions;
 use Illuminate\Support\Facades\DB;
@@ -13,7 +14,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Problem extends Model
 {
     use HasFactory;
- protected $fillables=[
+ protected $fillable=[
   'title',
   'description',
   'author',
@@ -22,9 +23,17 @@ class Problem extends Model
   'tags',
   'upvote',
   'user_id',
-  'id'
+  'privacy'
 
  ];
+ protected static function boot()
+ {
+     parent::boot();
+
+     static::creating(function ($model) {
+         $model->{$model->getKeyName()} = Str::uuid()->toString();
+     });
+ }
  protected static function newFactory(){
   return problemFactory::new();
 }

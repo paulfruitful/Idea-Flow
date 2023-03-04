@@ -21,7 +21,7 @@
 @endif 
 <div class="relative flex flex-row m-6">
   <label  class="text-xl pr-3">Title:</label>
-  <input type="text" placeholder="Name e.g MediStar" class=" placeholder:italic placeholder:text-slate-400 block border-solid border-t-0 border-b-2 border-slate-600  focus:outline-none w-full focus:border-sky-500" style=" border-bottom-width:2.4px;" name="title">
+  <input type="text" placeholder="Name e.g MediStar" class=" placeholder:italic placeholder:text-slate-400 block border-solid border-t-0 border-b-2 border-slate-600  focus:outline-none w-full focus:border-sky-500" style=" border-bottom-width:2.4px;" name="title" value={{old('title')}}>
 </div>
 
 <div class=" flex flex-row m-12 ml-4">
