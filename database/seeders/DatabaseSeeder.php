@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\Idea;
+use App\Models\Problem;
 use Illuminate\Database\Seeder;
 use \App\Models\User;
 class DatabaseSeeder extends Seeder
@@ -27,6 +28,11 @@ class DatabaseSeeder extends Seeder
     solutionSeeder::class
 ]
      );
-        
+     $Problemuser=User::all();
+     $Problemuser=$Problemuser[1];
+     Problem::factory(33)->create([ 
+    'user_id'=>$Problemuser->id,
+    'author'=>$Problemuser->username
+     ]);   
     }
 }

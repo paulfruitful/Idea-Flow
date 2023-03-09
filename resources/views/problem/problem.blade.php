@@ -10,23 +10,23 @@
 <body>
     <x-navbar/>
     <div class="flex flex-col">
-    <x-solution-hero :solution="$solution" />
+    <x-problem-hero :problem="$problem" />
     
 </div>
 
 <div>
- <x-solution-description :solution="$solution" :image="$image"/>
+ <x-problem-description :problem="$problem" :image="$image"/>
 </div>
 <div>
-  <x-solution-reaction :solution="$solution" :unliked="$unliked" :liked="$liked"  />
+  <x-problem-reaction :problem="$problem" :unliked="$unliked" :liked="$liked" />
   @php
       
   @endphp
 </div>
 <div>
-  <x-comments :comments="$solution->solutionComment"/>
+  <x-comments :comments="$idea->idea_comment"/>
 </div>
-<x-solution-comment-form :id="$solution->id"/>
+<x-comment-form :id="$idea->id"/>
  <div>
   <x-footer/>
  </div>

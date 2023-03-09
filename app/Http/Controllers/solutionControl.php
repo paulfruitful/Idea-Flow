@@ -13,7 +13,7 @@ class solutionControl extends Controller
     public function all(){
         
         return view('pool.solution',[
-            'solutions'=>Solution::where('privacy','true')->latest()->paginate(8)
+            'solutions'=>Solution::recent()
         ]);
     }
 
@@ -126,7 +126,7 @@ public function comment(Solution $solution, Request $request){
 }
 
 public function like(Solution $solution){
-    $check_id=$solution->reaction->where('user_id',auth()->id());
+    $check_id=$solution->check_reaction();
   
  
     if(count($check_id)>0){

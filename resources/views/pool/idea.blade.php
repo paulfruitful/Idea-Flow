@@ -15,7 +15,7 @@
       <div class=" justify-self-center m-auto">
       <div class="m-auto flex flex-col">
       <p class="text-3xl lg:text-5xl text-white m-auto font-bold "><span class="">Get Inspired</span> </p>
-      <p class="text-md lg:text-2xl font-bold m-auto p-6 mb-4" style="color: #ffffff">Implement Ideas</p>
+      <p class="text-xl lg:text-2xl italic m-auto p-6 mb-4" style="color: #ffffff">Implement Ideas</p>
       <div class="justify-items-center flex flex-row m-auto">
      <a href="/create/idea" class="p-4 m-auto hover:shadow-md hover:p-3 text-md text-gray-800 flex flex-row font-bold border-solid shadow-xl rounded-md bg-black text-white" >New Idea</a>
       

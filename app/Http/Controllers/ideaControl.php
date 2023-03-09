@@ -14,13 +14,13 @@ class ideaControl extends Controller
 public function all(){
    
     return view('pool.idea',[
-        'ideas'=>Idea::where('privacy','true')->latest()->paginate(8),
+        'ideas'=>Idea::recent(),
     ]);
 }
 
 public function idea(Idea $idea){
     
-    $check_id=$idea->reaction->where('user_id',auth()->id());
+    $check_id=$idea->check_reaction();
     if(count($check_id)>0){
     if(preg_match('/images/i',$idea->image)){
         return view('idea.idea',[

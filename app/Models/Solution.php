@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\User;
 use App\Models\solutionComment;
 use App\Models\solutionReaction;
+use Illuminate\Support\Facades\DB;
 use Database\Factories\solutionFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
@@ -44,4 +45,14 @@ protected static function newFactory(){
    return solutionFactory::new();
 }
 
+public static function recent(){
+   return Solution::where('privacy','true')->latest()->limit(20)->paginate(5);
+ }
+ public function check_reaction(){
+   return $this->reaction->where('user_id',auth()->id());
+ }
+ public static function trending(){
+  return DB::table('solutions')->orderBy('upvote','desc')->limit(5)->get();
+ }
+ 
 }

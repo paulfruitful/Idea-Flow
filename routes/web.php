@@ -14,9 +14,11 @@ use App\Models\Idea;
 */
 use App\Models\Solution;
 use App\Http\Controllers\ideaControl;
+use App\Http\Controllers\problemControl;
 use App\Http\Controllers\userControl;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\solutionControl;
+use App\Models\Problem;
 
 //Primary User Routes
 Route::get('/', function () {
@@ -25,8 +27,12 @@ Route::get('/', function () {
 
 Route::get('/pools', function(){
     return view('pool.pools',[
-        'ideas'=>Idea::where('privacy','true')->latest()->paginate(8),
-        'solutions'=>Solution::where('privacy','true')->latest()->paginate(8)
+        'ideas'=>Idea::recent(),
+        'solutions'=>Solution::recent(),
+        'topIdeas'=>Idea::trending(),
+        'topSolutions'=>Solution::trending(),
+        'problems'=>Problem::recent(),
+        'topProblems'=>Problem::trending(),
     ]);
 });
 Route::get('/register',[userControl::class,'create']);
@@ -37,44 +43,58 @@ Route::post('/login',function(){
 });
 Route::post('/login',[userControl::class,'login']);
 Route::get('/logout',[userControl::class,'logout']);
-//Idea Routes
 
-Route::prefix('create')->group(
+
+//Get Routes for Solutions
+Route::get('/pools/solutions',[solutionControl::class,'all']);
+Route::get('/create/solution',[solutionControl::class,'create']);
+
+//Post Route for Solution
+Route::post('/create/solution',[solutionControl::class,'store']);
+
+//Get Routes for Ideas
+Route::get('/pools/ideas',[ideaControl::class,'all']);
+
+//Post Idea Routes
+Route::prefix('create')->middleware('auth')->group(
     function(){
 
 Route::get('/idea',[ideaControl::class,'create']);
 Route::post('/idea',[ideaControl::class,'store']);
     }
 );
-Route::get('/pools/solutions',[solutionControl::class,'all']);
-Route::get('/create/solution',[solutionControl::class,'create']);
 
-Route::post('/create/solution',[solutionControl::class,'store']);
-Route::get('/pools/ideas',[ideaControl::class,'all']);
+//Problem Get Routes
+Route::get('/pools/problems',[problemControl::class,'all']);
+Route::get('/problems/{problem}/',[problemControl::class,'problem']);
+Route::get('/create/problem',[problemControl::class,'create']);
 
+//Problem Post Routes
+Route::post('/create/problem',[problemControl::class,'store']);
+//Solution Routes
 Route::get('/solutions/{solution}',[solutionControl::class,'solution']);
+Route::get('/solutions/{solution}/edit',[solutionControl::class,'edit'])->middleware('auth');
+Route::post('/solutions/{solution}/update',[solutionControl::class, 'update'])->middleware('auth');
+Route::get('/solutions/{solution}/delete',[solutionControl::class,'delete'])->middleware('auth');
+Route::post('/solutions/{solution}/comment',[solutionControl::class,'comment'])->middleware('auth');
+Route::get('/solutions/{solution}/like',[solutionControl::class,'like'])->middleware('auth');
 
-Route::get('/solutions/{solution}/edit',[solutionControl::class,'edit']);
-Route::post('/solutions/{solution}/update',[solutionControl::class, 'update']);
-Route::get('/solutions/{solution}/delete',[solutionControl::class,'delete']);
-Route::post('/solutions/{solution}/comment',[solutionControl::class,'comment']);
-Route::get('/solutions/{solution}/like',[solutionControl::class,'like']);
-
+//Idea Routes
 Route::get('/ideas/{idea}',[ideaControl::class,'idea']);
-Route::get('/idea/{idea}/edit',[ideaControl::class,'edit']);
-Route::post('/idea/{idea}/update',[ideaControl::class, 'update']);
-Route::get('/idea/{idea}/delete',[ideaControl::class,'delete']);
-Route::post('/idea/{idea}/comment',[ideaControl::class,'comment']);
-Route::get('/idea/{idea}/like',[ideaControl::class,'like']);
+Route::get('/idea/{idea}/edit',[ideaControl::class,'edit'])->middleware('auth');
+Route::post('/idea/{idea}/update',[ideaControl::class, 'update'])->middleware('auth');
+Route::get('/idea/{idea}/delete',[ideaControl::class,'delete'])->middleware('auth');
+Route::post('/idea/{idea}/comment',[ideaControl::class,'comment'])->middleware('auth');
+Route::get('/idea/{idea}/like',[ideaControl::class,'like'])->middleware('auth');
 
 //User Routes
 Route::get('/user/{user}',function(){
     return view('user.profile');
-});
+})->middleware('auth');
 
 Route::get('/user/{user}/profile',function(){
     return view('user.edit');
-});
+})->middleware('auth');
 
 Route::post('/user/{user}',[userControl::class,'editProfile']);
 

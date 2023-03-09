@@ -4,7 +4,8 @@
  @forelse ($solutions as $solution)
  <x-solution :solution="$solution"/>
  @empty
-     <p>No Idea</p>
+    
+ <p class="text-center text-gray-500 text-xl">--No Solutions--</p>
  @endforelse
 
 
