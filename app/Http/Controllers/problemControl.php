@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Problem;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class problemControl extends Controller
@@ -25,14 +26,14 @@ class problemControl extends Controller
             //Checks whether the image is locally stored
         if(preg_match('/images/i',$problem->image)){
             return view('problem.problem',[
-            'idea'=>$problem,
+            'problem'=>$problem,
             'liked'=>true, //Returns true if $check_id is greater than 0
             'unliked'=>false, //Returns false if $check_id is  equal 0
             "image"=>"/storage/".$problem->image //Returns this if the storage is local
         ]);
     }else{
         return view('problem.problem',[
-            'idea'=>$problem,
+            'problem'=>$problem,
             'liked'=>true,
             'unliked'=>false,
             "image"=>$problem->image
@@ -41,14 +42,14 @@ class problemControl extends Controller
     }else{
         if(preg_match('/images/i',$problem->image)){
         return view('problem.problem',[
-            'idea'=>$problem,
+            'problem'=>$problem,
             'liked'=>false,
             'unliked'=>true,
             'image'=>"/storage/".$problem->image
         ]);
     }else{
         return view('problem.problem',[
-            'idea'=>$problem,
+            'problem'=>$problem,
             'liked'=>false,
             'unliked'=>true,
             "image"=>$problem->image
@@ -69,6 +70,7 @@ class problemControl extends Controller
         'image'=>'required'
     ]);
    $form_data['upvote']=0;
+   $form_data['id']=Str::uuid();
    $form_data['views']=0;
     $form_data["user_id"]=auth()->id();
     $form_data["author"]=auth()->user()->username;

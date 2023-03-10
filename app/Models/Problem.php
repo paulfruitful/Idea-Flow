@@ -23,17 +23,11 @@ class Problem extends Model
   'tags',
   'upvote',
   'user_id',
-  'privacy'
+  'privacy',
+  
 
  ];
- protected static function boot()
- {
-     parent::boot();
 
-     static::creating(function ($model) {
-         $model->{$model->getKeyName()} = Str::uuid()->toString();
-     });
- }
  protected static function newFactory(){
   return problemFactory::new();
 }
@@ -42,7 +36,7 @@ class Problem extends Model
     }
 
     public function check_reaction(){
-        return $this->reaction->where('user_id',auth()->id());
+      return $this->reactions->where('user_id',auth()->id());
       }
 
     public static function trending(){

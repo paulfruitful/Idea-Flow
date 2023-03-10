@@ -24,9 +24,9 @@
   @endphp
 </div>
 <div>
-  <x-comments :comments="$idea->idea_comment"/>
+  <x-comments :comments="$problem->comments"/>
 </div>
-<x-comment-form :id="$idea->id"/>
+<x-comment-form :id="$problem->id"/>
  <div>
   <x-footer/>
  </div>
