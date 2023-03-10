@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\SolutionLikeJob;
 use App\Models\Solution;
 use Illuminate\Http\Request;
 use App\Models\solutionComment;
@@ -135,14 +136,7 @@ public function like(Solution $solution){
      $solution->save();
      return back()->with('unliked',true);
     }else{
-      $data=[
-         "user_id"=>auth()->id(),
-         "solution_id"=>$solution->id ];
- 
-     $react=solutionReaction::create($data);
- 
-     $solution->upvote+=1;
-     $solution->save();
+      dispatch(new SolutionLikeJob($solution));
      return back()->with('liked',true);
      }
  

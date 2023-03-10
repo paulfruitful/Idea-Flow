@@ -9,7 +9,6 @@ class problemControl extends Controller
 {
     //
     public function all(){
-   
         return view('pool.problem',[
             'problems'=>Problem::recent(),
         ]);
