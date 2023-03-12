@@ -68,9 +68,9 @@ Route::post('/idea',[ideaControl::class,'store']);
 Route::get('/pools/problems',[problemControl::class,'all']);
 Route::get('/problems/{problem}/',[problemControl::class,'problem']);
 Route::get('/create/problem',[problemControl::class,'create']);
-
 Route::get('/problems/{problem}/like',[problemControl::class,'like'])->middleware('auth');
 Route::get('/problems/{problem}/edit',[problemControl::class,'edit'])->middleware('auth');
+Route::get('/problems/{problem}/delete',[problemControl::class,'delete'])->middleware('auth');
 
 //Problem Post Routes
 Route::post('/create/problem',[problemControl::class,'store']);
