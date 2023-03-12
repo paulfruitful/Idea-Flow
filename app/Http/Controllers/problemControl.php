@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Problem;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Models\ProblemReactions;
 
 class problemControl extends Controller
 {
@@ -82,4 +83,27 @@ class problemControl extends Controller
 
     return redirect('/pools/problems')->with('success','Idea Shared Successfully');
    }
+ 
+   public function like(Problem $problem){
+    $check_id=$problem->check_reaction();
+  
+ 
+    if(count($check_id)>0){
+     $problem->reaction->where('user_id', auth()->id())->first()->delete();
+     $problem->upvote-=1;
+     $problem->save();
+     return back()->with('unliked',true);
+    }else{
+        $data=[
+            "user_id"=>auth()->id(),
+            "problem_id"=>$problem->id ];
+    
+        $react=ProblemReactions::create($data);
+    
+        $problem->upvote+=1;
+        $problem->save();
+     return back()->with('liked',true);
+     }
+ 
+ }
 }
