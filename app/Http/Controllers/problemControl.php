@@ -106,4 +106,9 @@ class problemControl extends Controller
      }
  
  }
+
+ public function delete(Problem $problem){
+    $problem->delete();
+    return redirect('/pools/problems');
+ }
 }
