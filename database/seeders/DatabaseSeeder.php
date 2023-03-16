@@ -23,16 +23,19 @@ class DatabaseSeeder extends Seeder
     'author'=>$user->username,
      'email'=>$user->email
      ]);
-     $this->call(
-[
-    solutionSeeder::class
-]
-     );
-     $Problemuser=User::all();
+
+  $Problemuser=User::all();
      $Problemuser=$Problemuser[1];
      Problem::factory(33)->create([ 
     'user_id'=>$Problemuser->id,
     'author'=>$Problemuser->username
      ]);   
-    }
+    
+     $this->call(
+[
+    solutionSeeder::class
+]
+     );
+}
+   
 }
