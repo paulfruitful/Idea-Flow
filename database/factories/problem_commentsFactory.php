@@ -17,7 +17,8 @@ class problem_commentsFactory extends Factory
     public function definition()
     {
         return [
-            //
+           'comment'=>implode('',fake()->sentences(3)),
+           'username'=>fake()->name()
         ];
     }
 }
