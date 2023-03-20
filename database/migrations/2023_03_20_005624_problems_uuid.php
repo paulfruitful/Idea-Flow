@@ -13,7 +13,19 @@ return new class extends Migration
      */
     public function up()
     {
-        //
+        Schema::disableForeignKeyConstraints();
+        Schema::table('problems',function(Blueprint $table){
+           $table->uuid('id')->change();
+        });
+        
+        Schema::table('problem_comments',function(Blueprint $table){
+            $table->foreignUuid('problem_id')->change();
+        });
+       
+      
+        Schema::table('problem_reactions',function(Blueprint $table){
+            $table->foreignUuid('problem_id')->change();
+        });
     }
 
     /**

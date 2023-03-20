@@ -8,12 +8,13 @@ use App\Models\ProblemComments;
 use App\Models\ProblemReactions;
 use Illuminate\Support\Facades\DB;
 use Database\Factories\problemFactory;
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Problem extends Model
 {
-    use HasFactory;
+    use HasFactory,HasUuids;
  protected $fillable=[
   'title',
   'description',
