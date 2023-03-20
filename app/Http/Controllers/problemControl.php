@@ -141,6 +141,6 @@ public function update(Problem $problem,Request $request){
  $problem->update($form_data);
     
 
-    return redirect('/problem/'.$problem->id)->with('success','Problem Shared Successfully');
+    return redirect('/problems/'.$problem->id)->with('success','Problem Shared Successfully');
 }
 }
