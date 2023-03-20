@@ -9,7 +9,6 @@ use App\Models\Problem;
 use App\Models\ProblemComments;
 use Illuminate\Database\Seeder;
 use \App\Models\User;
-use Database\Factories\problem_commentsFactory;
 
 class DatabaseSeeder extends Seeder
 {
@@ -34,9 +33,6 @@ class DatabaseSeeder extends Seeder
     'author'=>$Problemuser->username
      ]);   
     
-     $problem=$problem[rand(0,12)]->comments->factory(18)->create([
-         'problem_id'=>$problem->id
-     ]);
    
 
      $this->call(
