@@ -72,7 +72,6 @@ class problemControl extends Controller
         'image'=>'required'
     ]);
    $form_data['upvote']=0;
-   $form_data['id']=Str::uuid();
    $form_data['views']=0;
     $form_data["user_id"]=auth()->id();
     $form_data["author"]=auth()->user()->username;
@@ -124,5 +123,24 @@ class problemControl extends Controller
      
     return back()->with('success', 'done');
 }
+public function edit(Problem $problem){
+     return view('problem.edit',[
+        'problem'=>$problem
+     ]);
+}
 
+public function update(Problem $problem,Request $request){
+    $form_data=$request->validate([
+        'title'=>'max:30',
+        'description',
+        'privacy'
+    ]);
+    if($request->hasFile('image')){
+        $form_data["image"]=$request->file('image')->store('images','public');
+    }
+ $problem->update($form_data);
+    
+
+    return redirect('/problem/'.$problem->id)->with('success','Problem Shared Successfully');
+}
 }

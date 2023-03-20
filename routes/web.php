@@ -75,6 +75,7 @@ Route::get('/problem/{problem}/delete',[problemControl::class,'delete'])->middle
 
 //Problem Post Routes
 Route::post('/create/problem',[problemControl::class,'store']);
+Route::post('problem/{problem}/edit',[problemControl::class,'update']);
 //Solution Routes
 Route::get('/solutions/{solution}',[solutionControl::class,'solution']);
 Route::get('/solutions/{solution}/edit',[solutionControl::class,'edit'])->middleware('auth');
