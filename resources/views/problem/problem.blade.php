@@ -26,7 +26,7 @@
 <div>
   <x-comments :comments="$problem->comments"/>
 </div>
-<x-comment-form :id="$problem->id"/>
+<x-problem-comment-form :id="$problem->id"/>
  <div>
   <x-footer/>
  </div>

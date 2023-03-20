@@ -69,6 +69,7 @@ Route::get('/pools/problems',[problemControl::class,'all']);
 Route::get('/problems/{problem}/',[problemControl::class,'problem']);
 Route::get('/create/problem',[problemControl::class,'create']);
 Route::get('/problem/{problem}/like',[problemControl::class,'like'])->middleware('auth');
+Route::post('/problem/{problem}/comment',[problemControl::class,'comment']);
 Route::get('/problem/{problem}/edit',[problemControl::class,'edit'])->middleware('auth');
 Route::get('/problem/{problem}/delete',[problemControl::class,'delete'])->middleware('auth');
 

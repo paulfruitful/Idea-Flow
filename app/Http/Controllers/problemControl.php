@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Problem;
+use App\Models\ProblemComments;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\ProblemReactions;
@@ -111,4 +112,17 @@ class problemControl extends Controller
     $problem->delete();
     return redirect('/pools/problems');
  }
+
+ public function comment(Problem $problem, Request $request){
+    $formData=$request->validate([
+        'comment'=>'required'
+    ]);
+    $formData["problem_id"]=$problem->id;
+    $formData["username"]=auth()->user()->username;
+  
+    ProblemComments::create($formData);
+     
+    return back()->with('success', 'done');
+}
+
 }

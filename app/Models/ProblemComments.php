@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class ProblemComments extends Model
 {
     use HasFactory;
-    protected $fillables=[
+    protected $fillable=[
       'problem_id',
       'comment',
       'username'
