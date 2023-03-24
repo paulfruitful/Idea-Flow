@@ -30,7 +30,7 @@
 
   <div class="m-6 mt-12">
     <h1 class="font-semibold text-center text-3xl">See Similar Ideas</h1>
-    <x-latest-ideas :ideas="$similar"/>
+    <x-latest-solutions :solutions="$similar"/>
   </div>
   
  <div>
