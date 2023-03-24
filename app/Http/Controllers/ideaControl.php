@@ -22,21 +22,22 @@ public function idea(Idea $idea){
     
     $check_id=$idea->check_reaction();
     $similar=$idea->similar();
-    dd($similar);
     if(count($check_id)>0){
     if(preg_match('/images/i',$idea->image)){
         return view('idea.idea',[
         'idea'=>$idea,
         'liked'=>true,
         'unliked'=>false,
-        "image"=>"/storage/".$idea->image
+        "image"=>"/storage/".$idea->image,
+        "similar"=>$similar
     ]);
 }else{
     return view('idea.idea',[
         'idea'=>$idea,
         'liked'=>true,
         'unliked'=>false,
-        "image"=>$idea->image
+        "image"=>$idea->image,
+        "similar"=>$similar
     ]);
 }
 }else{
@@ -45,14 +46,16 @@ public function idea(Idea $idea){
         'idea'=>$idea,
         'liked'=>false,
         'unliked'=>true,
-        'image'=>"/storage/".$idea->image
+        'image'=>"/storage/".$idea->image,
+        "similar"=>$similar
     ]);
 }else{
     return view('idea.idea',[
         'idea'=>$idea,
         'liked'=>false,
         'unliked'=>true,
-        "image"=>$idea->image
+        "image"=>$idea->image,
+        "similar"=>$similar
     ]);
 }
 }
