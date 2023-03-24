@@ -21,6 +21,8 @@ public function all(){
 public function idea(Idea $idea){
     
     $check_id=$idea->check_reaction();
+    $similar=$idea->similar();
+    dd($similar);
     if(count($check_id)>0){
     if(preg_match('/images/i',$idea->image)){
         return view('idea.idea',[

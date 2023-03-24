@@ -55,4 +55,7 @@ public static function trending(){
   return DB::table('ideas')->orderBy('upvote','desc')->limit(5)->get();
 }
 
+public function similar(){
+return Db::table('ideas')->where('plan','like',$this->plan)->orderBy('upvote','desc')->limit(5)->get();
+}
 }
