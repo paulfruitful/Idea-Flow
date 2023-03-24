@@ -27,6 +27,12 @@
   <x-comments :comments="$solution->solutionComment"/>
 </div>
 <x-solution-comment-form :id="$solution->id"/>
+
+  <div class="m-6 mt-12">
+    <h1 class="font-semibold text-center text-3xl">See Similar Ideas</h1>
+    <x-latest-ideas :ideas="$similar"/>
+  </div>
+  
  <div>
   <x-footer/>
  </div>

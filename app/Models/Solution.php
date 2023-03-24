@@ -54,5 +54,7 @@ public static function recent(){
  public static function trending(){
   return DB::table('solutions')->orderBy('upvote','desc')->limit(5)->get();
  }
- 
+ public function similar(){
+   return DB::table('solutions')->where('sector','like',$this->sector)->orderBy('upvote','desc')->get();
+ }
 }

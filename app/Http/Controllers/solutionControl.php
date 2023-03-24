@@ -27,14 +27,16 @@ class solutionControl extends Controller
             'solution'=>$solution,
             'liked'=>true,
             'unliked'=>false,
-            "image"=>"/storage/".$solution->image
+            "image"=>"/storage/".$solution->image,
+            "similar"=>$solution->similar()
         ]);
     }else{
         return view('solution.solution',[
             'solution'=>$solution,
             'liked'=>true,
             'unliked'=>false,
-            "image"=>$solution->image
+            "image"=>$solution->image,
+            "similar"=>$solution->similar()
         ]);
     }
     }else{
@@ -43,14 +45,16 @@ class solutionControl extends Controller
             'solution'=>$solution,
             'liked'=>false,
             'unliked'=>true,
-            'image'=>"/storage/".$solution->image
+            'image'=>"/storage/".$solution->image,
+            "similar"=>$solution->similar()
         ]);
     }else{
         return view('solution.solution',[
             'solution'=>$solution,
             'liked'=>false,
             'unliked'=>true,
-            "image"=>$solution->image
+            "image"=>$solution->image,
+            "similar"=>$solution->similar()
         ]);
     }
     }
