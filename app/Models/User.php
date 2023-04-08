@@ -30,7 +30,8 @@ class User extends Authenticatable
         'country',
         'ip',
         'followers',
-        'avatar'
+        'avatar',
+        'cover_photo'
     ];
   public function idea(){
     return $this->hasMany(Idea::class,'user_id');

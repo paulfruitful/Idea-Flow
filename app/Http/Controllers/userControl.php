@@ -83,13 +83,13 @@ class userControl extends Controller
 
         return abort('403');
     }
-    public function follow(User $user){
+  /*  public function follow(User $user){
      $user->followers+=1;
      $user->save();    
 
     
     return back()->with('success','User Profile Updated');
- }
+ }*/
     public function ideas(User $user){
         dd($user->ideas->all());
        return view('user.ideas',[
