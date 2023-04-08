@@ -9,4 +9,7 @@
 </head>
 <body>
     <x-navbar/>
+    <div>
+      <x-profile-header/>
+    </div>
 </body>
