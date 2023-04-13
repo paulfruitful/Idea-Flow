@@ -23,12 +23,13 @@
       </div>
     </div>
   -->
-  <div class="text-center m-6 mt-8 font-bold text-4xl">Solution Pool</div>
-  
   <div class="grid justify-self-stretch">
     <div class="flex">
       <x-solution-tags/>
     </div>
+  <div class="text-center m-6 mt-8 font-bold text-4xl">Solution Pool</div>
+  
+  
   </div>
     <x-latest-solutions :solutions="$solutions"/>
  <div class="p-6 m-6">{{$solutions->links()}}</div>  
