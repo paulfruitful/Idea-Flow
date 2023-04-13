@@ -10,7 +10,7 @@
 <body class="block">
  
     <x-navbar/>
-    <div class="block">
+   <!-- <div class="block">
     <div class="grid justify-self-stretch justify-items-center mt-3 mb-6  bg-gradient-to-r from-cyan-500 to-blue-700 w-full" style="height: 400px">
       <div class=" justify-self-center m-auto">
       <div class="m-auto flex flex-col">
@@ -22,7 +22,7 @@
       </div>
       </div>
       </div>
-    </div>
+    </div>-->
   <div class="text-center m-6 mt-8 font-bold text-3xl">Idea Pool</div>
     <x-latest-ideas :ideas="$ideas"/>
  <div class="p-6 m-6">{{$ideas->links()}}</div>  

@@ -10,8 +10,7 @@
 <body class="block">
  
     <x-navbar/>
-    <div class="block">
-    <div class="grid justify-self-stretch justify-items-center mt-3 mb-6  bg-gradient-to-r from-green-300 to-green-700 w-full" style="height: 400px">
+   <!-- <div class="grid justify-self-stretch justify-items-center mt-3 mb-6  bg-gradient-to-r from-green-300 to-green-700 w-full" style="height: 400px">
       <div class=" justify-self-center m-auto">
       <div class="m-auto flex flex-col">
       <p class="text-2xl lg:text-5xl text-white m-auto font-bold "><span class="">Discover Solutions</span> </p>
@@ -23,6 +22,7 @@
       </div>
       </div>
     </div>
+  -->
   <div class="text-center m-6 mt-8 font-bold text-4xl">Solution Pool</div>
     <x-latest-solutions :solutions="$solutions"/>
  <div class="p-6 m-6">{{$solutions->links()}}</div>  
