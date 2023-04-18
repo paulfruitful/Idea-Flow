@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Jobs\SolutionLikeJob;
 use App\Models\Solution;
 use Illuminate\Http\Request;
+use App\Jobs\SolutionLikeJob;
 use App\Models\solutionComment;
 use App\Models\solutionReaction;
+use Illuminate\Support\Facades\DB;
 
 class solutionControl extends Controller
 {
@@ -15,6 +16,11 @@ class solutionControl extends Controller
         $solutions=Solution::recent();
         if($req->tag){
             $solutions=Solution::where('sector',$req->tag)->paginate(5);
+            
+        }
+
+        if($req->search){
+            $solutions=DB::table('solutions')->where('sector','like',$req->search)->orderBy('upvote','desc')->paginate(5);
         }
         
         return view('pool.solution',compact('solutions'));
