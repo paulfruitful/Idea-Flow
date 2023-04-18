@@ -11,11 +11,13 @@ use App\Models\solutionReaction;
 class solutionControl extends Controller
 {
     //
-    public function all(){
+    public function all(Request $req){
+        $solutions=Solution::recent();
+        if($req->tag){
+            $solutions=Solution::where('sector',$req->tag)->get();
+        }
         
-        return view('pool.solution',[
-            'solutions'=>Solution::recent()
-        ]);
+        return view('pool.solution',compact('solutions'));
     }
 
     public function solution(Solution $solution){
