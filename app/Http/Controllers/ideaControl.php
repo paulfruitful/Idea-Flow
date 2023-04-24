@@ -3,19 +3,27 @@
 namespace App\Http\Controllers;
 
 use App\Models\Idea;
-use App\Models\Idea_comment;
 use App\Models\reaction;
 use App\Models\Solution;
+use App\Models\Idea_comment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ideaControl extends Controller
 {
     //
-public function all(){
-   
-    return view('pool.idea',[
-        'ideas'=>Idea::recent(),
-    ]);
+public function all(Request $req){
+   $ideas=Idea::recent();
+   $solutions=Idea::recent();
+   if($req->tag){
+       $solutions=Solution::where('plan',$req->tag)->paginate(5);
+       
+   }
+
+   if($req->search){
+       $solutions=Idea::where('plan','like',$req->search)->orderBy('upvote','desc')->paginate(5);
+   }
+    return view('pool.idea',compact('ideas'));
 }
 
 public function idea(Idea $idea){
