@@ -21,7 +21,7 @@ public function all(Request $req){
    }
 
    if($req->search){
-       $ideas=Idea::where('plan','like',$req->search)->orderBy('upvote','desc')->paginate(5);
+       $ideas=Idea::where('title','like',$req->search)->orderBy('upvote','desc')->paginate(5);
    }
     return view('pool.idea',compact('ideas'));
 }
