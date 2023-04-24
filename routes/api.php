@@ -28,7 +28,7 @@ Route::get('/ideas',function(){
         $topIdeas
 
     ];
-   return $res;
+   return response('',200)->json($res);
 });
 
 Route::get('/ideas/{idea}',function(Idea $idea){
