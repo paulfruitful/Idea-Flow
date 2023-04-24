@@ -24,11 +24,12 @@ Route::get('/ideas',function(){
     $ideas=json_encode(Idea::where('privacy','true')->latest()->get());
     $topIdeas=json_encode(Idea::trending());
     $res=[
-        $ideas,
-        $topIdeas
+        "ideas"=>$ideas,
+        "topIdeas"=>$topIdeas
 
     ];
-   return response('',200)->json($res);
+    json_encode($res);
+   return $res;
 });
 
 Route::get('/ideas/{idea}',function(Idea $idea){
