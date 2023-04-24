@@ -13,7 +13,7 @@ class problemControl extends Controller
     //
     public function all(Request $req){
         $problems=Problem::recent();
-        if($req->tags){
+        if($req->tag){
             $problems=Problem::where('tags', $req->tags)->orderBy('upvote','desc')->paginate(5);
         }
         if($req->search){
