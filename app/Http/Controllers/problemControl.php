@@ -11,10 +11,12 @@ use App\Models\ProblemReactions;
 class problemControl extends Controller
 {
     //
-    public function all(){
-        return view('pool.problem',[
-            'problems'=>Problem::recent(),
-        ]);
+    public function all(Request $req){
+        $problems=Problem::recent();
+        if($req->tags){
+            $problems=Problem::where('tags', $req->tags)->orderBy('upvote','desc')->paginate(5);
+        }
+        return view('pool.problem',compact('problems'));
     }
     
     public function problem(Problem $problem){
