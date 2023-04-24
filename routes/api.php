@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Idea;
+use App\Models\Solution;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -28,4 +29,8 @@ Route::get('/topIdeas',function(){
  
 Route::get('/ideas/{idea}',function(Idea $idea){
     return json_decode($idea);
+});
+
+Route::get('/solutions',function(){
+    return json_encode(Solution::where('privacy','true')->orderBy('upvote','desc')->latest()->get());
 });
