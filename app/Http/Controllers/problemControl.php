@@ -16,6 +16,9 @@ class problemControl extends Controller
         if($req->tags){
             $problems=Problem::where('tags', $req->tags)->orderBy('upvote','desc')->paginate(5);
         }
+        if($req->search){
+            $problems=Problem::where('tags', $req->tags)->orderBy('upvote','desc')->paginate(5);
+        }
         return view('pool.problem',compact('problems'));
     }
     
