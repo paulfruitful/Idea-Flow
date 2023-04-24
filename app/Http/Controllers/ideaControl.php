@@ -16,12 +16,12 @@ public function all(Request $req){
    $ideas=Idea::recent();
    $solutions=Idea::recent();
    if($req->tag){
-       $solutions=Solution::where('plan',$req->tag)->paginate(5);
+       $ideas=Solution::where('plan',$req->tag)->paginate(5);
        
    }
 
    if($req->search){
-       $solutions=Idea::where('plan','like',$req->search)->orderBy('upvote','desc')->paginate(5);
+       $ideas=Idea::where('plan','like',$req->search)->orderBy('upvote','desc')->paginate(5);
    }
     return view('pool.idea',compact('ideas'));
 }
