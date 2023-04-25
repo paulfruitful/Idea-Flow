@@ -21,14 +21,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/ideas',function(){
-    $ideas=json_encode(Idea::where('privacy','true')->latest()->get());
-    $topIdeas=json_encode(Idea::trending());
+    $ideas=Idea::where('privacy','true')->latest()->get();
+    $topIdeas=Idea::trending();
     $res=[
         "ideas"=>$ideas,
         "topIdeas"=>$topIdeas
 
     ];
-    json_encode($res);
    return $res;
 });
 
