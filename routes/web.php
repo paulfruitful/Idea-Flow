@@ -12,13 +12,14 @@ use App\Models\Idea;
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Models\User;
+use App\Models\Problem;
 use App\Models\Solution;
 use App\Http\Controllers\ideaControl;
-use App\Http\Controllers\problemControl;
 use App\Http\Controllers\userControl;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\problemControl;
 use App\Http\Controllers\solutionControl;
-use App\Models\Problem;
 
 //Primary User Routes
 Route::get('/', function () {
@@ -94,11 +95,13 @@ Route::post('/idea/{idea}/comment',[ideaControl::class,'comment'])->middleware('
 Route::get('/idea/{idea}/like',[ideaControl::class,'like'])->middleware('auth');
 
 //User Routes
-Route::get('/user/{user}',function(){
+Route::get('/user/{user}',function($name){ 
+    $user=User::where('username',$name)->get();
     return view('user.profile');
 })->middleware('auth');
 
 Route::get('/user/{user}/profile',function(){
+  
     return view('user.edit');
 })->middleware('auth');
 
