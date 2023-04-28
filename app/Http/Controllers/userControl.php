@@ -15,6 +15,7 @@ class userControl extends Controller
         return view('user.register');
     }
     //Store users profile
+    
     public function store(Request $request){
      $formData=$request->validate(
         [
@@ -23,8 +24,8 @@ class userControl extends Controller
           'password'=>['required','min:6','confirmed'],
           'username'=>'required|min:8|unique:users'
 
-        ]
-        );
+        ]);
+
         $form_data['ip']=$request->ip();
         $form_data['followers']=1;
         $formData['password']=bcrypt($formData['password']);

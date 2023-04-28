@@ -104,12 +104,13 @@ public function store(Request $request){
 
 public function update(Idea $idea,Request $request){
     $form_data=$request->validate([
-        'title'=>'max:30',
-        'tagline'=>'max:120',
-        'description',
-        'sponsor',
-        'plan',
-        'privacy'
+        'title'=>'required|max:30',
+        'tagline'=>'required|max:120',
+        'description'=>'required',
+        'sponsor'=>'required',
+        'plan'=>'required',
+        'privacy'=>'required',
+        'image'=>'mimes:jpeg,jpg,png,gif'
     ]);
 
  $idea->update($form_data);

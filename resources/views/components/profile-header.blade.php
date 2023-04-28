@@ -7,7 +7,7 @@
 
 <!--Profile Photo-->
 <div class="z-50 justify-self-start justify-items-center p-6">
-   <img src={{auth()->user()->avatar?auth()->user()->avatar:'d emo pic'}}  class="p-6 justify-self-start rounded-lg z-50">
+   <img class="p-6 justify-self-start rounded-lg z-2" height="100" width="200" src={{auth()->user()->avatar?auth()->user()->avatar:'https://i.ibb.co/KLLtzGc/avatar-1.png'}} >
 
 </div>
 
