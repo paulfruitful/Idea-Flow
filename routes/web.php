@@ -95,12 +95,9 @@ Route::post('/idea/{idea}/comment',[ideaControl::class,'comment'])->middleware('
 Route::get('/idea/{idea}/like',[ideaControl::class,'like'])->middleware('auth');
 
 //User Routes
-Route::get('/user/{user}',function($name){ 
-    $user=User::where('username',$name)->limit(1);
-    dd($user);
-    return view('user.profile',[
-        'user'=>$user
-    ]);
+Route::get('/user/{user}',function(){ 
+   
+    return view('user.profile');
 })->middleware('auth');
 
 Route::get('/user/{user}/profile',function(){

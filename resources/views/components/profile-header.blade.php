@@ -2,10 +2,9 @@
 <div class="grid p-8 justify-self-stretch relative w-full">
 
 
-@if ($user->id==auth()->id())
-    <span class="text-center text-2xl font-bold">{{auth()->user()->name}}</span>
+    <span class="text-center text-2xl font-bold">Your Profile</span>
 
-@endif    
+
 
 
 
