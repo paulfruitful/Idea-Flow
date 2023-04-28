@@ -96,8 +96,11 @@ Route::get('/idea/{idea}/like',[ideaControl::class,'like'])->middleware('auth');
 
 //User Routes
 Route::get('/user/{user}',function($name){ 
-    $user=User::where('username',$name)->get();
-    return view('user.profile');
+    $user=User::where('username',$name)->limit(1);
+    dd($user);
+    return view('user.profile',[
+        'user'=>$user
+    ]);
 })->middleware('auth');
 
 Route::get('/user/{user}/profile',function(){

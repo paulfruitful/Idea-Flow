@@ -10,6 +10,6 @@
 <body>
     <x-navbar/>
     <div>
-      <x-profile-header/>
+      <x-profile-header :user="$user"/>
     </div>
 </body>

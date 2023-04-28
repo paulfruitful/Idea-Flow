@@ -1,3 +1,4 @@
+@props('user')
 <div class="grid p-8 justify-self-stretch relative w-full">
 
 
