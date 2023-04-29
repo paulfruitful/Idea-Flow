@@ -8,11 +8,11 @@
 
 <!--Profile Photo-->
 <div class=" rounded-full border-solid z-40 lg:m-16 m-6 justify-self-center  justify-items-center ">
-   <img class="p-6 justify-self-center lg:p-3 bg-white shadow-lg rounded-full m-3 z-2" height="200" width="150" src={{auth()->user()->avatar?auth()->user()->avatar:'https://i.ibb.co/KLLtzGc/avatar-1.png'}} >
-   <div class="flex flex-col">
-   <span class="font-bold text-white text-2xl lg:text-3xl lg:m-3 m-6">{{auth()->user()->name}}</span>
+   <img class="p-6 justify-self-center lg:p-3 bg-white shadow-lg rounded-full ml-4 lg:ml-6 relative  z-2" height="200" width="150" src={{auth()->user()->avatar?auth()->user()->avatar:'https://i.ibb.co/KLLtzGc/avatar-1.png'}} >
+   <div class="flex flex-col justify-self-center relative">
+   <span class="font-bold text-white text-2xl lg:text-3xl lg:m-3 m-3">{{auth()->user()->name}}</span>
    @if (auth()->user()->username==request()->user)
-     <span class="text-md text-white p-6 font-bold italic">Followers: <span class="not-italic p-3">{{auth()->user()->followers?auth()->user()->followers:0}}</span></span>       
+     <span class="text-md lg:text-xl text-white lg:mx-12 mx-8 italic">Followers: <span class="not-italic">{{auth()->user()->followers?auth()->user()->followers:0}}</span></span>       
    @endif
 </div>
 </div>
