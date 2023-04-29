@@ -2,8 +2,6 @@
 <div class="grid p-8 justify-self-stretch relative w-full">
 
 
-    <span class="text-center text-2xl font-bold">Your Profile</span>
-
 
 
 
