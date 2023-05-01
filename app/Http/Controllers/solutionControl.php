@@ -15,7 +15,7 @@ class solutionControl extends Controller
     public function all(Request $req){
         $solutions=Solution::recent();
         if($req->tag){
-            $solutions=Solution::where('sector',$req->tag)->paginate(5);
+            $solutions=Solution::where('sector','LIKE','%'.$req->tag.'%')->paginate(5);
             
         }
 
