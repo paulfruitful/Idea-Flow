@@ -20,7 +20,10 @@ class solutionControl extends Controller
         }
 
         if($req->search){
-            $solutions=DB::table('solutions')->where('sector','like',$req->search)->orderBy('upvote','desc')->paginate(5);
+            $solutions=DB::table('solutions')->where('title','like','%'.$req->search .'%')
+            ->orWhere('author','LIKE', '%'.$req->search.'%')
+            ->orWhere('tagline','LIKE','%'.$req->search .'%')
+            ->orderBy('upvote','desc')->paginate(5);
         }
         
         return view('pool.solution',compact('solutions'));
