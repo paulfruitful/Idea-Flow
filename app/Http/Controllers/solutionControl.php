@@ -15,15 +15,18 @@ class solutionControl extends Controller
     public function all(Request $req){
         $solutions=Solution::recent();
         if($req->tag){
-            $solutions=Solution::where('sector','LIKE','%'.$req->tag.'%')->paginate(5);
+            $solutions=Solution::where('sector','LIKE','%'.$req->tag.'%')->orderBy('upvote','desc')->paginate(5);
+            return view('pool.solution',compact('solutions'));
             
         }
 
         if($req->search){
-            $solutions=DB::table('solutions')->where('title','like','%'.$req->search .'%')
+            $solutions=DB::table('solutions')->where('title','LIKE','%'.$req->search .'%')
             ->orWhere('author','LIKE', '%'.$req->search.'%')
             ->orWhere('tagline','LIKE','%'.$req->search .'%')
-            ->orderBy('upvote','desc')->paginate(5);
+            ->paginate(5);
+            return view('pool.solution',compact('solutions'));
+        
         }
         
         return view('pool.solution',compact('solutions'));
