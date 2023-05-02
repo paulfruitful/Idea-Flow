@@ -16,7 +16,7 @@ public function all(Request $req){
    $solutions=Idea::recent();
    if($req->tag){
        $ideas=Idea::where('plan','LIKE','%'.$req->tag.'%')->paginate(5);
-       
+       return view('pool.idea',compact('ideas'));
    }
 
    if($req->search){
@@ -24,8 +24,9 @@ public function all(Request $req){
        ->orWhere('author','LIKE', '%'.$req->search.'%')
        ->orWhere('tagline','LIKE','%'.$req->search .'%')
        ->orderBy('upvote','desc')->paginate(5);
+       return view('pool.idea',compact('ideas'));
    }
-    return view('pool.idea',compact('ideas'));
+   return view('pool.idea',compact('ideas'));
 }
 
 public function idea(Idea $idea){
