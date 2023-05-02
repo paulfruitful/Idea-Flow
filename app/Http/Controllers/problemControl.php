@@ -15,12 +15,14 @@ class problemControl extends Controller
         $problems=Problem::recent();
         if($req->tag){
             $problems=Problem::where('tags','LIKE','%'.$req->tag.'%')->orderBy('upvote','desc')->paginate(5);
+            return view('pool.problem',compact('problems'));
         }
         if($req->search){
             $problems=Problem::where('title','like','%'.$req->search .'%')
             ->orWhere('author','LIKE', '%'.$req->search.'%')
-            ->orWhere('tagline','LIKE','%'.$req->search .'%')
+            ->orWhere('description','LIKE','%'.$req->search .'%')
             ->paginate(5);
+            return view('pool.problem',compact('problems'));
         }
         return view('pool.problem',compact('problems'));
     }
