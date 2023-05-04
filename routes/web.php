@@ -95,15 +95,8 @@ Route::post('/idea/{idea}/comment',[ideaControl::class,'comment'])->middleware('
 Route::get('/idea/{idea}/like',[ideaControl::class,'like'])->middleware('auth');
 
 //User Routes
-Route::get('/user/{user}',function(){ 
-   
-    return view('user.profile');
-})->middleware('auth');
+Route::get('/user/{user}',[userControl::class,'profile'])->middleware('auth');
 
-Route::get('/user/{user}/profile',function(){
-  
-    return view('user.edit');
-})->middleware('auth');
 
 Route::post('/user/{user}',[userControl::class,'editProfile']);
 

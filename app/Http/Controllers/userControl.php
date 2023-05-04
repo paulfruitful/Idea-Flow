@@ -61,6 +61,11 @@ class userControl extends Controller
             return back()->withErrors(['error'=>'Invalid Login Details']);
         
     }
+    public function profile($username){ 
+      $user=User::where('username',$username);
+     
+      return view('user.profile');
+    }
 
     public function editProfile(Request $request,User $user){
         if(auth()->id()==$user->id){
