@@ -62,9 +62,9 @@ class userControl extends Controller
             return back()->withErrors(['error'=>'Invalid Login Details']);
         
     }
-    public function profile($username){
+    public function profile($user){
       $is_user=False; 
-      if($username==auth()->user()->username){
+      if($user==auth()->user()->username){
         $is_user=True;
       }
       
@@ -94,11 +94,11 @@ class userControl extends Controller
 
         return abort('403');
     }
-  /*  public function follow(User $user){
+   public function follow(User $user){
      $user->followers+=1;
      $user->save();    
 
     
     return back()->with('success','User Profile Updated');
- }*/
+ }
 }
