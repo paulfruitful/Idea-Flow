@@ -62,10 +62,13 @@ class userControl extends Controller
             return back()->withErrors(['error'=>'Invalid Login Details']);
         
     }
-    public function profile($username){ 
-      $user=DB::table('users')->where('username','LIKE',$username)->limit(1)->get('id');
-      dd($user->id);
-     
+    public function profile($username){
+      $is_user=False; 
+      if($username==auth()->user()->username){
+        $is_user=True;
+      }
+      
+     dd($is_user);
       return view('user.profile');
     }
 
