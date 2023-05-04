@@ -95,7 +95,9 @@ class userControl extends Controller
         return abort('403');
     }
    public function follow($user){
-       
+     $user=User::where('username',$user)->get();
+     $user->followers+=1;
+     $user->save();    
 
     
     return back()->with('success','User Profile Updated');
