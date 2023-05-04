@@ -10,6 +10,7 @@
 <body>
     <x-navbar/>
     <div>
-      <x-profile-header />
+      <!-- User Heading: Image And Followers-->
+      <x-profile-header :is_user="$is_user"/>
     </div>
 </body>
