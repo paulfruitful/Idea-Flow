@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Notifications\Welcome;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Notification;
 
@@ -62,7 +63,8 @@ class userControl extends Controller
         
     }
     public function profile($username){ 
-      $user=User::where('username',$username);
+      $user=DB::table('users')->where('username','LIKE',$username)->limit(1);
+      dd($user);
      
       return view('user.profile');
     }
