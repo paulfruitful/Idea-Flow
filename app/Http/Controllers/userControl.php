@@ -68,8 +68,8 @@ class userControl extends Controller
         $is_user=True;
       }
       
-     dd($is_user);
-      return view('user.profile');
+     
+      return view('user.profile',compact('is_user'));
     }
 
     public function editProfile(Request $request,User $user){
