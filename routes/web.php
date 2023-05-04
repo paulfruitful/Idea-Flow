@@ -98,6 +98,8 @@ Route::get('/idea/{idea}/like',[ideaControl::class,'like'])->middleware('auth');
 Route::get('/user/{user}',[userControl::class,'profile'])->middleware('auth');
 
 
+Route::post('/user/{user}/follow',[userControl::class,'follow']);
+
 Route::post('/user/{user}',[userControl::class,'editProfile']);
 
 Route::get('/user/{user}/ideas',function(){
@@ -105,4 +107,3 @@ Route::get('/user/{user}/ideas',function(){
     return redirect('/pools');
 });
 
-Route::post('/user/{user}/follow',[userControl::class,'follow']);

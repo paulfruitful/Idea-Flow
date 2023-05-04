@@ -94,9 +94,8 @@ class userControl extends Controller
 
         return abort('403');
     }
-   public function follow(User $user){
-     $user->followers+=1;
-     $user->save();    
+   public function follow($user){
+       
 
     
     return back()->with('success','User Profile Updated');
