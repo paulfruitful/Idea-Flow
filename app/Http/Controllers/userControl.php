@@ -63,8 +63,8 @@ class userControl extends Controller
         
     }
     public function profile($username){ 
-      $user=DB::table('users')->where('username','LIKE',$username)->limit(1);
-      dd($user);
+      $user=DB::table('users')->where('username','LIKE',$username)->limit(1)->get('id');
+      dd($user->id);
      
       return view('user.profile');
     }
