@@ -13,4 +13,7 @@
       <!-- User Heading: Image And Followers-->
       <x-profile-header :is_user="$is_user"/>
     </div>
+  <div>
+    <x-profile-ideas :user="$user"/>
+  </div>
 </body>
