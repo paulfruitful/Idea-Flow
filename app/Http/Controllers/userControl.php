@@ -67,7 +67,7 @@ class userControl extends Controller
       if($user==auth()->user()->username){
         $is_user=True;
       }
-      $user=User::where('username',$user)->get();
+      $user=User::where('username',$user)->first();
 
       
      
@@ -97,7 +97,7 @@ class userControl extends Controller
         return abort('403');
     }*/
    public function follow($user){
-     $user=User::where('username',$user)->get();
+     $user=User::where('username',$user)->first();
      $user->followers+=1;
      $user->save();    
 
