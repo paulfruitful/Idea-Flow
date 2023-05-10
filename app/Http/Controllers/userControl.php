@@ -67,11 +67,13 @@ class userControl extends Controller
       if($user==auth()->user()->username){
         $is_user=True;
       }
+      $user=User::where('username',$user)->get();
+
       
      
-      return view('user.profile',compact('is_user'));
+      return view('user.profile',compact('is_user','user'));
     }
-
+/*
     public function editProfile(Request $request,User $user){
         if(auth()->id()==$user->id){
            $form_data=$request->validate([
@@ -93,7 +95,7 @@ class userControl extends Controller
         }
 
         return abort('403');
-    }
+    }*/
    public function follow($user){
      $user=User::where('username',$user)->get();
      $user->followers+=1;
