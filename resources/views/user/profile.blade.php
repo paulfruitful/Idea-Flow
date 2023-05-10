@@ -11,7 +11,7 @@
     <x-navbar/>
     <div>
       <!-- User Heading: Image And Followers-->
-      <x-profile-header :is_user="$is_user"/>
+      <x-profile-header :is_user="$is_user" :user="$user"/>
     </div>
   <div>
     <x-profile-ideas :user="$user"/>
