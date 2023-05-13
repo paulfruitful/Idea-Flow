@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Follower;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Notifications\Welcome;
@@ -98,6 +99,10 @@ class userControl extends Controller
     }*/
    public function follow($user){
      $user=User::where('username',$user)->first();
+     Follower::create([
+      'follower_id'=>auth()->id(),
+      'user_id'=>$user->id
+     ]);
      $user->followers+=1;
      $user->save();    
 
