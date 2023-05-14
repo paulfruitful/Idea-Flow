@@ -51,7 +51,7 @@ public function followers(){
 }
 
 public function check_followers(){
-  return $this->followers->where('user_id', auth()->id());
+  return $this->followers->where('follower_id', auth()->id());
 }
     /**
      * The attributes that should be hidden for serialization.
