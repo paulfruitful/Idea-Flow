@@ -46,7 +46,7 @@ class User extends Authenticatable
     return $this->hasMany(Solution::class,'user_id');
  }
 
-public function followers(){
+public function follower(){
   return $this->hasMany(Follower::class,'user_id');
 }
 

@@ -100,6 +100,7 @@ class userControl extends Controller
    public function follow($user){
      $user=User::where('username',$user)->first();
      $check_follower=$user->check_followers();
+     dd($check_follower);
      if(!count($check_follower)>0){
      Follower::create([
       'follower_id'=>auth()->id(),
