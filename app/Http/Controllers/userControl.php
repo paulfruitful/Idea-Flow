@@ -64,15 +64,16 @@ class userControl extends Controller
         
     }
     public function profile($user){
-      $is_user=False; 
+      $is_user=False;
+      
       if($user==auth()->user()->username){
         $is_user=True;
       }
       $user=User::where('username',$user)->first();
-
+      $follower=count($user->check_followers())>0?true:false; 
       
      
-      return view('user.profile',compact('is_user','user'));
+      return view('user.profile',compact('is_user','user','follower'));
     }
 /*
     public function editProfile(Request $request,User $user){

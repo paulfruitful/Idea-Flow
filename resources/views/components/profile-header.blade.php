@@ -1,4 +1,4 @@
-@props(['is_user','user'])
+@props(['is_user','user','follower'])
 <div class="grid p-8 justify-self-stretch relative w-full bg-gradient-to-r from-cyan-500 to-blue-700">
 
 
@@ -13,7 +13,8 @@
    <span class="font-bold text-white text-2xl lg:text-3xl lg:m-3 m-4">{{$user->name}}</span>
     <span class="text-md lg:text-xl text-white lg:mx-12 mx-12  italic">Followers: <span class="not-italic">{{auth()->user()->followers?auth()->user()->followers:0}}</span></span>       
    @if($is_user)
-   <div class="grid justify-items-center mt-3 mx-12">
+   @if ($follower)
+         <div class="grid justify-items-center mt-3 mx-12">
    
     <form action="/user/{{request()->user}}/follow" method="POST"> 
       @csrf
@@ -21,6 +22,17 @@
    
     </form>
     </div>
+   @else
+   <div class="grid justify-items-center mt-3 mx-12">
+   
+    <form action="/user/{{request()->user}}/follow" method="POST"> 
+      @csrf
+    <button type="submit"  class="p-4 mr-4 m-auto hover:shadow-md hover:p-3 text-md text-gray-800 flex flex-row font-bold border-solid shadow-xl rounded-md bg-white text-black" style="">Follow</button>
+   
+    </form>
+    </div>
+   @endif
+ 
    @endif
   </div>
 </div>
