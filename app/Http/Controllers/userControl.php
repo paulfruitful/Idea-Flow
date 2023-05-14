@@ -99,6 +99,7 @@ class userControl extends Controller
     }*/
    public function follow($user){
      $user=User::where('username',$user)->first();
+     $follower=Follower::where('user_id',auth()->id());
      Follower::create([
       'follower_id'=>auth()->id(),
       'user_id'=>$user->id
