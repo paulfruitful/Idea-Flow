@@ -99,13 +99,20 @@ class userControl extends Controller
     }*/
    public function follow($user){
      $user=User::where('username',$user)->first();
-     $follower=$user->followers->where('user_id',auth()->id());
+     $check_follower=$user->check_followers();
+     if(!count($check_follower)>0){
      Follower::create([
       'follower_id'=>auth()->id(),
       'user_id'=>$user->id
-     ]);
+     ]);  
      $user->followers+=1;
-     $user->save();    
+     $user->save(); 
+    }else{
+      $check_follower->first()->delete();
+      $user->followers-=1;
+      $user->save(); 
+    }
+      
 
     
     return back()->with('success','User Profile Updated');
