@@ -27,7 +27,7 @@
    
     <form action="/user/{{request()->user}}/follow" method="POST"> 
       @csrf
-    <button type="submit"  class="p-4 mr-4 m-auto hover:shadow-md hover:p-3 text-md text-gray-800 flex flex-row font-bold border-solid shadow-xl rounded-md bg-white text-black" style="">Follow</button>
+    <button type="submit"  class="p-4 mr-4 m-auto hover:shadow-md hover:p-3 text-md text-gray-800 flex flex-row font-bold border-solid shadow-xl rounded-md bg-white text-black" style="">Unfollow</button>
    
     </form>
     </div>
