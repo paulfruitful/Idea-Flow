@@ -49,6 +49,10 @@ class User extends Authenticatable
 public function followers(){
   return $this->hasMany(Follower::class,'user_id');
 }
+
+public function check_followers(){
+  return $this->followers->where('user_id', auth()->id());
+}
     /**
      * The attributes that should be hidden for serialization.
      *
