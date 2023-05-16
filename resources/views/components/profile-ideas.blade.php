@@ -5,9 +5,9 @@
 </div>
 
 
-<div class="flex flex-col  flex-wrap w-full h-full p-6 ">
- @forelse ($user->ideas as $idea)
- <x-idea :idea="$idea" :is_user="$is_user"/>
+<div class="flex flex-col  flex-wrap w-full h-full p-3 ">
+ @forelse ($user->idea as $idea)
+ <x-user-idea :idea="$idea" :is_user="$is_user"/>
  @empty
      
  <p class="text-center text-gray-500 text-xl">--No Ideas--</p>
