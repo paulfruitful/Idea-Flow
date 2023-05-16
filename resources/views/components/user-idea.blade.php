@@ -13,7 +13,9 @@
     </div>
     </div>
     </a>
-    
+    <div class="flex-col p-6 absolute bg-white text-black z-10">
+    <p>Hey</p>
+</div>
 @else
 <a href="/ideas/{{$idea->id}}" class="">
 <div class="block p-6 relative bg-white hover:shadow-lg hover:p-8 text-black shadow-md m-4">
@@ -28,5 +30,7 @@
 </div>
 </div>
 </a>
+
+
 @endif
 
