@@ -1,13 +1,23 @@
 @props(['idea','is_user'])
 @if ($is_user)
+<script>
+    modal=document.querySelector("dialog")
+    btn=document.querySelector('#btn')
+    btn.addEventListener('click',()=>{
+        modal.showModal()
+    })
+
+</script>
 <a href="/ideas/{{$idea->id}}" class="">
     <div class="block p-6 relative bg-white hover:shadow-lg hover:p-8 text-black shadow-md m-4">
         <dialog>
-            <ul class="flex p-6 flex-col bg-white z-10 shadow-md">
+            <ul class="flex p-6 flex-col  z-10 ">
                <li class="my-3 text-xl ">Delete</li>
                <li class="my-3 text-xl">Edit</li>
             </ul>
-       <form method="dialog">
+      
+     </dialog>
+     <form method="dialog" id="btn">
         <div class="text-center flex flex-row flex-row-reverse p-6 text-blue-600 text-md" style="font-size: 20px;">
           
           <button class="bg-transparent border-none"> 
@@ -16,7 +26,6 @@
    
     </div>
  </form>
-     </dialog>
     <div class="text-center font-bold p-6 text-xl">-{{$idea->title}}</div>
     <div class="relative grid">
     <div class="relative text-md mb-3 justify-self-start">By <a href="/ideas/{{$idea->id}}" class=" font-bold">You</a></div>
