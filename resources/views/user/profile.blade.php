@@ -14,6 +14,6 @@
       <x-profile-header :is_user="$is_user" :user="$user" :follower="$follower"/>
     </div>
   <div>
-    <x-profile-ideas :user="$user" :is_user="$is_user" :ideas="$ideas"/>
+    <x-profile-ideas :user="$user" :is_user="$is_user" />
   </div>
 </body>
