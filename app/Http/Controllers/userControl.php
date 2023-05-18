@@ -72,8 +72,8 @@ class userControl extends Controller
       $user=User::where('username',$user)->first();
       $follower=count($user->check_followers())>0?true:false; 
       
-     
-      return view('user.profile',compact('is_user','user','follower'));
+     $ideas=$user->idea->paginate(5);
+      return view('user.profile',compact('is_user','user','follower','ideas'));
     }
 /*
     public function editProfile(Request $request,User $user){
