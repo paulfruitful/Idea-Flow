@@ -15,5 +15,8 @@
     </div>
   <div>
     <x-profile-ideas :user="$user" :is_user="$is_user" :ideas="$ideas"/>
+    <div class="p-6">
+      {{$ideas->links()}}
+  </div>
   </div>
 </body>

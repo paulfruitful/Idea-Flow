@@ -12,9 +12,7 @@
      
  <p class="text-center text-gray-500 text-xl">--No Ideas--</p>
  @endforelse
-<!--<div class="p-6">
-    
-</div>-->
+
 </div>
 </div>
 

@@ -71,7 +71,7 @@ class userControl extends Controller
         $is_user=True;
       }
       $user=User::where('username',$user)->first();
-      $ideas=Idea::where('user_id',$user->id)->latest()->paginate(5);
+      $ideas=Idea::where('user_id',$user->id)->latest()->paginate(1);
       $follower=count($user->check_followers())>0?true:false; 
       
      
