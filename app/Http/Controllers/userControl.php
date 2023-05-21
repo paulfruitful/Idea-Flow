@@ -79,7 +79,7 @@ class userControl extends Controller
       $follower=count($user->check_followers())>0?true:false; 
       
      
-      return view('user.profile',compact('is_user','user','follower','ideas'));
+      return view('user.profile',compact('is_user','user','follower','ideas','solutions'));
     }
 /*
     public function editProfile(Request $request,User $user){
