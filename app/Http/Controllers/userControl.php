@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Idea;
 use App\Models\User;
 use App\Models\Follower;
+use App\Models\Problem;
+use App\Models\Solution;
 use Illuminate\Http\Request;
 use App\Notifications\Welcome;
 use Illuminate\Validation\Rule;
@@ -72,6 +74,8 @@ class userControl extends Controller
       }
       $user=User::where('username',$user)->first();
       $ideas=Idea::where('user_id',$user->id)->latest()->paginate(5);
+      $solutions=Solution::where('user_id',$user->id)->latest()->paginate(5);
+      $problems=Problem::where('user_id',$user->id)->latest()->paginate(5);
       $follower=count($user->check_followers())>0?true:false; 
       
      
