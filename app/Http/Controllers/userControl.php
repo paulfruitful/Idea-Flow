@@ -113,11 +113,11 @@ class userControl extends Controller
       'follower_id'=>auth()->id(),
       'user_id'=>$user->id
      ]);  
-     $user->followers+=1;
+     $user->followers-=1;
      $user->save(); 
     }else{
       $check_follower->first()->delete();
-      $user->followers-=1;
+      $user->followers+=1;
       $user->save(); 
     }
       
