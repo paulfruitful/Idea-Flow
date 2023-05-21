@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Follower;
+use App\Models\Idea;
 use App\Models\User;
+use App\Models\Follower;
 use Illuminate\Http\Request;
 use App\Notifications\Welcome;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Notification;
 
 class userControl extends Controller
@@ -70,10 +71,11 @@ class userControl extends Controller
         $is_user=True;
       }
       $user=User::where('username',$user)->first();
+      $ideas=Idea::where('user_id',$user->id)->latest()->paginate(5);
       $follower=count($user->check_followers())>0?true:false; 
       
      
-      return view('user.profile',compact('is_user','user','follower'));
+      return view('user.profile',compact('is_user','user','follower','ideas'));
     }
 /*
     public function editProfile(Request $request,User $user){
