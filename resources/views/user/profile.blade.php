@@ -19,4 +19,11 @@
       {{$ideas->links()}}
   </div>
   </div>
+
+  <div>
+    <x-profile-solutions :user="$user" :is_user="$is_user" :solutions="$solutions"/>
+    <div class="p-6">
+      {{$solutions->links()}}
+  </div>
+  </div>
 </body>
