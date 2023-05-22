@@ -10,7 +10,7 @@
  <x-user-idea :idea="$solution" :is_user="$is_user"/>
  @empty
      
- <p class="text-center text-gray-500 text-xl">--No Ideas--</p>
+ <p class="text-center text-gray-500 text-xl">--No Solutions--</p>
  @endforelse
 
 </div>
