@@ -1,10 +1,10 @@
 @props(['idea','is_user'])
 @if ($is_user)
 <script>
-    idea={!!json_encode($idea) !!}
-    modal=document.querySelector(`#${idea.id}`)
+    idea={!!json_encode($idea->id) !!}
+    modal=document.querySelector(`#${idea[0]}`)
     btn=document.querySelector('#btn')
-    console.log(modal)
+    console.log(idea[0])
     btn.addEventListener('click',()=>{
         modal.showModal()
     })
