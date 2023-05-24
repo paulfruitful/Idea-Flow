@@ -26,4 +26,5 @@
       {{$solutions->links()}}
   </div>
   </div>
+  <x-floating-buttons/>
 </body>
