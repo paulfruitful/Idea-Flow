@@ -11,7 +11,7 @@
    <img class="p-6 justify-self-center lg:p-3 bg-white shadow-lg rounded-full ml-4 lg:ml-6 relative  " height="200" width="150" src={{auth()->user()->avatar?auth()->user()->avatar:'https://i.ibb.co/KLLtzGc/avatar-1.png'}} >
    <div class="flex flex-col justify-self-center relative">
    <span class="font-bold text-white text-2xl lg:text-3xl lg:m-3 m-4">{{$user->name}}</span>
-    <span class="text-md lg:text-xl text-white lg:mx-12 mx-12  italic">Followers: <span class="not-italic">{{auth()->user()->followers}}</span></span>       
+    <span class="text-md lg:text-xl text-white lg:mx-12 mx-12  italic">Followers: <span class="not-italic">{{$user->followers?$user->followers:0}}</span></span>       
    @if(!$is_user)
    @if (!$follower)
          <div class="grid justify-items-center mt-3 mx-12">
