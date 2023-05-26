@@ -12,13 +12,14 @@ use App\Models\Idea;
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Models\User;
+use App\Models\Problem;
 use App\Models\Solution;
 use App\Http\Controllers\ideaControl;
-use App\Http\Controllers\problemControl;
 use App\Http\Controllers\userControl;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\problemControl;
 use App\Http\Controllers\solutionControl;
-use App\Models\Problem;
 
 //Primary User Routes
 Route::get('/', function () {
@@ -68,9 +69,15 @@ Route::post('/idea',[ideaControl::class,'store']);
 Route::get('/pools/problems',[problemControl::class,'all']);
 Route::get('/problems/{problem}/',[problemControl::class,'problem']);
 Route::get('/create/problem',[problemControl::class,'create']);
+Route::get('/problem/{problem}/like',[problemControl::class,'like'])->middleware('auth');
+Route::post('/problem/{problem}/comment',[problemControl::class,'comment']);
+Route::get('/problem/{problem}/edit',[problemControl::class,'edit'])->middleware('auth');
+Route::get('/problem/{problem}/delete',[problemControl::class,'delete'])->middleware('auth');
 
 //Problem Post Routes
 Route::post('/create/problem',[problemControl::class,'store']);
+Route::post('problem/{problem}/edit',[problemControl::class,'update']);
+
 //Solution Routes
 Route::get('/solutions/{solution}',[solutionControl::class,'solution']);
 Route::get('/solutions/{solution}/edit',[solutionControl::class,'edit'])->middleware('auth');
@@ -88,13 +95,10 @@ Route::post('/idea/{idea}/comment',[ideaControl::class,'comment'])->middleware('
 Route::get('/idea/{idea}/like',[ideaControl::class,'like'])->middleware('auth');
 
 //User Routes
-Route::get('/user/{user}',function(){
-    return view('user.profile');
-})->middleware('auth');
+Route::get('/user/{user}',[userControl::class,'profile'])->middleware('auth');
 
-Route::get('/user/{user}/profile',function(){
-    return view('user.edit');
-})->middleware('auth');
+
+Route::post('/user/{user}/follow',[userControl::class,'follow']);
 
 Route::post('/user/{user}',[userControl::class,'editProfile']);
 
@@ -103,4 +107,3 @@ Route::get('/user/{user}/ideas',function(){
     return redirect('/pools');
 });
 
-Route::post('/user/{user}/follow',[userControl::class,'follow']);

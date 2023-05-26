@@ -4,17 +4,32 @@ namespace App\Http\Controllers;
 
 use App\Models\Solution;
 use Illuminate\Http\Request;
+use App\Jobs\SolutionLikeJob;
 use App\Models\solutionComment;
 use App\Models\solutionReaction;
+use Illuminate\Support\Facades\DB;
 
 class solutionControl extends Controller
 {
     //
-    public function all(){
+    public function all(Request $req){
+        $solutions=Solution::recent();
+        if($req->tag){
+            $solutions=Solution::where('sector','LIKE','%'.$req->tag.'%')->orderBy('upvote','desc')->paginate(5);
+            return view('pool.solution',compact('solutions'));
+            
+        }
+
+        if($req->search){
+            $solutions=DB::table('solutions')->where('title','LIKE','%'.$req->search .'%')
+            ->orWhere('author','LIKE', '%'.$req->search.'%')
+            ->orWhere('tagline','LIKE','%'.$req->search .'%')
+            ->paginate(5);
+            return view('pool.solution',compact('solutions'));
         
-        return view('pool.solution',[
-            'solutions'=>Solution::recent()
-        ]);
+        }
+        
+        return view('pool.solution',compact('solutions'));
     }
 
     public function solution(Solution $solution){
@@ -26,14 +41,16 @@ class solutionControl extends Controller
             'solution'=>$solution,
             'liked'=>true,
             'unliked'=>false,
-            "image"=>"/storage/".$solution->image
+            "image"=>"/storage/".$solution->image,
+            "similar"=>$solution->similar()
         ]);
     }else{
         return view('solution.solution',[
             'solution'=>$solution,
             'liked'=>true,
             'unliked'=>false,
-            "image"=>$solution->image
+            "image"=>$solution->image,
+            "similar"=>$solution->similar()
         ]);
     }
     }else{
@@ -42,14 +59,16 @@ class solutionControl extends Controller
             'solution'=>$solution,
             'liked'=>false,
             'unliked'=>true,
-            'image'=>"/storage/".$solution->image
+            'image'=>"/storage/".$solution->image,
+            "similar"=>$solution->similar()
         ]);
     }else{
         return view('solution.solution',[
             'solution'=>$solution,
             'liked'=>false,
             'unliked'=>true,
-            "image"=>$solution->image
+            "image"=>$solution->image,
+            "similar"=>$solution->similar()
         ]);
     }
     }
@@ -135,14 +154,7 @@ public function like(Solution $solution){
      $solution->save();
      return back()->with('unliked',true);
     }else{
-      $data=[
-         "user_id"=>auth()->id(),
-         "solution_id"=>$solution->id ];
- 
-     $react=solutionReaction::create($data);
- 
-     $solution->upvote+=1;
-     $solution->save();
+      dispatch(new SolutionLikeJob($solution));
      return back()->with('liked',true);
      }
  

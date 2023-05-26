@@ -2,10 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Idea;
 use App\Models\User;
+use App\Models\Follower;
+use App\Models\Problem;
+use App\Models\Solution;
 use Illuminate\Http\Request;
 use App\Notifications\Welcome;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Notification;
 
 class userControl extends Controller
@@ -15,6 +20,7 @@ class userControl extends Controller
         return view('user.register');
     }
     //Store users profile
+    
     public function store(Request $request){
      $formData=$request->validate(
         [
@@ -23,8 +29,8 @@ class userControl extends Controller
           'password'=>['required','min:6','confirmed'],
           'username'=>'required|min:8|unique:users'
 
-        ]
-        );
+        ]);
+
         $form_data['ip']=$request->ip();
         $form_data['followers']=1;
         $formData['password']=bcrypt($formData['password']);
@@ -60,7 +66,22 @@ class userControl extends Controller
             return back()->withErrors(['error'=>'Invalid Login Details']);
         
     }
-
+    public function profile($user){
+      $is_user=False;
+      
+      if($user==auth()->user()->username){
+        $is_user=True;
+      }
+      $user=User::where('username',$user)->first();
+      $ideas=Idea::where('user_id',$user->id)->latest()->paginate(5);
+      $solutions=Solution::where('user_id',$user->id)->latest()->paginate(5);
+      $problems=Problem::where('user_id',$user->id)->latest()->paginate(5);
+      $follower=count($user->check_followers())>0?true:false; 
+      
+     
+      return view('user.profile',compact('is_user','user','follower','ideas','solutions'));
+    }
+/*
     public function editProfile(Request $request,User $user){
         if(auth()->id()==$user->id){
            $form_data=$request->validate([
@@ -82,20 +103,26 @@ class userControl extends Controller
         }
 
         return abort('403');
-    }
-    public function follow(User $user){
+    }*/
+   public function follow($user){
+     $user=User::where('username',$user)->first();
+     $check_follower=$user->check_followers();
+     
+     if(!count($check_follower)>0){
+     Follower::create([
+      'follower_id'=>auth()->id(),
+      'user_id'=>$user->id
+     ]);  
      $user->followers+=1;
-     $user->save();    
+     $user->save(); 
+    }else{
+      $check_follower->first()->delete();
+      $user->followers-=1;
+      $user->save(); 
+    }
+      
 
     
     return back()->with('success','User Profile Updated');
  }
-    public function ideas(User $user){
-        dd($user->ideas->all());
-       return view('user.ideas',[
-        'user'=>$user->idea()->latest()
-       ]);
-        
-
-}
 }

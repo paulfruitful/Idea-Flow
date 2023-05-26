@@ -6,8 +6,10 @@ namespace Database\Seeders;
 
 use App\Models\Idea;
 use App\Models\Problem;
+use App\Models\ProblemComments;
 use Illuminate\Database\Seeder;
 use \App\Models\User;
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -23,16 +25,21 @@ class DatabaseSeeder extends Seeder
     'author'=>$user->username,
      'email'=>$user->email
      ]);
+
+  $Problemuser=User::all();
+     $Problemuser=$Problemuser[1];
+    $problem= Problem::factory(33)->create([ 
+    'user_id'=>$Problemuser->id,
+    'author'=>$Problemuser->username
+     ]);   
+    
+   
+
      $this->call(
 [
     solutionSeeder::class
 ]
      );
-     $Problemuser=User::all();
-     $Problemuser=$Problemuser[1];
-     Problem::factory(33)->create([ 
-    'user_id'=>$Problemuser->id,
-    'author'=>$Problemuser->username
-     ]);   
-    }
+}
+   
 }

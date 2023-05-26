@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Idea;
+use App\Models\Solution;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,12 +21,20 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/ideas',function(){
-   return json_encode(Idea::where('privacy','true')->latest()->get());
+    $ideas=Idea::where('privacy','true')->latest()->get();
+    $topIdeas=Idea::trending();
+    $res=[
+        "ideas"=>$ideas,
+        "topIdeas"=>$topIdeas
+
+    ];
+   return $res;
 });
-Route::get('/topIdeas',function(){
-    return json_encode(Idea::trending());
- });
- 
+
 Route::get('/ideas/{idea}',function(Idea $idea){
     return json_decode($idea);
+});
+
+Route::get('/solutions',function(){
+    return json_encode(Solution::where('privacy','true')->orderBy('upvote','desc')->latest()->get());
 });

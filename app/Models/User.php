@@ -5,8 +5,10 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Models\Idea;
 use App\Models\Problem;
+use App\Models\Follower;
+//use Laravel\Sanctum\HasApiTokens;
 use App\Models\Solution;
-use Laravel\Sanctum\HasApiTokens;
+use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -30,7 +32,8 @@ class User extends Authenticatable
         'country',
         'ip',
         'followers',
-        'avatar'
+        'avatar',
+        'cover_photo'
     ];
   public function idea(){
     return $this->hasMany(Idea::class,'user_id');
@@ -43,6 +46,13 @@ class User extends Authenticatable
     return $this->hasMany(Solution::class,'user_id');
  }
 
+public function follower(){
+  return $this->hasMany(Follower::class,'user_id');
+}
+
+public function check_followers(){
+  return $this->follower->where('follower_id', auth()->id());
+}
     /**
      * The attributes that should be hidden for serialization.
      *
