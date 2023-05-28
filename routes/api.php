@@ -32,9 +32,15 @@ Route::get('/ideas',function(){
 });
 
 Route::get('/ideas/{idea}',function(Idea $idea){
-    return json_decode($idea);
+    return $idea;
 });
 
 Route::get('/solutions',function(){
-    return json_encode(Solution::where('privacy','true')->orderBy('upvote','desc')->latest()->get());
+    $topSolutions=Solution::trending();
+    $solutions=Idea::where('privacy','true')->latest()->get();
+    $res=[
+        "solutions"=>$solutions,
+        "topSolutions"=>$topSolutions
+    ];
+    return $res;
 });
