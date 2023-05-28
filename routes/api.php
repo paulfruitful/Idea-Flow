@@ -45,3 +45,4 @@ Route::get('/solutions',function(){
     return $res;
 });
 
+Route::get('/problems',function(){});
