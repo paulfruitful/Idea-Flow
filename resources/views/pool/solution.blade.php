@@ -49,5 +49,6 @@
     <x-latest-solutions :solutions="$solutions"/>
  <div class="p-6 m-6">{{$solutions->links()}}</div>  
 
+ <x-solution-float/>
  <x-footer/>
 </body>
