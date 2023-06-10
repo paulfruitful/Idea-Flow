@@ -36,6 +36,6 @@
   <div class="text-center m-6 mt-8 font-bold text-3xl">Idea Pool</div>
     <x-latest-ideas :ideas="$ideas"/>
  <div class="p-6 m-6">{{$ideas->links()}}</div>  
-
+ <x-idea-float/>
  <x-footer/>
 </body>
