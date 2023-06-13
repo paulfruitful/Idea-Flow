@@ -37,10 +37,12 @@ Route::get('/ideas/{idea}',function(Idea $idea){
 
 Route::get('/solutions',function(){
     $topSolutions=Solution::trending();
-    $solutions=Idea::where('privacy','true')->latest()->get();
+    $solutions=Solution::where('privacy','true')->latest()->get();
     $res=[
         "solutions"=>$solutions,
         "topSolutions"=>$topSolutions
     ];
     return $res;
 });
+
+Route::get('/problems',function(){});
