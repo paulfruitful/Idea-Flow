@@ -18,7 +18,9 @@ public function all(Request $req){
    });
    
    if($req->tag){
-       $ideas=Idea::where('plan','LIKE','%'.$req->tag.'%')->orderBy('upvote','desc')->paginate(5);
+       $ideas=cache()->rememberForever('ideas',function(){
+        return Idea::where('plan','LIKE','%'.$req->tag.'%')->orderBy('upvote','desc')->paginate(5);
+       });
        return view('pool.idea',compact('ideas'));
    }
 
