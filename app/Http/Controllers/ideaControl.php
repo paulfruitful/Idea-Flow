@@ -26,12 +26,12 @@ public function all(Request $req){
    }
 
    if($req->search){
-       $ideas=cache()->add('ideas',function(){
+       $ideas=cache()->put('ideas',function(){
         return Idea::where('title','like','%'.$req->search .'%')
         ->orWhere('author','LIKE', '%'.$req->search.'%')
         ->orWhere('tagline','LIKE','%'.$req->search .'%')
         ->paginate(5);
-       });
+       },now()->addMinutes(60));
        return view('pool.idea',compact('ideas'));
    }
    return view('pool.idea',compact('ideas'));
