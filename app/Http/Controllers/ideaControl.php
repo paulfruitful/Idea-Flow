@@ -13,7 +13,9 @@ class ideaControl extends Controller
 {
     //
 public function all(Request $req){
-   $ideas=Idea::recent();
+   $ideas=cache()->rememberForever('ideas',function(){
+     return Idea::recent();
+   });
    
    if($req->tag){
        $ideas=Idea::where('plan','LIKE','%'.$req->tag.'%')->orderBy('upvote','desc')->paginate(5);
