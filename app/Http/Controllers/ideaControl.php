@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Idea;
 use App\Models\reaction;
 use App\Models\Idea_comment;
+use Doctrine\Common\Cache\Cache;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -12,18 +13,25 @@ class ideaControl extends Controller
 {
     //
 public function all(Request $req){
-   $ideas=Idea::recent();
-   $solutions=Idea::recent();
+   $ideas=cache()->rememberForever('ideas',function(){
+     return Idea::recent();
+   });
+   
    if($req->tag){
-       $ideas=Idea::where('plan','LIKE','%'.$req->tag.'%')->orderBy('upvote','desc')->paginate(5);
+    
+       $ideas=cache()->rememberForever('ideas',function(){
+        return Idea::where('plan','LIKE','%'.$req->tag.'%')->orderBy('upvote','desc')->paginate(5);
+       });
        return view('pool.idea',compact('ideas'));
    }
 
    if($req->search){
-       $ideas=Idea::where('title','like','%'.$req->search .'%')
-       ->orWhere('author','LIKE', '%'.$req->search.'%')
-       ->orWhere('tagline','LIKE','%'.$req->search .'%')
-       ->paginate(5);
+       $ideas=cache()->rememberForever('ideas',function(){
+        return Idea::where('title','like','%'.$req->search .'%')
+        ->orWhere('author','LIKE', '%'.$req->search.'%')
+        ->orWhere('tagline','LIKE','%'.$req->search .'%')
+        ->paginate(5);
+       });
        return view('pool.idea',compact('ideas'));
    }
    return view('pool.idea',compact('ideas'));
