@@ -26,7 +26,8 @@ class Idea extends Model
  'upvote',
  'privacy',
  'tagline',
- 'image'
+ 'image',
+ 'tags'
     ];
     public function user(){
         return $this->belongsTo(User::class,'user_id');
@@ -56,6 +57,6 @@ public static function trending(){
 }
 
 public function similar(){
-return Db::table('ideas')->where('plan','like',$this->plan)->orderBy('upvote','desc')->limit(5)->get();
+return Db::table('ideas')->where('plan','like','%'.$this->tags.'%')->orderBy('upvote','desc')->limit(5)->get();
 }
 }
