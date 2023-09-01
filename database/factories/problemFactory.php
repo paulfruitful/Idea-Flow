@@ -24,7 +24,7 @@ class problemFactory extends Factory
             'privacy'=>fake()->randomElement(['true','false']),
             'upvote'=>fake()->numberBetween(0,1340),
             'views'=>fake()->numberBetween(1,1000),
-            'tags'=>implode('',fake()->randomElements(['health','finance','ai']))
+            'tags'=>implode('',fake()->randomElements(['health','finance','AI','Agriculture','Entertainment','Real Estate','Fashion','Technology']))
         ];
     }
 }
