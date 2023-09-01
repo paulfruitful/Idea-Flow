@@ -30,7 +30,8 @@ class solutionFactory extends Factory
             'monetizable'=>fake()->randomElement(['true','false']),
             'privacy'=>fake()->randomElement(['true','false']),
             'upvote'=>fake()->numberBetween(5,100),
-          
+            'tags'=>implode('',fake()->randomElements(['health','finance','AI','Agriculture','Entertainment','Real Estate','Fashion','Technology']))
+     
 
         ];
     }
