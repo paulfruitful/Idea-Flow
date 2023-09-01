@@ -20,7 +20,7 @@ public function all(Request $req){
    if($req->tag){
     
        $ideas=cache()->rememberForever('ideas',function(){
-        return Idea::where('plan','LIKE','%'.$req->tag.'%')->orderBy('upvote','desc')->paginate(5);
+        return Idea::where('plan','LIKE','%'.$req->tag.'%')->orderBy('upvote','desc')->paginate(25);
        });
        return view('pool.idea',compact('ideas'));
    }
@@ -30,7 +30,7 @@ public function all(Request $req){
         return Idea::where('title','like','%'.$req->search .'%')
         ->orWhere('author','LIKE', '%'.$req->search.'%')
         ->orWhere('tagline','LIKE','%'.$req->search .'%')
-        ->paginate(5);
+        ->paginate(25);
        });
        return view('pool.idea',compact('ideas'));
    }
