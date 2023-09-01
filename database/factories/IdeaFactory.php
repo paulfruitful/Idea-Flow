@@ -28,6 +28,7 @@ class IdeaFactory extends Factory
             'sponsor'=>fake()->randomElement(['true','false']),
             'privacy'=>fake()->randomElement(['true','false']),
             'upvote'=>fake()->numberBetween(5,100),
+            'tags'=>fake()->randomElements(['AI','Health','Fashion','Entertainment','Agriculture','Real Estate','Finance'])
           
 
         ];
