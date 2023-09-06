@@ -20,7 +20,7 @@ public function all(Request $req){
    if($req->tag){
     
        $ideas=cache()->rememberForever('ideas',function(){
-        return Idea::where('plan','LIKE','%'.$req->tag.'%')->orderBy('upvote','desc')->paginate(25);
+        return Idea::where('tags','LIKE','%'.$req->tag.'%')->orderBy('upvote','desc')->paginate(25);
        });
        return view('pool.idea',compact('ideas'));
    }
