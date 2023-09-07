@@ -14,7 +14,7 @@ class ideaControl extends Controller
     //
 public function all(Request $req){
    $ideas=cache()->rememberForever('ideas',function(){
-     return Idea::recent();
+     return Idea::where('privacy','true')->latest()->paginate(25);
    });
    
    if($req->tag){
