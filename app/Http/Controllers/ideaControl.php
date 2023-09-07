@@ -24,12 +24,11 @@ public function all(Request $req){
    }
 
    if($req->search){
-       $ideas=cache()->rememberForever('ideas',function(){
-        return Idea::where('title','like','%'.$req->search .'%')
+       $ideas= Idea::where('title','like','%'.$req->search .'%')
         ->orWhere('author','LIKE', '%'.$req->search.'%')
         ->orWhere('tagline','LIKE','%'.$req->search .'%')
         ->paginate(25);
-       });
+    
        return view('pool.idea',compact('ideas'));
    }
    return view('pool.idea',compact('ideas'));
