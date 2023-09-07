@@ -71,8 +71,14 @@
 </select>
 
 </div>
+
 </div>
 
+<div class="relative p-6 flex flex-row mt-4">
+    <label  class="text-xl pr-3">Tags:</label>
+    <input type="text" placeholder="Health, AI, Fashion etc " class=" placeholder:italic placeholder:text-slate-400 block border-solid border-2 p-3 border-slate-600  focus:outline-none w-full focus:border-sky-500" style=" border-bottom-width:2.4px;" name="tags">
+
+</div>
 <div class="mt-16 grid justify-items-end">
     <button type="submit" class="p-4 pt-2 pb-2 bg-black text-white font-bold text-md border-solid border-black border-2 shadow-sm hover:bg-white hover:text-black rounded">Share</button>
 </div>
