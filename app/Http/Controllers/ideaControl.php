@@ -13,7 +13,7 @@ class ideaControl extends Controller
 {
     //
 public function all(Request $req){
-   $ideas=cache()->rememberForever('ideas',function(){
+   $ideas=cache()->remember('ideas',function(){
      return Idea::where('privacy','true')->latest()->paginate(25);
    });
    
@@ -98,7 +98,8 @@ public function store(Request $request){
         'sponsor'=>'required',
         'plan'=>'required',
         'privacy'=>'required',
-        'image'=>'required'
+        'image'=>'required',
+        'tags'=>'required'
     ]);
 
     $form_data["user_id"]=auth()->id();
@@ -121,7 +122,8 @@ public function update(Idea $idea,Request $request){
         'sponsor'=>'required',
         'plan'=>'required',
         'privacy'=>'required',
-        'image'=>'mimes:jpeg,jpg,png,gif'
+        'image'=>'mimes:jpeg,jpg,png,gif',
+        'tags'=>'required'
     ]);
 
  $idea->update($form_data);
