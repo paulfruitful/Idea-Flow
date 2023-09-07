@@ -13,9 +13,9 @@ class solutionControl extends Controller
 {
     //
     public function all(Request $req){
-        $solutions=Solution::recent();
+        $solutions=Solution::where('privacy','true')->latest()->paginate(25);
         if($req->tag){
-            $solutions=Solution::where('sector','LIKE','%'.$req->tag.'%')->orderBy('upvote','desc')->paginate(5);
+            $solutions=Solution::where('sector','LIKE','%'.$req->tag.'%')->orderBy('upvote','desc')->paginate(25);
             return view('pool.solution',compact('solutions'));
             
         }

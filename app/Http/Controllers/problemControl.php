@@ -14,14 +14,14 @@ class problemControl extends Controller
     public function all(Request $req){
         $problems=Problem::recent();
         if($req->tag){
-            $problems=Problem::where('tags','LIKE','%'.$req->tag.'%')->orderBy('upvote','desc')->paginate(5);
+            $problems=Problem::where('tags','LIKE','%'.$req->tag.'%')->orderBy('upvote','desc')->paginate(25);
             return view('pool.problem',compact('problems'));
         }
         if($req->search){
             $problems=Problem::where('title','like','%'.$req->search .'%')
             ->orWhere('author','LIKE', '%'.$req->search.'%')
             ->orWhere('description','LIKE','%'.$req->search .'%')
-            ->paginate(5);
+            ->paginate(25);
             return view('pool.problem',compact('problems'));
         }
         return view('pool.problem',compact('problems'));

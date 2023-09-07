@@ -33,7 +33,7 @@ class Problem extends Model
   return problemFactory::new();
 }
     public static function recent(){
-        return Problem::where('privacy','true')->latest()->limit(20)->paginate(5);
+        return Problem::where('privacy','true')->latest()->limit(20)->paginate(25);
     }
 
     public function check_reaction(){
