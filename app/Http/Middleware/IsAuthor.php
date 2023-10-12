@@ -16,6 +16,9 @@ class IsAuthor
      */
     public function handle(Request $request, Closure $next)
     {
-        return $next($request);
-    }
+        if($request->idea==auth()->id()){ 
+                return $next($request);
+            }
+        return redirect('/pools/ideas');
+}
 }

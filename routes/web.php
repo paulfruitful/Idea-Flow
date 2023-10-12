@@ -87,7 +87,7 @@ Route::post('/solutions/{solution}/comment',[solutionControl::class,'comment'])-
 Route::get('/solutions/{solution}/like',[solutionControl::class,'like'])->middleware('auth');
 
 //Idea Routes
-Route::get('/ideas/{idea}',[ideaControl::class,'idea']);
+Route::get('/idea/{idea}',[ideaControl::class,'idea']);
 Route::get('/idea/{idea}/edit',[ideaControl::class,'edit'])->middleware('auth');
 Route::post('/idea/{idea}/update',[ideaControl::class, 'update'])->middleware('auth');
 Route::get('/idea/{idea}/delete',[ideaControl::class,'delete'])->middleware('auth');
