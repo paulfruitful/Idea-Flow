@@ -16,8 +16,6 @@ class ideaObserver
     public function created(Idea $idea)
     {
         //
-
-        Cache::forget('ideas');
     }
 
     /**
