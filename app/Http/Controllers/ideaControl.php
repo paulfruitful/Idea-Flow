@@ -13,12 +13,12 @@ class ideaControl extends Controller
 {
     //
 public function all(Request $req){
-   $ideas=Idea::where('privacy','true')->latest()->paginate(25);
+   $ideas=Idea::where('privacy','true')->pluck('title','author','id','tagline')->latest()->paginate(25);
    
-   
+   ddd($ideas); 
    if($req->tag){
-    
-       $ideas= Idea::where('tags','LIKE','%'.$req->tag.'%')->orderBy('upvote','desc')->paginate(25);
+     
+       $ideas= Idea::where('tags','LIKE','%'.$req->tag.'%')->orderBy('upvote','desc')->pluck('title','author','id', 'tagline')->paginate(25);
       
        return view('pool.idea',compact('ideas'));
    }
@@ -27,6 +27,7 @@ public function all(Request $req){
        $ideas= Idea::where('title','like','%'.$req->search .'%')
         ->orWhere('author','LIKE', '%'.$req->search.'%')
         ->orWhere('tagline','LIKE','%'.$req->search .'%')
+        ->pluck('title','author','id','tagline')
         ->paginate(25);
     
        return view('pool.idea',compact('ideas'));
