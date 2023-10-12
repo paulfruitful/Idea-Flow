@@ -8,6 +8,7 @@ use App\Models\Idea_comment;
 use Doctrine\Common\Cache\Cache;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Gate;
 
 class ideaControl extends Controller
 {
@@ -83,9 +84,13 @@ public function create(){
 }
 
 public function edit(Idea $idea){
+ if(Gate::allows('edit_idea',$idea)){
     return view('idea.edit',[
         'idea'=>$idea
     ]);
+}
+
+return redirect('/pools/ideas');
 }
 
 public function store(Request $request){
