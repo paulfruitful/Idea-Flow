@@ -2,6 +2,11 @@
 
 namespace App\Providers;
 
+use App\Models\Idea;
+use App\Models\User;
+use App\Models\Ideas;
+use Illuminate\Support\Facades\Gate;
+
 // use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Laravel\Passport\Passport;
@@ -25,6 +30,8 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
-               //
+        Gate::define('edit_idea',function(User $user, Idea $idea){
+            return $user->id==$idea->user_id;
+        });             //
     }
 }
