@@ -89,8 +89,8 @@ Route::get('/solutions/{solution}/like',[solutionControl::class,'like'])->middle
 //Idea Routes
 Route::get('/idea/{idea}',[ideaControl::class,'idea']);
 Route::get('/idea/{idea}/edit',[ideaControl::class,'edit'])->middleware('auth');
-Route::post('/idea/{idea}/update',[ideaControl::class, 'update'])->middleware('auth');
-Route::get('/idea/{idea}/delete',[ideaControl::class,'delete'])->middleware('auth');
+Route::post('/idea/{idea}/update',[ideaControl::class, 'update'])->middleware('auth','is_author:idea');
+Route::get('/idea/{idea}/delete',[ideaControl::class,'delete'])->middleware('auth','is_author:idea');
 Route::post('/idea/{idea}/comment',[ideaControl::class,'comment'])->middleware('auth');
 Route::get('/idea/{idea}/like',[ideaControl::class,'like'])->middleware('auth');
 Route::get('/idea/{idea}/analytics',[ideaControl::class,'analytics'])->middleware('is_author');
