@@ -175,4 +175,8 @@ public function delete(Idea $idea){
     return redirect()->back();
 }
 
+public function analytics(Idea $idea){
+
+    return view('idea.analytics',$idea);
+}
 }

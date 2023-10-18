@@ -93,7 +93,7 @@ Route::post('/idea/{idea}/update',[ideaControl::class, 'update'])->middleware('a
 Route::get('/idea/{idea}/delete',[ideaControl::class,'delete'])->middleware('auth','is_author:idea');
 Route::post('/idea/{idea}/comment',[ideaControl::class,'comment'])->middleware('auth');
 Route::get('/idea/{idea}/like',[ideaControl::class,'like'])->middleware('auth');
-Route::get('/idea/{idea}/analytics',[ideaControl::class,'analytics'])->middleware('is_author');
+Route::get('/idea/{idea}/analytics',[ideaControl::class,'analytics'])->middleware('is_author:idea');
 
 
 //User Routes

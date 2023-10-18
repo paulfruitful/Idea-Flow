@@ -14,7 +14,7 @@ class IsAuthor
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    public function handle(Request $request, Closure $next, String $type)
+    public function handle(Request $request, Closure $next,  $type)
     {
         if($request[$type]==auth()->id()){ 
                 return $next($request);
