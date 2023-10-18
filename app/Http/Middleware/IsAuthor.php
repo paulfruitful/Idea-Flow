@@ -16,9 +16,22 @@ class IsAuthor
      */
     public function handle(Request $request, Closure $next,  $type)
     {
-        if($request[$type]==auth()->id()){ 
-                return $next($request);
-            }
+         
+        if($request[$type]=='idea'){
+          
+            $idea=Idea::find($request[$type]);
+           
+             dd($idea);
+            if($idea===auth()->id()){
+
+            return $next($request);
+            }else{
+
+            
         return redirect('/pools/ideas');
+            }
+
+            }else{
+        return redirect('/pools/ideas');}
 }
 }
