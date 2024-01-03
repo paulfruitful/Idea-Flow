@@ -24,7 +24,6 @@ Though This App Was Canceled By My Team During The Hackathon Due To It Beign A M
 
 ## Authors
 
-- [@JonathanAzuonye]('https://github.com/JonathanAzuonye')
 - [@paulfruitful]('https://github.com/paulfruitful')
 
 ## Features
