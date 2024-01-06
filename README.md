@@ -15,11 +15,6 @@ This App Was Created For The GDG ABA Devfest22 Hackathon Sponsored By Techmie.
 Though This App Was Canceled By My Team During The Hackathon Due To It Beign A Marketplace And Not A MicroSass Solution, But I Taking This Project Further And Making It A World Class Solution That Would Birth Many Other Solutions😊
 
  Checkout <a href="https://github.com/paulfruitful/ReviewIt">ReviewIt</a> The App My Team Later Came Up With
-## Acknowledgements
-
- - [Awesome Readme Templates](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
- - [Awesome README](https://github.com/matiassingers/awesome-readme)
- - [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
 
 
 ## Authors
@@ -37,13 +32,31 @@ Though This App Was Canceled By My Team During The Hackathon Due To It Beign A M
 
 ## Installation
 
-To deploy this project on your local server you need composer on your PC.
+To deploy this project on your local server you need composer and Xampp to run it efficiently on your PC.
 
 Download composer at: https://getcomposer.org/
 
+Get XAMPP at https://www.apachefriends.org/download.html
+- Clone this repository and run:
 ```bash
   composer install
 ```
+
+- Start up a XAMPP server for Mysql and create a database for the project!
+
+<img src="https://github.com/paulfruitful/Idea-Flow/blob/master/Screenshot%202024-01-06%20090707.jpg"/>
+- Open the .env file of the cloned project and fill in this details with your database credentials
+
+- Open Up the project and run this command in its directory
+
+```bash
+  php artisan migrate
+```
+
+- Then you run, to run the application on your local server
+  ``` bash
+   php artisan serve
+  ```
 # Hi, I'm Paul Fruitful ! 👋
 
 ## 🚀 About Me
